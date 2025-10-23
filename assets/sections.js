@@ -384,7 +384,7 @@ function successStoryCard(name, country, profession, before, after, image, quote
     return `
     <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
         <div class="flex items-start space-x-4 mb-4">
-            <img src="images/${image}" alt="${name}" class="w-16 h-16 rounded-full object-cover">
+            <img src="images/${image}" alt="${name}" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
             <div>
                 <h3 class="font-bold text-lg text-gray-900">${name}</h3>
                 <p class="text-sm text-gray-600">${country} • ${profession}</p>
