@@ -116,6 +116,11 @@
         width: auto !important;
     }
     
+    /* Hide Success Stories link in navigation */
+    nav a[href="#success-stories"] {
+        display: none !important;
+    }
+    
     /* ============================================
        HERO SECTION - IMPROVED SPACING & LAYOUT
        ============================================ */
@@ -128,16 +133,17 @@
     }
     
     .hero-section h1 {
-        font-size: 36px !important;
-        margin-bottom: 24px !important;
+        font-size: 42px !important;
+        margin-bottom: 32px !important;
         color: white !important;
-        line-height: 1.2 !important;
+        line-height: 1.15 !important;
         letter-spacing: -0.5px !important;
+        font-weight: 800 !important;
     }
     
     .hero-section > p {
-        font-size: 19px !important;
-        margin-bottom: 32px !important;
+        font-size: 21px !important;
+        margin-bottom: 48px !important;
         color: white !important;
         line-height: 1.5 !important;
         font-weight: 500 !important;
@@ -148,8 +154,8 @@
         display: flex !important;
         flex-direction: column !important;
         gap: 16px !important;
-        margin-top: 32px !important;
-        margin-bottom: 32px !important;
+        margin-top: 48px !important;
+        margin-bottom: 48px !important;
     }
     
     .hero-section .flex.gap-4 a,
@@ -179,24 +185,38 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
     }
     
-    /* Step numbers - enhanced visibility */
+    /* Step numbers - enhanced visibility with rounded boxes */
+    .card > div:first-child,
     .card .text-5xl,
-    .card .text-4xl,
-    .card > div:first-child {
-        width: 56px !important;
-        height: 56px !important;
-        min-width: 56px !important;
-        min-height: 56px !important;
+    .card .text-4xl {
+        width: 64px !important;
+        height: 64px !important;
+        min-width: 64px !important;
+        min-height: 64px !important;
         background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%) !important;
         color: white !important;
-        border-radius: 50% !important;
+        border-radius: 16px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        font-size: 28px !important;
-        font-weight: 700 !important;
-        margin: 0 auto 16px auto !important;
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+        font-size: 32px !important;
+        font-weight: 800 !important;
+        margin: 0 auto 20px auto !important;
+        box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5) !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Target the actual number text */
+    .card .text-5xl,
+    .card .text-4xl {
+        width: auto !important;
+        height: auto !important;
+        min-width: auto !important;
+        min-height: auto !important;
+        background: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
     }
     
     /* ============================================
@@ -253,23 +273,32 @@
         color: white !important;
     }
     
-    footer * {
+    footer *,
+    footer p,
+    footer span,
+    footer div,
+    footer li {
         color: white !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
     }
     
     footer h3,
     footer h4 {
         color: white !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        margin-bottom: 12px !important;
     }
     
     footer a {
-        color: rgba(255, 255, 255, 0.9) !important;
+        color: white !important;
         text-decoration: none !important;
+        font-weight: 500 !important;
     }
     
     footer a:hover {
-        color: white !important;
+        color: rgba(255, 255, 255, 0.8) !important;
     }
     
     /* Add logo to footer */
