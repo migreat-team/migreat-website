@@ -6,7 +6,8 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const animationObserver = new IntersectionObserver((entries) => {
+// Make animationObserver globally accessible for component-loader.js
+window.animationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -23,22 +24,22 @@ const animationObserver = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
     // Fade-in animations
     document.querySelectorAll('.fade-in').forEach(el => {
-        animationObserver.observe(el);
+        window.animationObserver.observe(el);
     });
-    
+
     // Slide-in animations
     document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
-        animationObserver.observe(el);
+        window.animationObserver.observe(el);
     });
-    
+
     // Scale-in animations
     document.querySelectorAll('.scale-in').forEach(el => {
-        animationObserver.observe(el);
+        window.animationObserver.observe(el);
     });
-    
+
     // Counter animations
     document.querySelectorAll('.counter').forEach(el => {
-        animationObserver.observe(el);
+        window.animationObserver.observe(el);
     });
     
     // Add smooth scroll to all anchor links

@@ -7,28 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <i data-lucide="plane-takeoff" class="h-8 w-8 text-red-600 mr-2"></i>
-                        <span class="text-2xl font-bold text-gray-900">MiGreat Germany</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
-                    <a href="degree-check.html" class="text-red-600 font-semibold">Degree Recognition</a>
-                    <a href="visa-check.html" class="text-gray-700 hover:text-red-600">Visa Quick Check</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-red-600">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Component -->
+    <div id="nav-container"></div>
 
     <!-- Main Content -->
     <div class="max-w-4xl mx-auto px-4 py-12" x-data="degreeChecker()" x-init="init()">
@@ -179,11 +162,11 @@
 
                 async init() {
                     // Load institutions data
-                    const instResponse = await fetch('assets/anabin-data.json');
+                    const instResponse = await fetch('assets/json/anabin-data.json');
                     this.institutionsData = await instResponse.json();
-                    
+
                     // Load degrees data
-                    const degResponse = await fetch('assets/degrees-data.json');
+                    const degResponse = await fetch('assets/json/degrees-data.json');
                     this.degreesData = await degResponse.json();
                     
                     lucide.createIcons();
@@ -268,6 +251,10 @@
         }
     </script>
 
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="assets/js/component-loader.js"></script>
     <script>
         lucide.createIcons();
     </script>

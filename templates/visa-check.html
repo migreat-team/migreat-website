@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visa Quick Check - MiGreat Germany</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -16,14 +16,13 @@
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Navigation Component -->
+    <div id="nav-container"></div>
+
     <div class="min-h-screen py-12 px-4" x-data="visaChecker()">
         <div class="max-w-4xl mx-auto">
             <!-- Header -->
             <div class="text-center mb-8">
-                <a href="index.html" class="inline-flex items-center text-red-600 hover:text-red-700 mb-4">
-                    <i data-lucide="arrow-left" class="h-5 w-5 mr-2"></i>
-                    Back to Home
-                </a>
                 <h1 class="text-4xl font-bold text-gray-900 mb-4">German Work Visa Survey</h1>
                 <p class="text-xl text-gray-600">Find out which German work visa you're eligible for</p>
             </div>
@@ -786,6 +785,11 @@
             lucide.createIcons();
         });
     </script>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="assets/js/component-loader.js"></script>
 </body>
 </html>
 

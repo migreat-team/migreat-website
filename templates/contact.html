@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - MiGreat Germany</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -14,26 +14,8 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="text-2xl font-bold gradient-bg bg-clip-text text-transparent">
-                    MiGreat Germany
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-red-600 transition">Home</a>
-                    <a href="index.html#get-started" class="text-gray-700 hover:text-red-600 transition">Get Started!</a>
-                    <a href="index.html#services" class="text-gray-700 hover:text-red-600 transition">Services</a>
-                    <a href="index.html#success-stories" class="text-gray-700 hover:text-red-600 transition">Success Stories</a>
-                    <a href="index.html#why-germany" class="text-gray-700 hover:text-red-600 transition">Why Germany?</a>
-                    <a href="degree-check.html" class="text-gray-700 hover:text-red-600 transition">Degree Recognition</a>
-                    <a href="visa-check.html" class="text-gray-700 hover:text-red-600 transition">Visa Quick Check</a>
-                    <a href="contact.html" class="text-red-600 font-semibold">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Component -->
+    <div id="nav-container"></div>
 
     <!-- Contact Section -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -190,56 +172,10 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">MiGreat Germany</h3>
-                    <p class="text-gray-400">Your trusted companion for migration to Germany</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-                        <li><a href="index.html#services" class="hover:text-white transition">Services</a></li>
-                        <li><a href="visa-check.html" class="hover:text-white transition">Visa Check</a></li>
-                        <li><a href="degree-check.html" class="hover:text-white transition">Degree Recognition</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Friedrichstraße 123</li>
-                        <li>10117 Berlin, Germany</li>
-                        <li><a href="mailto:migreatgermany@gmail.com" class="hover:text-white transition">migreatgermany@gmail.com</a></li>
-                        <li><a href="https://wa.me/491234567890" class="hover:text-white transition">+49 123 456 7890</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i data-lucide="facebook" class="h-6 w-6"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i data-lucide="twitter" class="h-6 w-6"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i data-lucide="linkedin" class="h-6 w-6"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i data-lucide="instagram" class="h-6 w-6"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 MiGreat Germany. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
 
+    <script src="assets/js/component-loader.js"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();

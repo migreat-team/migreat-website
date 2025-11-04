@@ -31,7 +31,7 @@ function heroSection() {
                             <div :class="currentSlide === 0 ? 'carousel-item active' : 'carousel-item'" class="w-full">
                                 <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
                                     <div class="flex items-start space-x-4">
-                                        <img src="images/priya-sharma-new.jpg" alt="Priya Sharma" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="assets/images/priya-sharma-new.jpg" alt="Priya Sharma" class="w-16 h-16 rounded-full object-cover">
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-lg">Priya Sharma</h3>
                                             <p class="text-sm text-gray-600">Software Engineer</p>
@@ -58,7 +58,7 @@ function heroSection() {
                             <div :class="currentSlide === 1 ? 'carousel-item active' : 'carousel-item'" class="w-full">
                                 <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
                                     <div class="flex items-start space-x-4">
-                                        <img src="images/akosua-mensah-new.jpg" alt="Akosua Mensah" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="assets/images/akosua-mensah-new.jpg" alt="Akosua Mensah" class="w-16 h-16 rounded-full object-cover">
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-lg">Akosua Mensah</h3>
                                             <p class="text-sm text-gray-600">Geriatric Nurse</p>
@@ -85,7 +85,7 @@ function heroSection() {
                             <div :class="currentSlide === 2 ? 'carousel-item active' : 'carousel-item'" class="w-full">
                                 <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
                                     <div class="flex items-start space-x-4">
-                                        <img src="images/chidinma-okafor-new.jpg" alt="Chidinma Okafor" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="assets/images/chidinma-okafor-new.jpg" alt="Chidinma Okafor" class="w-16 h-16 rounded-full object-cover">
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-lg">Chidinma Okafor</h3>
                                             <p class="text-sm text-gray-600">Hotel Manager</p>
@@ -112,7 +112,7 @@ function heroSection() {
                             <div :class="currentSlide === 3 ? 'carousel-item active' : 'carousel-item'" class="w-full">
                                 <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
                                     <div class="flex items-start space-x-4">
-                                        <img src="images/wanjiru-kamau-new.jpg" alt="Wanjiru Kamau" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="assets/images/wanjiru-kamau-new.jpg" alt="Wanjiru Kamau" class="w-16 h-16 rounded-full object-cover">
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-lg">Wanjiru Kamau</h3>
                                             <p class="text-sm text-gray-600">Kindergarten Teacher</p>
@@ -360,23 +360,6 @@ function successStoriesSection() {
             </div>
         </div>
     </section>
-    <script>
-        function carousel() {
-            return {
-                currentSlide: 0,
-                totalSlides: 5,
-                next() {
-                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-                },
-                prev() {
-                    this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
-                },
-                init() {
-                    setInterval(() => this.next(), 5000);
-                }
-            }
-        }
-    </script>
     `;
 }
 
@@ -384,7 +367,7 @@ function successStoryCard(name, country, profession, before, after, image, quote
     return `
     <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
         <div class="flex items-start space-x-4 mb-4">
-            <img src="images/${image}" alt="${name}" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+            <img src="assets/images/${image}" alt="${name}" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
             <div>
                 <h3 class="font-bold text-lg text-gray-900">${name}</h3>
                 <p class="text-sm text-gray-600">${country} • ${profession}</p>
