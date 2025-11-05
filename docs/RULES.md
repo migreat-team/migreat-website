@@ -1,6 +1,9 @@
 # MiGreat Website - Development Rules & Standards
 
-**Purpose**: Maintain clean, simple, maintainable code without duplication or over-engineering.
+**Purpose**: Maintain clean, simple, maintainable code with multilingual support and automated builds.
+
+**Version**: 2.0 - Updated for Handlebars + i18n architecture
+**Last Updated**: 2025-11-05
 
 ---
 
@@ -9,32 +12,38 @@
 ### 1. **Simplicity Over Complexity**
 - Write code that's easy to read and understand
 - If you can't explain it in one sentence, simplify it
-- Prefer vanilla JavaScript over frameworks when possible
-- No build systems, no bundlers - keep it simple
+- Use Handlebars for templating - simple and powerful
+- Build system automates repetitive tasks
 
-### 2. **Component-Based Architecture**
+### 2. **Component-Based Architecture with Handlebars**
 - **DRY** (Don't Repeat Yourself) - write once, use everywhere
-- Every reusable element gets its own component
-- Components live in `templates/components/`
-- Load components with simple JavaScript fetch()
+- Every reusable element gets its own partial
+- Partials live in `views/partials/`
+- Components compiled at build time (not runtime)
 
 ### 3. **Zero Duplication**
 - Never copy-paste code between files
 - One source of truth for every piece of content
-- If it exists twice, make it a component
-- Regular audits to catch duplication early
+- If it exists twice, make it a partial
+- All text content in `locales/` JSON files (never hardcoded)
 
-### 4. **No Over-Engineering**
+### 4. **Multilingual First**
+- All user-facing text goes in `locales/` JSON files
+- Never hardcode text strings in templates
+- Use `{{t "key"}}` helper for all translations
+- Test both English and German versions after changes
+
+### 5. **Build-Aware Development**
+- Never edit `public/` directory - it's generated
+- Always run `npm run build` after changes
+- Test the built output, not source files
+- Commit source files, not generated output
+
+### 6. **No Over-Engineering**
 - Don't add features "just in case"
 - Don't optimize prematurely
 - Don't use complex patterns when simple ones work
 - Ship working code, iterate later
-
-### 5. **No Overthinking**
-- Make decisions quickly
-- Perfect is the enemy of good
-- If it works and it's clean, ship it
-- Don't debate for hours what can be tested in minutes
 
 ---
 
@@ -42,90 +51,127 @@
 
 ```
 migreat-website/
-├── assets/
-│   ├── css/          # All stylesheets
-│   ├── csv/          # Data files (Anabin database)
-│   ├── images/       # All images
-│   ├── js/           # JavaScript files
-│   └── json/         # JSON data files
-├── docs/             # ALL documentation (markdown files ONLY)
-│   ├── README.md
-│   ├── RULES.md
-│   └── REFACTORING-PLAN.md
-└── templates/
-    ├── components/   # Reusable HTML components
-    │   ├── nav.html
-    │   ├── footer.html
-    │   ├── head.html
-    │   └── scripts.html
-    ├── index.html
-    ├── degree-check.html
-    ├── visa-check.html
-    └── contact.html
+├── views/               # SOURCE: Handlebars templates
+│   ├── layouts/
+│   │   └── main.handlebars        # Main layout wrapper
+│   ├── pages/
+│   │   ├── home.handlebars        # Homepage
+│   │   ├── contact.handlebars
+│   │   ├── degree-check.handlebars
+│   │   └── visa-check.handlebars
+│   └── partials/                  # Reusable components
+│       ├── common/                # Shared (nav, footer, head)
+│       ├── home/                  # Homepage sections
+│       └── sections/              # Other sections
+├── locales/             # SOURCE: Translations
+│   ├── en/             # English translations
+│   │   ├── meta.json
+│   │   ├── nav.json
+│   │   ├── hero.json
+│   │   └── [others].json
+│   └── de/             # German translations
+│       └── [same structure]
+├── assets/              # SOURCE: Static files (copied to public/)
+│   ├── css/
+│   ├── js/
+│   ├── json/           # Data (anabin, degrees)
+│   ├── images/
+│   └── csv/
+├── src/                 # SOURCE: Build inputs
+│   ├── js/
+│   └── styles/
+├── scripts/
+│   └── build.js        # Build script
+├── public/              # GENERATED: Do not edit!
+│   ├── index.html      # Root redirect
+│   ├── en/             # English pages
+│   ├── de/             # German pages
+│   └── assets/         # Copied from /assets
+└── docs/                # Documentation
+    ├── README.md
+    ├── RULES.md
+    └── RESOURCE-PATHS.md
 ```
 
 ### File Naming Rules
-- HTML: `kebab-case.html` (e.g., `degree-check.html`)
-- CSS: `kebab-case.css` (e.g., `mobile-only.css`)
-- JavaScript: `kebab-case.js` (e.g., `component-loader.js`)
-- Images: `kebab-case.jpg/png/webp` (e.g., `priya-sharma-new.jpg`)
-- Components: `name.html` (e.g., `nav.html`, `footer.html`)
+- **Handlebars**: `kebab-case.handlebars` (e.g., `degree-check.handlebars`)
+- **CSS**: `kebab-case.css` (e.g., `mobile-only.css`)
+- **JavaScript**: `kebab-case.js` (e.g., `main.js`)
+- **Images**: `kebab-case.jpg/png/webp` (e.g., `priya-sharma-new.jpg`)
+- **Translations**: `section-name.json` (e.g., `hero.json`, `nav.json`)
+- **Partials**: `component-name.handlebars` (e.g., `nav.handlebars`)
 
 ### What Goes Where
-- **HTML pages**: `templates/`
-- **Components**: `templates/components/`
-- **Stylesheets**: `assets/css/`
-- **Scripts**: `assets/js/`
+- **Page templates**: `views/pages/` (Handlebars)
+- **Reusable partials**: `views/partials/` (Handlebars)
+- **Layout wrapper**: `views/layouts/` (Handlebars)
+- **All text content**: `locales/{lang}/` (JSON)
+- **Stylesheets**: `assets/css/` or `src/styles/`
+- **Scripts**: `assets/js/` or `src/js/`
 - **Images**: `assets/images/`
 - **Data**: `assets/json/` or `assets/csv/`
 - **Documentation**: `docs/` (markdown ONLY)
+- **Generated output**: `public/` (NEVER EDIT!)
 
 ---
 
-## 🧩 Component Rules
+## 🧩 Component Rules (Handlebars Partials)
 
-### When to Create a Component
-✅ **Create component if**:
+### When to Create a Partial
+✅ **Create partial if**:
 - Code appears on 2+ pages
 - Code is likely to be reused
-- Code is self-contained (nav, footer, header)
+- Code is self-contained (nav, footer, sections)
 - Code is complex and benefits from isolation
 
-❌ **Don't create component if**:
-- Used only once
-- Highly page-specific
+❌ **Don't create partial if**:
+- Used only once and page-specific
 - Would be more complex than inline
+- Content varies significantly between uses
 
-### Component Structure
-```html
-<!-- templates/components/nav.html -->
-<!--
+### Partial Structure
+```handlebars
+{{!-- views/partials/common/nav.handlebars --}}
+{{!--
   PURPOSE: Main navigation bar
-  USED ON: All pages
+  USED ON: All pages via main layout
   DEPENDENCIES: Lucide icons, Alpine.js
-  UPDATED: 2025-10-31
--->
+  UPDATED: 2025-11-05
+--}}
 <nav class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
-    <!-- Navigation content -->
+    <div class="max-w-7xl mx-auto px-4">
+        <a href="/{{lang}}/">
+            <img src="/assets/images/logo.png" alt="{{t 'nav.logoAlt'}}">
+        </a>
+        <a href="/{{lang}}/#services">{{t 'nav.services'}}</a>
+        {{!-- More nav items --}}
+    </div>
 </nav>
 ```
 
-### Component Loading
-```javascript
-// Simple, no build system
-async function loadComponent(elementId, componentPath) {
-    const response = await fetch(componentPath);
-    const html = await response.text();
-    document.getElementById(elementId).innerHTML = html;
-    // Re-initialize icons and Alpine if needed
-    if (window.lucide) lucide.createIcons();
-}
+### Using Partials
+```handlebars
+{{!-- In layout or page --}}
+{{> common/nav}}           <!-- Include nav partial -->
+{{> home/hero}}           <!-- Include hero section -->
+{{> common/footer}}       <!-- Include footer -->
 
-// Usage in HTML
-<div id="nav-container"></div>
-<script>
-    loadComponent('nav-container', '/templates/components/nav.html');
-</script>
+{{!-- Pass data to partials --}}
+{{> common/card title="My Title" description="My Description"}}
+```
+
+### Translation Helper
+```handlebars
+{{!-- Lookup translation key in locales/{lang}/*.json --}}
+<h1>{{t "hero.title"}}</h1>
+<p>{{t "hero.subtitle"}}</p>
+
+{{!-- Translation files --}}
+{{!-- locales/en/hero.json --}}
+{
+  "hero.title": "Welcome to MiGreat Germany",
+  "hero.subtitle": "Your companion for migration"
+}
 ```
 
 ---
@@ -187,25 +233,33 @@ nav div ul li a.link.active.current {
 
 ---
 
-## 📝 HTML Rules
+## 📝 Handlebars & HTML Rules
 
-### Semantic HTML
-```html
-<!-- ✅ GOOD - Semantic, accessible -->
+### Semantic HTML with Handlebars
+```handlebars
+<!-- ✅ GOOD - Semantic, accessible, translated -->
 <nav>
     <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="/{{lang}}/">{{t 'nav.home'}}</a></li>
+        <li><a href="/{{lang}}/contact.html">{{t 'nav.contact'}}</a></li>
     </ul>
 </nav>
 
 <section class="hero">
-    <h1>Welcome</h1>
-    <p>Description</p>
+    <h1>{{t 'hero.title'}}</h1>
+    <p>{{t 'hero.subtitle'}}</p>
 </section>
 
 <footer>
-    <p>&copy; 2024 MiGreat Germany</p>
+    <p>&copy; 2024 {{t 'footer.company'}}</p>
 </footer>
+
+<!-- ❌ BAD - Hardcoded text, no translation -->
+<nav>
+    <ul>
+        <li><a href="/en/">Home</a></li>
+    </ul>
+</nav>
 
 <!-- ❌ BAD - Div soup, no semantics -->
 <div class="nav">
@@ -215,6 +269,26 @@ nav div ul li a.link.active.current {
         </div>
     </div>
 </div>
+```
+
+### Handlebars Best Practices
+```handlebars
+<!-- ✅ GOOD - Use helpers for logic -->
+{{#if (eq page 'home')}}
+    <h1>{{t 'home.welcome'}}</h1>
+{{/if}}
+
+<!-- ✅ GOOD - Language-aware URLs -->
+<a href="/{{lang}}/contact.html">{{t 'nav.contact'}}</a>
+
+<!-- ✅ GOOD - Use triple braces for HTML content -->
+<div>{{{body}}}</div>
+
+<!-- ❌ BAD - Hardcoded language -->
+<a href="/en/contact.html">Contact</a>
+
+<!-- ❌ BAD - Hardcoded text -->
+<h1>Welcome to MiGreat</h1>
 ```
 
 ### Accessibility
@@ -291,30 +365,146 @@ async function lc(e,p){const r=await fetch(p);document.getElementById(e).innerHT
 
 ---
 
-## 🔗 Linking & Paths
+## 🌍 Internationalization (i18n) Workflow
 
-### Internal Links
-```html
-<!-- ✅ GOOD - Relative paths -->
-<a href="degree-check.html">Degree Recognition</a>
-<a href="visa-check.html">Visa Check</a>
-<a href="contact.html">Contact</a>
+### Adding New Translations
 
-<!-- ❌ BAD - Broken anchor links (not pages) -->
-<a href="#degree-check">Degree Recognition</a>
+```bash
+# 1. Add keys to both language files
+# locales/en/nav.json
+{
+  "nav.newItem": "New Item",
+  "nav.newDescription": "Description here"
+}
+
+# locales/de/nav.json
+{
+  "nav.newItem": "Neuer Artikel",
+  "nav.newDescription": "Beschreibung hier"
+}
+
+# 2. Use in template
+{{t 'nav.newItem'}}
+
+# 3. Rebuild
+npm run build
 ```
 
-### Asset Paths
-```html
-<!-- ✅ GOOD - Correct folder structure -->
-<link rel="stylesheet" href="assets/css/styles.css">
-<script src="assets/js/main.js"></script>
-<img src="assets/images/logo.png" alt="MiGreat Germany Logo">
+### Translation File Organization
+```
+locales/
+├── en/
+│   ├── meta.json          # SEO, titles, descriptions
+│   ├── nav.json           # Navigation
+│   ├── footer.json        # Footer
+│   ├── hero.json          # Hero section
+│   ├── how-it-works.json  # How it works section
+│   ├── services.json      # Services
+│   ├── stats.json         # Statistics
+│   ├── success-stories.json
+│   ├── why-germany.json
+│   ├── cta.json           # Call to action
+│   ├── contact.json       # Contact page
+│   ├── degree-check.json  # Degree checker
+│   └── visa-check.json    # Visa checker
+└── de/
+    └── [same structure]
+```
 
-<!-- ❌ BAD - Old/incorrect paths -->
-<link rel="stylesheet" href="assets/styles.css">
-<script src="assets/main.js"></script>
-<img src="images/logo.png" alt="Logo">
+### Translation Best Practices
+- ✅ Use descriptive keys: `hero.title`, `nav.services`
+- ✅ Group by section/page in separate JSON files
+- ✅ Keep keys consistent across languages
+- ❌ Never hardcode text in templates
+- ❌ Don't create overly nested keys
+- ❌ Don't duplicate keys across files
+
+---
+
+## 🔨 Build System Workflow
+
+### Development Cycle
+```bash
+# 1. Make changes to source files
+#    - Edit views/*.handlebars
+#    - Edit locales/*.json
+#    - Edit assets/*
+
+# 2. Build the site
+npm run build
+
+# 3. Test locally
+npm run serve
+# Visit http://localhost:8000
+
+# 4. Check both languages
+# - http://localhost:8000/en/
+# - http://localhost:8000/de/
+
+# 5. Commit source files only
+git add views/ locales/ assets/ scripts/
+git commit -m "Your message"
+# Do NOT commit public/
+```
+
+### What the Build Does
+1. **Cleans** `public/` directory
+2. **Copies** `assets/` to `public/assets/`
+3. **Registers** all Handlebars partials from `views/partials/`
+4. **Loads** translations for each language
+5. **Compiles** each page template with translations
+6. **Generates** HTML for English (`/en/`) and German (`/de/`)
+7. **Creates** root `index.html` with language detection
+
+### Build Script Location
+- **File**: `scripts/build.js`
+- **Run**: `npm run build`
+- **Package.json**: `"build": "node scripts/build.js"`
+
+### Files to NEVER Edit
+- ❌ `public/**` - Completely generated
+- ❌ `package-lock.json` - Managed by npm
+- ❌ Built HTML files - Generated from templates
+
+### Files to ALWAYS Edit
+- ✅ `views/**` - All templates
+- ✅ `locales/**` - All translations
+- ✅ `assets/**` - Static files
+- ✅ `scripts/build.js` - If modifying build
+
+---
+
+## 🔗 Linking & Paths
+
+### Internal Links (Language-Aware)
+```handlebars
+<!-- ✅ GOOD - Language-aware paths -->
+<a href="/{{lang}}/">{{t 'nav.home'}}</a>
+<a href="/{{lang}}/degree-check.html">{{t 'nav.degreeCheck'}}</a>
+<a href="/{{lang}}/visa-check.html">{{t 'nav.visaCheck'}}</a>
+<a href="/{{lang}}/contact.html">{{t 'nav.contact'}}</a>
+
+<!-- ✅ GOOD - Section anchors with language -->
+<a href="/{{lang}}/#services">{{t 'nav.services'}}</a>
+<a href="/{{lang}}/#why-germany">{{t 'nav.whyGermany'}}</a>
+
+<!-- ❌ BAD - Hardcoded language -->
+<a href="/en/contact.html">Contact</a>
+
+<!-- ❌ BAD - Missing language path -->
+<a href="/contact.html">Contact</a>
+```
+
+### Asset Paths (Absolute from Root)
+```handlebars
+<!-- ✅ GOOD - Absolute paths from root -->
+<link rel="stylesheet" href="/assets/css/animations.css">
+<script src="/assets/js/main.js"></script>
+<img src="/assets/images/logo.png" alt="{{t 'nav.logoAlt'}}">
+
+<!-- ❌ BAD - Relative paths (break in subfolders) -->
+<link rel="stylesheet" href="assets/css/animations.css">
+<img src="assets/images/logo.png" alt="Logo">
 ```
 
 ### External Links
@@ -333,18 +523,36 @@ async function lc(e,p){const r=await fetch(p);document.getElementById(e).innerHT
 ## 🧪 Testing Rules
 
 ### Before Every Commit
-- [ ] Test all pages in Chrome
-- [ ] Test all pages in Safari
-- [ ] Test all pages in Firefox
+- [ ] Run `npm run build` successfully
+- [ ] Test English version (`/en/`)
+  - [ ] All pages load
+  - [ ] All translations appear
+  - [ ] All links work
+  - [ ] No console errors
+- [ ] Test German version (`/de/`)
+  - [ ] All pages load
+  - [ ] All translations appear
+  - [ ] All links work
+  - [ ] No console errors
+- [ ] Test language detection (root `/`)
+- [ ] Test on multiple browsers (Chrome, Safari, Firefox)
 - [ ] Test on mobile (375px, 768px, 1024px)
-- [ ] Check console for errors
-- [ ] Verify all links work
-- [ ] Verify all images load
+- [ ] Verify all images load from `/assets/`
+- [ ] Check for broken links
+
+### Multilingual Testing Checklist
+- [ ] All text is translated (no English in German pages)
+- [ ] Language-specific URLs work (`/en/`, `/de/`)
+- [ ] Navigation links include language prefix
+- [ ] Forms submit correctly in both languages
+- [ ] Meta tags (title, description) are translated
+- [ ] Error messages appear in correct language
 
 ### Cross-Browser Compatibility
 - Support last 2 versions of major browsers
 - Graceful degradation for older browsers
 - Test JavaScript features for browser support
+- Test language detection script
 
 ### Mobile Testing
 - Test on real devices when possible
@@ -352,6 +560,7 @@ async function lc(e,p){const r=await fetch(p);document.getElementById(e).innerHT
 - Check touch target sizes (min 44×44px)
 - Verify no horizontal scrolling
 - Test landscape and portrait
+- Test language switching on mobile
 
 ---
 
@@ -567,35 +776,57 @@ Before merging/deploying, verify:
 ## 🚀 Quick Reference
 
 ### Starting New Feature
-1. Plan component structure
-2. Create component files
-3. Write minimal HTML/CSS/JS
-4. Test functionality
-5. Refine and optimize
-6. Document usage
-7. Deploy
+1. Plan partial/component structure
+2. Create Handlebars template in `views/`
+3. Add translations to `locales/en/` and `locales/de/`
+4. Write minimal HTML/CSS/JS
+5. Run `npm run build`
+6. Test in both languages
+7. Refine and optimize
+8. Document usage
+9. Commit source files (not public/)
 
 ### Fixing Bugs
-1. Reproduce the bug
-2. Identify root cause
-3. Write fix (minimal change)
-4. Test fix thoroughly
-5. Deploy
-6. Monitor for regressions
+1. Reproduce the bug in both languages
+2. Identify root cause in source files
+3. Write fix (edit views/, locales/, or assets/)
+4. Run `npm run build`
+5. Test fix thoroughly in both languages
+6. Commit and deploy
+7. Monitor for regressions
 
 ### Adding New Page
-1. Copy similar existing page
-2. Replace page-specific content
-3. Ensure components are loaded
-4. Update navigation
-5. Test all links
-6. Test mobile responsiveness
-7. Deploy
+1. Create template: `views/pages/new-page.handlebars`
+2. Add translations:
+   - `locales/en/new-page.json`
+   - `locales/de/new-page.json`
+3. Build automatically generates pages
+4. Update navigation in partials
+5. Run `npm run build`
+6. Test all links in both languages
+7. Test mobile responsiveness
+8. Commit and deploy
+
+### Adding New Language
+1. Create directory: `locales/fr/` (example: French)
+2. Copy all JSON files from `locales/en/`
+3. Translate all strings
+4. Update `scripts/build.js`: Add 'fr' to languages array
+5. Run `npm run build`
+6. Test new language version
+7. Update language detection in root index.html
+
+### Editing Existing Content
+1. Find translation in `locales/{lang}/*.json`
+2. Edit the translation string
+3. Run `npm run build`
+4. Test the change in browser
+5. Commit changes
 
 ---
 
-**Last Updated**: 2025-10-31
-**Version**: 1.0
+**Last Updated**: 2025-11-05
+**Version**: 2.0 - Multilingual Build System
 **Maintainer**: MiGreat Germany Development Team
 
 ---

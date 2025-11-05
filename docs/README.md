@@ -1,8 +1,8 @@
 # MiGreat Germany - Migration Support Website
 
-**Version**: Production Ready
-**Last Updated**: 2025-10-31
-**Status**: ✅ Active Development
+**Version**: 2.0 - Internationalized & Build System
+**Last Updated**: 2025-11-05
+**Status**: ✅ Production Ready with Multilingual Support
 
 ---
 
@@ -10,7 +10,15 @@
 
 MiGreat Germany is a comprehensive migration support platform helping professionals from India, Ghana, Nigeria, and Kenya navigate the German work visa process. The platform provides automated degree recognition checking, visa eligibility assessment, and personalized migration guidance.
 
+**NEW in v2.0**: Full internationalization (i18n) support with English and German languages, Handlebars templating system, and automated build process.
+
 ### Key Features
+
+✅ **Multilingual Support**
+- English and German language versions
+- Automatic browser language detection
+- SEO-optimized language switching
+- Separate URL paths per language (/en/, /de/)
 
 ✅ **Degree Recognition Checker**
 - 1,671 institutions from 4 countries
@@ -41,90 +49,127 @@ MiGreat Germany is a comprehensive migration support platform helping profession
 ## 🏗️ Technical Architecture
 
 ### Tech Stack
-- **Frontend**: Pure HTML5, CSS3, JavaScript (ES6+)
+- **Templating**: Handlebars.js (component-based)
+- **Build System**: Node.js build script + Rollup + PostCSS
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Styling**: Tailwind CSS (CDN)
 - **Icons**: Lucide Icons (CDN)
 - **Interactivity**: Alpine.js (CDN)
-- **Build**: None (static site, no build process)
+- **i18n**: JSON-based translation files
+- **Deployment**: Static site generation
 
-### Component-Based Structure
+### Project Structure
 ```
-templates/
-├── components/         # Reusable HTML components
-│   ├── nav.html       # Navigation bar (all pages)
-│   ├── footer.html    # Footer (all pages)
-│   ├── head.html      # Common <head> tags
-│   └── scripts.html   # Common JavaScript
-├── index.html         # Homepage
-├── degree-check.html  # Degree recognition tool
-├── visa-check.html    # Visa eligibility checker
-└── contact.html       # Contact page
-```
-
-### Asset Organization
-```
-assets/
-├── css/               # All stylesheets
-│   ├── animations.css
-│   ├── carousel.css
-│   └── mobile-only.css
-├── js/                # JavaScript files
-│   ├── sections.js
-│   ├── animations.js
-│   └── anabin-data.js
-├── json/              # Data files
-│   ├── anabin-data.json    (1,671 institutions)
-│   └── degrees-data.json   (639 degrees)
-├── csv/               # Raw data
-│   └── AnabinDatabase-*.csv
-└── images/            # All images
-    ├── logo.png
-    └── [testimonial photos]
+migreat-website/
+├── views/                      # Handlebars templates (source)
+│   ├── layouts/
+│   │   └── main.handlebars    # Main layout wrapper
+│   ├── pages/                 # Page templates
+│   │   ├── home.handlebars
+│   │   ├── contact.handlebars
+│   │   ├── degree-check.handlebars
+│   │   └── visa-check.handlebars
+│   └── partials/              # Reusable components
+│       ├── common/            # Shared partials (nav, footer)
+│       ├── home/              # Homepage sections
+│       └── sections/          # Other reusable sections
+├── locales/                   # Translations (i18n)
+│   ├── en/                    # English translations
+│   │   ├── meta.json
+│   │   ├── nav.json
+│   │   ├── hero.json
+│   │   └── [other sections].json
+│   └── de/                    # German translations
+│       └── [same structure]
+├── assets/                    # Static assets (copied to public/)
+│   ├── css/
+│   │   ├── animations.css
+│   │   ├── carousel.css
+│   │   └── mobile-only.css
+│   ├── js/
+│   ├── json/
+│   │   ├── anabin-data.json   # Institution data
+│   │   └── degrees-data.json  # Degree data
+│   ├── images/
+│   └── csv/                   # Raw data
+├── src/                       # Source files for build
+│   ├── js/
+│   │   └── main.js
+│   └── styles/
+│       └── main.css
+├── scripts/
+│   └── build.js               # Build script (Handlebars + i18n)
+├── public/                    # Generated output (DO NOT EDIT!)
+│   ├── index.html             # Root redirect with language detection
+│   ├── en/                    # English version
+│   │   ├── index.html
+│   │   ├── contact.html
+│   │   ├── degree-check.html
+│   │   └── visa-check.html
+│   ├── de/                    # German version
+│   │   └── [same structure]
+│   └── assets/                # Copied from /assets
+└── docs/                      # Documentation
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-### Local Development
+### Prerequisites
+```bash
+Node.js >= 14.x
+npm >= 6.x
+```
+
+### Installation
 ```bash
 # Clone repository
 git clone [repository-url]
 cd migreat-website
 
-# Serve locally (any static server)
-python -m http.server 8000
-# OR
-npx serve .
-# OR
-php -S localhost:8000
-
-# Open browser
-open http://localhost:8000/templates/index.html
+# Install dependencies
+npm install
 ```
 
-### File Structure Rules
-- All HTML pages: `templates/`
-- All components: `templates/components/`
-- All CSS: `assets/css/`
-- All JavaScript: `assets/js/`
-- All images: `assets/images/`
-- All documentation: `docs/` (markdown only)
+### Development Workflow
+```bash
+# Build the site (compiles Handlebars + copies assets)
+npm run build
+
+# Serve the built site locally
+npm run serve
+# Opens at http://localhost:8000
+
+# For development with auto-rebuild (if configured)
+npm run dev
+```
+
+### Project Organization Rules
+- **Source templates**: `views/` (Handlebars)
+- **Translations**: `locales/` (JSON)
+- **Static assets**: `assets/` (CSS, JS, images, data)
+- **Build script**: `scripts/build.js`
+- **Generated output**: `public/` (never edit directly!)
+- **Documentation**: `docs/` (markdown only)
 
 ---
 
 ## 📱 Pages Overview
 
-### 1. Homepage (`index.html`)
+All pages are available in both English (`/en/`) and German (`/de/`) versions.
+
+### 1. Homepage (`home.handlebars` → `index.html`)
 - Hero section with auto-rotating testimonial carousel
-- "3 Easy Steps" section
+- "How It Works" - 3 Easy Steps section
 - Services overview
 - Success stories carousel (5 slides, 14 testimonials)
 - Why Germany section
 - Statistics section
 - Call-to-action sections
+- All content loaded from locales JSON files
 
-### 2. Degree Recognition Checker (`degree-check.html`)
+### 2. Degree Recognition Checker (`degree-check.handlebars`)
 - Country selection (India, Ghana, Nigeria, Kenya)
 - Institution dropdown (1,671 institutions)
 - Degree dropdown (639 degrees)
@@ -132,8 +177,9 @@ open http://localhost:8000/templates/index.html
   - **Fully Recognized**: H+ university + degree in list + class ≠ NZ
   - **University Recognized**: H+ university + degree not listed
   - **Manual Recognition**: All other cases
+- Multilingual labels and instructions
 
-### 3. Visa Eligibility Tool (`visa-check.html`)
+### 3. Visa Eligibility Tool (`visa-check.handlebars`)
 - 9-question assessment
 - Opportunity Card points calculation
 - Visa type recommendations:
@@ -142,14 +188,16 @@ open http://localhost:8000/templates/index.html
   - Opportunity Card
   - Job Training (Ausbildung)
 - Personalized guidance
+- Translated questions and results
 
-### 4. Contact Page (`contact.html`)
+### 4. Contact Page (`contact.handlebars`)
 - Berlin office address
 - Email: migreatgermany@gmail.com
 - WhatsApp: +49 123 456 7890
 - Contact form
 - Quick action links
 - Google Maps integration
+- Multilingual contact information
 
 ---
 
@@ -176,26 +224,49 @@ open http://localhost:8000/templates/index.html
 
 ## 🔧 Component System
 
-Components are loaded dynamically using JavaScript fetch():
+Components are built using Handlebars partials and compiled during the build process.
 
-```javascript
-// Component loader
-async function loadComponent(elementId, componentPath) {
-    const response = await fetch(componentPath);
-    const html = await response.text();
-    document.getElementById(elementId).innerHTML = html;
-    if (window.lucide) lucide.createIcons();
-}
+### Handlebars Templating
 
-// Usage
-loadComponent('nav-container', '/templates/components/nav.html');
+```handlebars
+<!-- Layout (views/layouts/main.handlebars) -->
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    {{> common/head}}
+</head>
+<body>
+    {{> common/nav}}
+    {{{body}}}
+    {{> common/footer}}
+</body>
+</html>
+
+<!-- Usage in templates with translation helper -->
+<h1>{{t "hero.title"}}</h1>
+<p>{{t "hero.subtitle"}}</p>
 ```
 
-### Available Components
-- `nav.html` - Navigation (used on all pages)
-- `footer.html` - Footer (used on all pages)
-- `head.html` - Common meta tags and CSS
-- `scripts.html` - Common JavaScript includes
+### Available Partials
+- **common/** - Shared across all pages
+  - `head.handlebars` - Meta tags, CSS, scripts
+  - `nav.handlebars` - Navigation bar
+  - `footer.handlebars` - Footer
+- **home/** - Homepage sections
+  - `hero.handlebars`
+  - `how-it-works.handlebars`
+  - `services.handlebars`
+  - `stats.handlebars`
+  - `success-stories.handlebars`
+  - `why-germany.handlebars`
+  - `cta.handlebars`
+- **sections/** - Reusable sections for other pages
+
+### Handlebars Helpers
+- `{{t "key"}}` - Translation lookup from locales JSON
+- `{{eq a b}}` - Equality comparison
+- `{{unless condition}}` - Inverse if
+- `{{add a b}}` - Addition helper
 
 ---
 
@@ -246,90 +317,165 @@ loadComponent('nav-container', '/templates/components/nav.html');
 
 ## 🚀 Deployment
 
+### Build Process
+
+The site must be built before deployment:
+
+```bash
+# 1. Run the build
+npm run build
+
+# 2. The build process:
+#    - Cleans the public/ directory
+#    - Copies assets/ to public/assets/
+#    - Compiles Handlebars templates with translations
+#    - Generates HTML for each language (en, de)
+#    - Creates root index.html with language detection
+
+# 3. Output is in public/ directory
+```
+
 ### Static Hosting Options
 
 **Option 1: Netlify** (Recommended)
 ```bash
-# Deploy via drag & drop at:
-https://app.netlify.com/drop
+# netlify.toml configuration
+[build]
+  command = "npm run build"
+  publish = "public"
 
-# OR via CLI:
-npm install -g netlify-cli
-netlify deploy --prod --dir=.
+# Build settings in Netlify UI:
+# - Build command: npm run build
+# - Publish directory: public
 ```
 
 **Option 2: Vercel**
 ```bash
-npm install -g vercel
-vercel --prod
+# vercel.json configuration
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "public"
+}
 ```
 
 **Option 3: GitHub Pages**
 ```bash
-# Push to GitHub, then enable Pages in repository settings
-# Set source to main branch, root directory
+# .github/workflows/deploy.yml
+- run: npm install
+- run: npm run build
+- uses: peaceiris/actions-gh-pages@v3
+  with:
+    publish_dir: ./public
 ```
 
 **Option 4: Traditional Hosting**
-- Upload all files via FTP/SFTP
+- Run `npm run build` locally
+- Upload contents of `public/` directory via FTP/SFTP
 - Ensure server serves index.html as default
 - Configure correct MIME types for .json files
 
 ### Pre-Deployment Checklist
-- [ ] Test all pages locally
-- [ ] Verify all links work
+- [ ] Run `npm run build` successfully
+- [ ] Test all pages locally in both languages (/en/ and /de/)
+- [ ] Verify language switching works
+- [ ] Check browser language detection
+- [ ] Verify all links work in both languages
 - [ ] Check console for errors
 - [ ] Test on mobile devices
-- [ ] Optimize images (already done)
 - [ ] Verify external links (Google Forms, etc.)
 - [ ] Test contact form
-- [ ] Verify data files load correctly
+- [ ] Verify data files load correctly (anabin-data.json, degrees-data.json)
+- [ ] Verify all images and assets load from /assets/
 
 ---
 
 ## 📝 Content Management
 
+### Adding/Editing Translations
+
+All content text is in JSON files under `locales/`:
+
+```bash
+# 1. Edit translation files
+locales/en/hero.json       # English hero section
+locales/de/hero.json       # German hero section
+
+# 2. Rebuild the site
+npm run build
+
+# 3. Test both languages
+# Visit /en/ and /de/ to verify changes
+```
+
+### Adding New Pages
+
+```bash
+# 1. Create Handlebars template
+views/pages/new-page.handlebars
+
+# 2. Create translation files
+locales/en/new-page.json
+locales/de/new-page.json
+
+# 3. Build automatically picks up new pages
+npm run build
+
+# Output: public/en/new-page.html and public/de/new-page.html
+```
+
 ### Adding New Testimonials
+
 1. Add image to `assets/images/`
-2. Edit `assets/js/sections.js`
-3. Add testimonial card in appropriate carousel section
-4. Update success stories section
+2. Edit translation files:
+   - `locales/en/success-stories.json`
+   - `locales/de/success-stories.json`
+3. Edit partial if needed: `views/partials/home/success-stories.handlebars`
+4. Rebuild: `npm run build`
 
 ### Updating Institution Data
+
 1. Download latest CSV from anabin.kmk.org
 2. Place in `assets/csv/`
 3. Run data conversion script (if needed)
 4. Update `assets/json/anabin-data.json`
-5. Test degree checker functionality
+5. Rebuild: `npm run build`
+6. Test degree checker functionality in both languages
 
 ### Modifying Navigation
-1. Edit `templates/components/nav.html`
-2. Changes reflect on all pages automatically
-3. Test mobile menu functionality
+
+1. Edit partial: `views/partials/common/nav.handlebars`
+2. Edit translations:
+   - `locales/en/nav.json`
+   - `locales/de/nav.json`
+3. Rebuild: `npm run build`
+4. Changes reflect on all pages automatically
 
 ### Updating Footer
-1. Edit `templates/components/footer.html`
-2. Changes reflect on all pages automatically
-3. Verify all links still work
+
+1. Edit partial: `views/partials/common/footer.handlebars`
+2. Edit translations:
+   - `locales/en/footer.json`
+   - `locales/de/footer.json`
+3. Rebuild: `npm run build`
+4. Verify all links still work
 
 ---
 
-## 🐛 Known Issues & Fixes
+## 🐛 Known Issues & Improvements
 
-### Mobile CSS
-- **Issue**: Excessive `!important` usage
-- **Fix**: Refactor to use more specific selectors
-- **Status**: Documented in REFACTORING-PLAN.md
+### Current State
+✅ **Resolved Issues (v2.0)**:
+- Component architecture implemented with Handlebars partials
+- Path references standardized with build system
+- Internationalization fully functional
+- Build process automated
 
-### Path References
-- **Issue**: Some CSS/JS paths incorrect (old structure)
-- **Fix**: Update all paths to new asset structure
-- **Status**: In progress
-
-### Component Loading
-- **Issue**: Components not yet extracted
-- **Fix**: Create component files and loader
-- **Status**: Planned
+### Future Improvements
+- [ ] Mobile CSS refactoring (reduce `!important` usage)
+- [ ] Add more languages (French, Spanish, etc.)
+- [ ] Implement CSS/JS minification in build
+- [ ] Add automated testing
+- [ ] Optimize image loading (lazy loading, WebP format)
 
 ---
 
@@ -338,13 +484,13 @@ vercel --prod
 ### Available Docs
 - **README.md** (this file) - Project overview and setup
 - **RULES.md** - Development standards and best practices
-- **REFACTORING-PLAN.md** - Detailed refactoring roadmap
-- **CHANGELOG.md** - Version history (archived)
+- **RESOURCE-PATHS.md** - Resource path reference guide
 
-### Code Comments
-- All complex functions documented
-- Component headers explain purpose
-- Data structures explained
+### Code Documentation
+- Build script (`scripts/build.js`) fully commented
+- Handlebars helpers documented
+- Translation system explained
+- Component structure documented in partials
 
 ---
 
@@ -352,19 +498,31 @@ vercel --prod
 
 ### Development Workflow
 1. Read `docs/RULES.md` for coding standards
-2. Create feature branch
-3. Make changes following component architecture
-4. Test thoroughly (all browsers, mobile)
-5. Submit for review
-6. Deploy after approval
+2. Create feature branch from `main`
+3. Make changes in `views/`, `locales/`, or `assets/`
+4. Run `npm run build` to generate output
+5. Test thoroughly:
+   - Both languages (/en/, /de/)
+   - All browsers
+   - Mobile devices
+6. Commit only source files (never commit `public/`)
+7. Submit pull request
+8. Deploy after approval
 
-### Coding Standards
-- Component-based architecture
-- No code duplication
-- Simple, readable code
-- Mobile-first responsive design
-- Accessibility compliance
+### Key Principles
+- Handlebars-based component architecture
+- All text content in `locales/` JSON files
+- Never edit `public/` directory directly
+- Always rebuild after changes
+- Test both language versions
 - See `docs/RULES.md` for full guidelines
+
+### Important Files to Never Edit Directly
+- ❌ `public/**` - Generated by build script
+- ❌ `package-lock.json` - Managed by npm
+- ✅ `views/**` - Source templates
+- ✅ `locales/**` - Translations
+- ✅ `assets/**` - Static files
 
 ---
 
@@ -418,12 +576,14 @@ vercel --prod
 
 ## 📋 Changelog Highlights
 
-### Version 2.0 (2025-10-31)
-- ✅ Moved files to organized structure
-- ✅ Created component architecture plan
-- ✅ Documented all standards (RULES.md)
-- ✅ Created refactoring roadmap
-- 🔄 In progress: Implementing components
+### Version 2.0 (2025-11-05)
+- ✅ **Multilingual Support**: English and German versions
+- ✅ **Build System**: Handlebars-based static site generation
+- ✅ **i18n Architecture**: JSON-based translations
+- ✅ **Component System**: Handlebars partials for reusable components
+- ✅ **Language Detection**: Automatic browser language routing
+- ✅ **SEO**: Language-specific URLs (/en/, /de/)
+- ✅ **Build Automation**: Single command deployment
 
 ### Version 1.0 (2025-10-23)
 - ✅ Complete website with all pages
@@ -437,26 +597,26 @@ vercel --prod
 
 ## 🎯 Roadmap
 
-### Short Term (Week 1)
-- [ ] Implement component architecture
-- [ ] Fix all path references
-- [ ] Consolidate navigation across pages
-- [ ] Improve mobile CSS
-- [ ] Remove duplicate files
+### Short Term (Weeks 1-2)
+- [ ] Mobile CSS refactoring (reduce `!important` usage)
+- [ ] Add CSS/JS minification to build process
+- [ ] Implement lazy loading for images
+- [ ] Add automated tests for build process
+- [ ] Create deployment CI/CD pipeline
 
-### Medium Term (Month 1)
-- [ ] Add user testimonial submission form
-- [ ] Implement newsletter signup
-- [ ] Add blog/news section
-- [ ] Improve SEO optimization
-- [ ] Add language switcher (DE/EN)
+### Medium Term (Month 1-2)
+- [ ] Add more languages (French, Spanish, Arabic)
+- [ ] User testimonial submission form
+- [ ] Newsletter signup integration
+- [ ] Blog/news section with CMS
+- [ ] Enhanced SEO optimization (structured data)
 
-### Long Term (Quarter 1)
+### Long Term (Quarter 1-2)
 - [ ] User dashboard for tracking applications
 - [ ] Integration with partner services
-- [ ] Automated degree recognition updates
-- [ ] Mobile app (PWA)
-- [ ] Advanced analytics
+- [ ] Automated degree recognition updates (API integration)
+- [ ] Progressive Web App (PWA) features
+- [ ] Advanced analytics and A/B testing
 
 ---
 
@@ -479,4 +639,5 @@ This is proprietary software. Unauthorized copying, distribution, or modificatio
 
 **For questions or support**: migreatgermany@gmail.com
 
-**Last Updated**: 2025-10-31
+**Last Updated**: 2025-11-05
+**Version**: 2.0
