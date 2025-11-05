@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t 'meta.title'}}</title>
+    <meta name="description" content="{{t 'meta.description'}}">
+    <meta name="keywords" content="{{t 'meta.keywords'}}">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://migreat.de{{#unless (eq lang 'en')}}/{{lang}}{{/unless}}{{path}}" />
+
+    <!-- Alternate Language Versions -->
+    <link rel="alternate" hreflang="en" href="https://migreat.de/en{{path}}" />
+    <link rel="alternate" hreflang="de" href="https://migreat.de/de{{path}}" />
+    <link rel="alternate" hreflang="x-default" href="https://migreat.de/en{{path}}" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{t 'meta.title'}}">
+    <meta property="og:description" content="{{t 'meta.description'}}">
+    <meta property="og:locale" content="{{#if (eq lang 'de')}}de_DE{{else}}en_US{{/if}}">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/mobile-only.css">
+    <link rel="stylesheet" href="/assets/css/carousel.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            // Add any custom Tailwind configuration here
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+        }
+    </style>
+
+    <script>
+        // Hero Carousel function - must be defined before Alpine.js loads
+        window.heroCarousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 4,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 4000);
+                }
+            }
+        }
+
+        // Success Stories Carousel function - must be defined before Alpine.js loads
+        window.carousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 5,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                prev() {
+                    this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 5000);
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Navigation Component -->
+    {{> common/nav}}
+
+    <!-- Main Content -->
+    {{{body}}}
+
+    <!-- Footer Component -->
+    {{> common/footer}}
+
+    <script src="/assets/js/animations.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

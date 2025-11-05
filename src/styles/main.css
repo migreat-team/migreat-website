@@ -1,0 +1,8 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import existing custom CSS */
+@import '../../assets/css/animations.css';
+@import '../../assets/css/carousel.css';
+@import '../../assets/css/mobile-only.css';

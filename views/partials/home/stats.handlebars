@@ -1,0 +1,31 @@
+<!--
+  SECTION: Stats
+  PURPOSE: Statistics and key metrics
+  DEPENDENCIES: None
+  UPDATED: 2025-11-05
+-->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">{{t 'stats.title'}}</h2>
+            <p class="text-xl text-gray-600">{{t 'stats.subtitle'}}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div class="stat-card scale-in bg-white rounded-xl shadow-lg p-6 md:p-8 text-center">
+                <div class="text-3xl md:text-5xl font-bold gradient-bg bg-clip-text text-transparent mb-2 leading-tight">{{t 'stats.stat1.value'}}</div>
+                <div class="text-sm md:text-base text-gray-600 leading-snug">{{t 'stats.stat1.description'}}</div>
+            </div>
+
+            <div class="stat-card scale-in bg-white rounded-xl shadow-lg p-6 md:p-8 text-center">
+                <div class="text-3xl md:text-5xl font-bold gradient-bg bg-clip-text text-transparent mb-2 leading-tight">{{t 'stats.stat2.value'}}</div>
+                <div class="text-sm md:text-base text-gray-600 leading-snug">{{t 'stats.stat2.description'}}</div>
+            </div>
+
+            <div class="stat-card scale-in bg-white rounded-xl shadow-lg p-6 md:p-8 text-center">
+                <div class="text-3xl md:text-5xl font-bold gradient-bg bg-clip-text text-transparent mb-2 leading-tight">{{t 'stats.stat3.value'}}</div>
+                <div class="text-sm md:text-base text-gray-600 leading-snug">{{t 'stats.stat3.description'}}<br><span class="text-xs md:text-sm">{{t 'stats.stat3.note'}}</span></div>
+            </div>
+        </div>
+    </div>
+</section>

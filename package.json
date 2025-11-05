@@ -1,0 +1,39 @@
+{
+  "name": "migreat-website",
+  "version": "1.0.0",
+  "description": "MiGreat - Migration to Germany Services",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\"",
+    "watch:css": "postcss src/styles/**/*.css -d public/css --watch",
+    "watch:js": "rollup -c -w",
+    "serve": "serve public -p 8000"
+  },
+  "keywords": [
+    "migration",
+    "germany",
+    "visa",
+    "degree-recognition"
+  ],
+  "author": "MiGreat",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "autoprefixer": "^10.4.17",
+    "concurrently": "^8.2.2",
+    "cssnano": "^6.0.3",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0",
+    "rollup": "^4.9.6",
+    "rollup-plugin-postcss": "^4.0.2",
+    "serve": "^14.2.1",
+    "tailwindcss": "^3.4.1"
+  }
+}

@@ -1,0 +1,52 @@
+<!--
+  SECTION: Services
+  PURPOSE: Core services overview
+  DEPENDENCIES: Lucide icons
+  UPDATED: 2025-11-05
+-->
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">{{t 'services.title'}}</h2>
+            <p class="text-xl text-gray-600">{{t 'services.subtitle'}}</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div class="service-card fade-in bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg transition">
+                <div class="w-12 h-12 md:w-14 md:h-14 gradient-bg rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                    <i data-lucide="file-text" class="h-6 w-6 md:h-7 md:w-7 text-white"></i>
+                </div>
+                <h3 class="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{{t 'services.card1.title'}}</h3>
+                <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">{{t 'services.card1.description'}}</p>
+                <a href="/{{lang}}/visa-check.html" class="inline-flex items-center text-sm md:text-base text-red-600 font-semibold hover:text-red-700 hover:underline">{{t 'services.card1.button'}}</a>
+            </div>
+
+            <div class="service-card fade-in bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg transition">
+                <div class="w-12 h-12 md:w-14 md:h-14 gradient-bg rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                    <i data-lucide="graduation-cap" class="h-6 w-6 md:h-7 md:w-7 text-white"></i>
+                </div>
+                <h3 class="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{{t 'services.card2.title'}}</h3>
+                <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">{{t 'services.card2.description'}}</p>
+                <a href="/{{lang}}/degree-check.html" class="inline-flex items-center text-sm md:text-base text-red-600 font-semibold hover:text-red-700 hover:underline">{{t 'services.card2.button'}}</a>
+            </div>
+
+            <div class="service-card fade-in bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg transition opacity-60">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-gray-300 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                    <i data-lucide="briefcase" class="h-6 w-6 md:h-7 md:w-7 text-gray-500"></i>
+                </div>
+                <h3 class="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{{t 'services.card3.title'}}</h3>
+                <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">{{t 'services.card3.description'}}</p>
+                <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-xs md:text-sm font-semibold rounded-full">{{t 'services.card3.badge'}}</span>
+            </div>
+
+            <div class="service-card fade-in bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg transition opacity-60">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-gray-300 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                    <i data-lucide="book-open" class="h-6 w-6 md:h-7 md:w-7 text-gray-500"></i>
+                </div>
+                <h3 class="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{{t 'services.card4.title'}}</h3>
+                <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">{{t 'services.card4.description'}}</p>
+                <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-xs md:text-sm font-semibold rounded-full">{{t 'services.card4.badge'}}</span>
+            </div>
+        </div>
+    </div>
+</section>

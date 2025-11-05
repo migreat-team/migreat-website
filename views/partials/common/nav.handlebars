@@ -1,0 +1,55 @@
+<nav class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+            <div class="flex items-center">
+                <a href="/{{lang}}/" class="flex items-center">
+                    <img src="/assets/images/logo.png" alt="{{t 'nav.logoAlt'}}" class="h-20 w-auto logo-animated">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6 ml-auto">
+                <a href="/{{lang}}/#services" class="nav-link text-gray-700 hover:text-red-600 font-medium">{{t 'nav.services'}}</a>
+                <a href="/{{lang}}/#success-stories" class="nav-link text-gray-700 hover:text-red-600 font-medium">{{t 'nav.successStories'}}</a>
+                <a href="/{{lang}}/#why-germany" class="nav-link text-gray-700 hover:text-red-600 font-medium">{{t 'nav.whyGermany'}}</a>
+                <a href="/{{lang}}/degree-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">{{t 'nav.degreeRecognition'}}</a>
+                <a href="/{{lang}}/visa-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">{{t 'nav.visaCheck'}}</a>
+                <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-red-600 font-medium">{{t 'nav.getStarted'}}</a>
+                <a href="/{{lang}}/contact.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">{{t 'nav.contact'}}</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700" aria-label="{{t 'nav.toggleMenu'}}">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t">
+        <div class="px-4 pt-2 pb-3 space-y-1">
+            <a href="/{{lang}}/#services" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">{{t 'nav.services'}}</a>
+            <a href="/{{lang}}/#why-germany" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">{{t 'nav.whyGermany'}}</a>
+            <a href="/{{lang}}/degree-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">{{t 'nav.degreeRecognition'}}</a>
+            <a href="/{{lang}}/visa-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">{{t 'nav.visaCheck'}}</a>
+            <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">{{t 'nav.getStarted'}}</a>
+            <a href="/{{lang}}/contact.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">{{t 'nav.contact'}}</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+// Highlight current page in navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || linkHref.startsWith(currentPage)) {
+            link.classList.remove('text-gray-700');
+            link.classList.add('text-red-600', 'font-semibold');
+        }
+    });
+});
+</script>

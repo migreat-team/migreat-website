@@ -1,0 +1,63 @@
+<footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div>
+                <div class="flex items-center space-x-2 mb-3 md:mb-4">
+                    <div class="w-8 h-8 md:w-10 md:h-10 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="plane" class="h-5 w-5 md:h-6 md:w-6 text-white"></i>
+                    </div>
+                    <span class="text-base md:text-lg font-bold">{{t 'footer.brand'}}</span>
+                </div>
+                <p class="text-gray-300 text-xs md:text-sm leading-relaxed">{{t 'footer.tagline'}}</p>
+            </div>
+
+            <div>
+                <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">{{t 'footer.servicesTitle'}}</h3>
+                <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                    <li><a href="/{{lang}}/#services" class="hover:text-white transition">{{t 'footer.visaApplications'}}</a></li>
+                    <li><a href="/{{lang}}/#services" class="hover:text-white transition">{{t 'footer.degreeRecognition'}}</a></li>
+                    <li><a href="/{{lang}}/#services" class="hover:text-white transition">{{t 'footer.germanLanguage'}}</a></li>
+                    <li><a href="/{{lang}}/#services" class="hover:text-white transition">{{t 'footer.jobMatching'}}</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">{{t 'footer.resourcesTitle'}}</h3>
+                <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                    <li><a href="/{{lang}}/visa-check.html" class="hover:text-white transition">{{t 'footer.visaCheck'}}</a></li>
+                    <li><a href="/{{lang}}/degree-check.html" class="hover:text-white transition">{{t 'footer.degreeCheck'}}</a></li>
+                    <li><a href="/{{lang}}/#why-germany" class="hover:text-white transition">{{t 'footer.aboutGermany'}}</a></li>
+                    <li><a href="/{{lang}}/#success-stories" class="hover:text-white transition">{{t 'footer.successStories'}}</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">{{t 'footer.contactTitle'}}</h3>
+                <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                    <li>{{t 'footer.whatsapp'}}</li>
+                    <li>{{t 'footer.email'}}</li>
+                    <li><a href="/{{lang}}/contact.html" class="hover:text-white transition">{{t 'footer.contactUs'}}</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-gray-400">{{t 'footer.copyright'}}</p>
+
+            <div class="language-switcher flex gap-3" role="navigation" aria-label="{{t 'footer.languageSelectorLabel'}}">
+                <a href="/en{{#if (eq path '/')}}{{else}}{{path}}.html{{/if}}"
+                   class="px-4 py-2 rounded-lg text-sm font-medium transition {{#if (eq lang 'en')}}bg-red-600 text-white{{else}}bg-gray-700 text-gray-300 hover:bg-gray-600{{/if}}"
+                   lang="en"
+                   hreflang="en"
+                   aria-label="{{t 'footer.switchToEnglish'}}">English</a>
+
+                <a href="/de{{#if (eq path '/')}}{{else}}{{path}}.html{{/if}}"
+                   class="px-4 py-2 rounded-lg text-sm font-medium transition {{#if (eq lang 'de')}}bg-red-600 text-white{{else}}bg-gray-700 text-gray-300 hover:bg-gray-600{{/if}}"
+                   lang="de"
+                   hreflang="de"
+                   aria-label="{{t 'footer.switchToGerman'}}">Deutsch</a>
+            </div>
+        </div>
+    </div>
+</footer>

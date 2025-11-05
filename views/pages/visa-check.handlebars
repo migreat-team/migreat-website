@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t 'visa.title'}}</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Component -->
+    <div id="nav-container"></div>
+
+    <div class="min-h-screen py-12 px-4" x-data="visaChecker()">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">{{t 'visa.heading'}}</h1>
+                <p class="text-xl text-gray-600">{{t 'visa.subheading'}}</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mb-8" x-show="!showResults">
+                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                    <span>{{t 'visa.progress.question'}} <span x-text="currentQuestion"></span> {{t 'visa.progress.of'}} 9</span>
+                    <span x-text="Math.round((currentQuestion / 9) * 100) + '{{t 'visa.progress.complete'}}'"></span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="gradient-bg h-2 rounded-full transition-all duration-300"
+                         :style="`width: ${(currentQuestion / 9) * 100}%`"></div>
+                </div>
+            </div>
+
+            <!-- Questions -->
+            <div class="bg-white rounded-lg shadow-lg p-8" x-show="!showResults" x-cloak>
+                <!-- Question 1: Age -->
+                <div x-show="currentQuestion === 1">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q1.heading'}}</h2>
+                    <p class="text-gray-600 mb-6">{{t 'visa.q1.subheading'}}</p>
+                    <div class="space-y-3">
+                        <button @click="answer('age', 'under35', 2)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.age === 'under35' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q1.under35'}}
+                        </button>
+                        <button @click="answer('age', '35-40', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.age === '35-40' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q1.35-40'}}
+                        </button>
+                        <button @click="answer('age', 'over40', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.age === 'over40' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q1.over40'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 2: Degree Recognition -->
+                <div x-show="currentQuestion === 2">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q2.heading'}}</h2>
+                    <p class="text-gray-600 mb-6">{{t 'visa.q2.subheading'}}</p>
+                    <p class="text-sm text-gray-500 mb-4">{{t 'visa.q2.help'}} <a href="/{{lang}}/degree-check" class="text-red-600 hover:underline">{{t 'visa.q2.help.link'}}</a></p>
+                    <div class="space-y-3">
+                        <button @click="answer('degreeRecognized', 'yes', 3)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.degreeRecognized === 'yes' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q2.yes'}}
+                        </button>
+                        <button @click="answer('degreeRecognized', 'no', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.degreeRecognized === 'no' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q2.no'}}
+                        </button>
+                        <button @click="answer('degreeRecognized', 'unknown', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.degreeRecognized === 'unknown' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q2.unknown'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 3: Field of Work -->
+                <div x-show="currentQuestion === 3">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q3.heading'}}</h2>
+                    <div class="space-y-3">
+                        <button @click="answer('field', 'it', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'it' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q3.it'}}
+                        </button>
+                        <button @click="answer('field', 'healthcare', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'healthcare' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q3.healthcare'}}
+                        </button>
+                        <button @click="answer('field', 'engineering', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'engineering' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q3.engineering'}}
+                        </button>
+                        <button @click="answer('field', 'stem', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'stem' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q3.stem'}}
+                        </button>
+                        <button @click="answer('field', 'trades', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'trades' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q3.trades'}}
+                        </button>
+                        <button @click="answer('field', 'construction', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'construction' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q3.construction'}}
+                        </button>
+                        <button @click="answer('field', 'social', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'social' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q3.social'}}
+                        </button>
+                        <button @click="answer('field', 'other', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'other' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q3.other'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 4: Work Experience -->
+                <div x-show="currentQuestion === 4">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q4.heading'}}</h2>
+                    <p class="text-gray-600 mb-6">{{t 'visa.q4.subheading'}}</p>
+                    <div class="space-y-3">
+                        <button @click="answer('experience', '5plus', 2)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.experience === '5plus' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q4.5plus'}}
+                        </button>
+                        <button @click="answer('experience', '2-5', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.experience === '2-5' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q4.2-5'}}
+                        </button>
+                        <button @click="answer('experience', 'less2', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.experience === 'less2' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q4.less2'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 5: German Language Skills -->
+                <div x-show="currentQuestion === 5">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q5.heading'}}</h2>
+                    <p class="text-gray-600 mb-6">{{{t 'visa.q5.subheading'}}}</p>
+                    <div class="space-y-3">
+                        <button @click="answer('germanLevel', 'b2plus', 3)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'b2plus' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q5.b2plus'}}
+                        </button>
+                        <button @click="answer('germanLevel', 'b1', 2)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'b1' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q5.b1'}}
+                        </button>
+                        <button @click="answer('germanLevel', 'a2', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'a2' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q5.a2'}}
+                        </button>
+                        <button @click="answer('germanLevel', 'a1', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'a1' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q5.a1'}}
+                        </button>
+                        <button @click="answer('germanLevel', 'none', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'none' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q5.none'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 6: English Language Skills -->
+                <div x-show="currentQuestion === 6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q6.heading'}}</h2>
+                    <p class="text-gray-600 mb-6">{{t 'visa.q6.subheading'}}</p>
+                    <div class="space-y-3">
+                        <button @click="answer('englishLevel', 'fluent', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.englishLevel === 'fluent' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q6.fluent'}}
+                        </button>
+                        <button @click="answer('englishLevel', 'intermediate', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.englishLevel === 'intermediate' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q6.intermediate'}}
+                        </button>
+                        <button @click="answer('englishLevel', 'basic', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.englishLevel === 'basic' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q6.basic'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 7: Job Offer -->
+                <div x-show="currentQuestion === 7">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q7.heading'}}</h2>
+                    <p class="text-gray-600 mb-6">{{t 'visa.q7.subheading'}}</p>
+                    <div class="space-y-3">
+                        <button @click="answer('jobOffer', 'yes', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.jobOffer === 'yes' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q7.yes'}}
+                        </button>
+                        <button @click="answer('jobOffer', 'no', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.jobOffer === 'no' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q7.no'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 8: Salary (if job offer) -->
+                <div x-show="currentQuestion === 8 && answers.jobOffer === 'yes'">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q8.heading'}}</h2>
+                    <p class="text-gray-600 mb-6">{{t 'visa.q8.subheading'}}</p>
+                    <div class="space-y-3">
+                        <button @click="answer('salary', 'high', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.salary === 'high' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q8.high'}}
+                        </button>
+                        <button @click="answer('salary', 'medium', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.salary === 'medium' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q8.medium'}}
+                        </button>
+                        <button @click="answer('salary', 'low', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.salary === 'low' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q8.low'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 9: Spouse -->
+                <div x-show="currentQuestion === 9 || (currentQuestion === 8 && answers.jobOffer === 'no')">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">{{t 'visa.q9.heading'}}</h2>
+                    <p class="text-gray-600 mb-2">{{{t 'visa.q9.subheading'}}}</p>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                        <p class="text-sm text-blue-900">
+                            <strong>{{t 'visa.q9.info.heading'}}</strong><br>
+                            {{t 'visa.q9.info.text'}}
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <button @click="answer('spouse', 'yes', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.spouse === 'yes' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q9.yes'}}
+                        </button>
+                        <button @click="answer('spouse', 'no', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.spouse === 'no' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            {{t 'visa.q9.no'}}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between mt-8">
+                    <button @click="previousQuestion()"
+                            x-show="currentQuestion > 1"
+                            class="px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition">
+                        {{t 'visa.button.previous'}}
+                    </button>
+                    <div x-show="currentQuestion === 1"></div>
+                    <button @click="nextQuestion()"
+                            x-show="currentQuestion < 10 && hasAnswer()"
+                            class="px-6 py-3 gradient-bg text-white font-semibold rounded-lg hover:opacity-90 transition">
+                        {{t 'visa.button.next'}}
+                    </button>
+                    <button @click="calculateResults()"
+                            x-show="currentQuestion === 10 && hasAnswer()"
+                            class="px-6 py-3 gradient-bg text-white font-semibold rounded-lg hover:opacity-90 transition">
+                        {{t 'visa.button.results'}}
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div x-show="showResults" x-cloak>
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-6">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">{{t 'visa.results.heading'}}</h2>
+                    <p class="text-gray-600 mb-6">{{t 'visa.results.subheading'}}</p>
+
+                    <!-- Opportunity Card Points (if eligible) -->
+                    <div x-show="opportunityCardPoints >= 6" class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                        <div class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-green-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-green-900 mb-2">
+                                    {{t 'visa.results.oc.points'}} <span x-text="opportunityCardPoints"></span>
+                                </h3>
+                                <p class="text-green-800">
+                                    {{t 'visa.results.oc.congrats'}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Not enough points message -->
+                    <div x-show="opportunityCardPoints < 6 && opportunityCardPoints > 0" class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-6">
+                        <div class="flex items-start">
+                            <i data-lucide="alert-circle" class="h-6 w-6 text-yellow-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-yellow-900 mb-2">
+                                    {{t 'visa.results.oc.points'}} <span x-text="opportunityCardPoints"></span>
+                                </h3>
+                                <p class="text-yellow-800 mb-3">
+                                    {{t 'visa.results.oc.need'}} <span x-text="6 - opportunityCardPoints"></span> {{t 'visa.results.oc.more'}}
+                                </p>
+                                <p class="text-sm text-yellow-700">
+                                    <strong>{{t 'visa.results.oc.howto'}}</strong><br>
+                                    {{t 'visa.results.oc.tip1'}}<br>
+                                    {{t 'visa.results.oc.tip2'}}<br>
+                                    {{t 'visa.results.oc.tip3'}}<br>
+                                    {{t 'visa.results.oc.tip4'}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Not recognized degree message -->
+                    <div x-show="answers.degreeRecognized === 'no'" class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                        <div class="flex items-start">
+                            <i data-lucide="info" class="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-blue-900 mb-2">{{t 'visa.results.degree.heading'}}</h3>
+                                <p class="text-blue-800">
+                                    {{t 'visa.results.degree.text'}}
+                                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="font-semibold underline hover:text-blue-900">{{t 'visa.results.degree.link'}}</a>!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">{{t 'visa.results.eligible'}}</h3>
+
+                    <!-- Visa Options -->
+                    <div class="space-y-6">
+                        <!-- EU Blue Card -->
+                        <div x-show="eligibleVisas.includes('euBlueCard')" class="border-2 border-blue-500 rounded-lg p-6">
+                            <div class="flex items-start mb-4">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold text-blue-900 mb-1">{{t 'visa.results.eublue.name'}}</h4>
+                                    <p class="text-gray-600">{{t 'visa.results.eublue.desc'}}</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.eublue.req.heading'}}</h5>
+                                    <ul class="space-y-1 text-sm">
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.eublue.req1'}}
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.eublue.req2'}}
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.eublue.req3'}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.eublue.duration.heading'}}</h5>
+                                    <p class="text-sm text-gray-700">{{t 'visa.results.eublue.duration'}}</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.eublue.benefits.heading'}}</h5>
+                                    <ul class="space-y-1 text-sm text-gray-700">
+                                        <li>{{t 'visa.results.eublue.benefit1'}}</li>
+                                        <li>{{t 'visa.results.eublue.benefit2'}}</li>
+                                        <li>{{t 'visa.results.eublue.benefit3'}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skilled Worker Visa -->
+                        <div x-show="eligibleVisas.includes('skilledWorker')" class="border-2 border-green-500 rounded-lg p-6">
+                            <div class="flex items-start mb-4">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-green-600 mr-3 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold text-green-900 mb-1">{{t 'visa.results.skilled.name'}}</h4>
+                                    <p class="text-gray-600">{{t 'visa.results.skilled.desc'}}</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.skilled.req.heading'}}</h5>
+                                    <ul class="space-y-1 text-sm">
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.skilled.req1'}}
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.skilled.req2'}}
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.skilled.req3'}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.skilled.duration.heading'}}</h5>
+                                    <p class="text-sm text-gray-700">{{t 'visa.results.skilled.duration'}}</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.skilled.benefits.heading'}}</h5>
+                                    <ul class="space-y-1 text-sm text-gray-700">
+                                        <li>{{t 'visa.results.skilled.benefit1'}}</li>
+                                        <li>{{t 'visa.results.skilled.benefit2'}}</li>
+                                        <li>{{t 'visa.results.skilled.benefit3'}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opportunity Card -->
+                        <div x-show="eligibleVisas.includes('opportunityCard')" class="border-2 border-yellow-500 rounded-lg p-6">
+                            <div class="flex items-start mb-4">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-yellow-600 mr-3 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold text-yellow-900 mb-1">{{t 'visa.results.opportunity.name'}}</h4>
+                                    <p class="text-gray-600">{{t 'visa.results.opportunity.desc'}}</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.opportunity.req.heading'}}</h5>
+                                    <ul class="space-y-1 text-sm">
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.opportunity.req1'}} <span x-text="opportunityCardPoints"></span>)
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.opportunity.req2'}}
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.opportunity.req3'}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.opportunity.duration.heading'}}</h5>
+                                    <p class="text-sm text-gray-700">{{t 'visa.results.opportunity.duration'}}</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.opportunity.benefits.heading'}}</h5>
+                                    <ul class="space-y-1 text-sm text-gray-700">
+                                        <li>{{t 'visa.results.opportunity.benefit1'}}</li>
+                                        <li>{{t 'visa.results.opportunity.benefit2'}}</li>
+                                        <li>{{t 'visa.results.opportunity.benefit3'}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Training Visa (Ausbildung) -->
+                        <div x-show="eligibleVisas.includes('jobTraining')" class="border-2 border-purple-500 rounded-lg p-6">
+                            <div class="flex items-start mb-4">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-purple-600 mr-3 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold text-purple-900 mb-1">{{t 'visa.results.training.name'}}</h4>
+                                    <p class="text-gray-600">{{t 'visa.results.training.desc'}}</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.training.req.heading'}}</h5>
+                                    <ul class="space-y-1 text-sm">
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.training.req1'}}
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.training.req2'}}
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.training.req3'}}
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            {{t 'visa.results.training.req4'}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.training.duration.heading'}}</h5>
+                                    <p class="text-sm text-gray-700">{{t 'visa.results.training.duration'}}</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">{{t 'visa.results.training.benefits.heading'}}</h5>
+                                    <ul class="space-y-1 text-sm text-gray-700">
+                                        <li>{{t 'visa.results.training.benefit1'}}</li>
+                                        <li>{{t 'visa.results.training.benefit2'}}</li>
+                                        <li>{{t 'visa.results.training.benefit3'}}</li>
+                                        <li>{{t 'visa.results.training.benefit4'}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Requirements Disclaimer (only for Opportunity Card) -->
+                    <div x-show="eligibleVisas.includes('opportunityCard')" class="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-6">
+                        <div class="flex items-start">
+                            <i data-lucide="info" class="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-blue-900 mb-2">{{t 'visa.results.financial.heading'}}</h3>
+                                <p class="text-blue-800 mb-3">
+                                    {{{t 'visa.results.financial.text'}}}
+                                </p>
+                                <ul class="space-y-2 text-sm text-blue-800">
+                                    <li class="flex items-start">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <strong>{{t 'visa.results.financial.option1.heading'}}</strong><br>
+                                            {{t 'visa.results.financial.option1.text'}}
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <strong>{{t 'visa.results.financial.option2.heading'}}</strong><br>
+                                            {{t 'visa.results.financial.option2.text'}}
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <strong>{{t 'visa.results.financial.option3.heading'}}</strong><br>
+                                            {{t 'visa.results.financial.option3.text'}}
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No eligible visas -->
+                    <div x-show="eligibleVisas.length === 0" class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-start">
+                            <i data-lucide="info" class="h-6 w-6 text-gray-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">{{t 'visa.results.nomatch.heading'}}</h3>
+                                <p class="text-gray-700 mb-3">
+                                    {{t 'visa.results.nomatch.text'}}
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-700">
+                                    <li>{{t 'visa.results.nomatch.option1'}}</li>
+                                    <li>{{t 'visa.results.nomatch.option2'}}</li>
+                                    <li>{{t 'visa.results.nomatch.option3'}}</li>
+                                    <li>{{t 'visa.results.nomatch.option4'}}</li>
+                                </ul>
+                                <p class="text-gray-700 mt-4">
+                                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="text-red-600 hover:text-red-700 font-semibold">{{t 'visa.results.nomatch.cta.link'}}</a> {{t 'visa.results.nomatch.cta'}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank"
+                           class="flex-1 inline-flex items-center justify-center px-6 py-3 gradient-bg text-white font-semibold rounded-lg hover:opacity-90 transition">
+                            {{t 'visa.results.cta.survey'}}
+                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </a>
+                        <button @click="reset()"
+                                class="flex-1 inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition">
+                            {{t 'visa.results.cta.retry'}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function visaChecker() {
+            return {
+                currentQuestion: 1,
+                showResults: false,
+                answers: {
+                    age: '',
+                    degreeRecognized: '',
+                    field: '',
+                    experience: '',
+                    germanLevel: '',
+                    englishLevel: '',
+                    jobOffer: '',
+                    salary: '',
+                    spouse: '',
+                },
+                opportunityCardPoints: 0,
+                eligibleVisas: [],
+
+                answer(question, value, points) {
+                    this.answers[question] = value;
+
+                    // Auto-advance to next question after short delay
+                    setTimeout(() => {
+                        this.nextQuestion();
+                    }, 300);
+                },
+
+                hasAnswer() {
+                    const questionMap = {
+                        1: 'age',
+                        2: 'degreeRecognized',
+                        3: 'field',
+                        4: 'experience',
+                        5: 'germanLevel',
+                        6: 'englishLevel',
+                        7: 'jobOffer',
+                        8: this.answers.jobOffer === 'yes' ? 'salary' : 'spouse',
+                        9: 'spouse'
+                    };
+
+                    const currentKey = questionMap[this.currentQuestion];
+                    return this.answers[currentKey] !== '';
+                },
+
+                nextQuestion() {
+                    if (!this.hasAnswer()) return;
+
+                    // If at question 9, show results
+                    if (this.currentQuestion === 9) {
+                        this.calculateResults();
+                        return;
+                    }
+
+                    // Skip salary question if no job offer
+                    if (this.currentQuestion === 7 && this.answers.jobOffer === 'no') {
+                        this.currentQuestion = 9;
+                    } else if (this.currentQuestion < 9) {
+                        this.currentQuestion++;
+                    }
+                },
+
+                previousQuestion() {
+                    // Skip back over salary question if no job offer
+                    if (this.currentQuestion === 9 && this.answers.jobOffer === 'no') {
+                        this.currentQuestion = 7;
+                    } else if (this.currentQuestion > 1) {
+                        this.currentQuestion--;
+                    }
+                },
+
+                calculateResults() {
+                    // Calculate Opportunity Card points
+                    let points = 0;
+
+                    // Age points
+                    if (this.answers.age === 'under35') points += 2;
+                    else if (this.answers.age === '35-40') points += 1;
+
+                    // Degree recognition points
+                    if (this.answers.degreeRecognized === 'yes') points += 3;
+
+                    // Field points (shortage occupation)
+                    if (['it', 'healthcare', 'engineering'].includes(this.answers.field)) points += 1;
+
+                    // Experience points
+                    if (this.answers.experience === '5plus') points += 2;
+                    else if (this.answers.experience === '2-5') points += 1;
+
+                    // German language points
+                    if (this.answers.germanLevel === 'b2plus') points += 3;
+                    else if (this.answers.germanLevel === 'b1') points += 2;
+                    else if (this.answers.germanLevel === 'a2') points += 1;
+
+                    // English language points
+                    if (this.answers.englishLevel === 'fluent') points += 1;
+
+                    // Spouse points
+                    if (this.answers.spouse === 'yes') points += 1;
+
+                    this.opportunityCardPoints = points;
+
+                    // Determine eligible visas
+                    this.eligibleVisas = [];
+
+                    // EU Blue Card
+                    if (this.answers.degreeRecognized === 'yes' &&
+                        this.answers.jobOffer === 'yes' &&
+                        this.answers.salary === 'high') {
+                        this.eligibleVisas.push('euBlueCard');
+                    }
+
+                    // Skilled Worker Visa
+                    if (this.answers.degreeRecognized === 'yes' &&
+                        this.answers.jobOffer === 'yes') {
+                        this.eligibleVisas.push('skilledWorker');
+                    }
+
+                    // Opportunity Card
+                    // If degree is fully recognized, eligible immediately
+                    if (this.answers.degreeRecognized === 'yes') {
+                        this.eligibleVisas.push('opportunityCard');
+                    }
+                    // If degree not recognized, need 6+ points
+                    else if (points >= 6) {
+                        this.eligibleVisas.push('opportunityCard');
+                    }
+
+                    // Job Training Visa (Ausbildung)
+                    // Eligible if under 40 years old AND has B1 German
+                    const hasB1German = ['b2Plus', 'b1'].includes(this.answers.germanLevel);
+                    if ((this.answers.age === 'under35' || this.answers.age === '35-40') && hasB1German) {
+                        this.eligibleVisas.push('jobTraining');
+                    }
+
+                    this.showResults = true;
+                    lucide.createIcons();
+
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
+
+                reset() {
+                    this.currentQuestion = 1;
+                    this.showResults = false;
+                    this.answers = {
+                        age: '',
+                        degreeRecognized: '',
+                        field: '',
+                        experience: '',
+                        germanLevel: '',
+                        englishLevel: '',
+                        jobOffer: '',
+                        salary: '',
+                        spouse: '',
+                    };
+                    this.opportunityCardPoints = 0;
+                    this.eligibleVisas = [];
+                    lucide.createIcons();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+
+        // Initialize Lucide icons
+        document.addEventListener('alpine:initialized', () => {
+            lucide.createIcons();
+        });
+    </script>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="/assets/js/component-loader.js"></script>
+</body>
+</html>

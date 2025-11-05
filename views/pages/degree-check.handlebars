@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{t 'degree.title'}}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Component -->
+    <div id="nav-container"></div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-12" x-data="degreeChecker()" x-init="init()">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-16 h-20 bg-red-100 rounded-full mb-4">
+                    <i data-lucide="graduation-cap" class="h-8 w-8 text-red-600"></i>
+                </div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">{{t 'degree.heading'}}</h1>
+                <p class="text-gray-600">{{t 'degree.subheading'}}</p>
+            </div>
+
+            <!-- Form -->
+            <div x-show="!showResult" class="space-y-6">
+                <!-- Step 1: Country Selection -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        {{t 'degree.step1'}}
+                    </label>
+                    <select x-model="selectedCountry" @change="onCountryChange()"
+                            class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-red-600 focus:outline-none">
+                        <option value="">{{t 'degree.step1.placeholder'}}</option>
+                        <option value="India">{{t 'degree.step1.india'}}</option>
+                        <option value="Ghana">{{t 'degree.step1.ghana'}}</option>
+                        <option value="Nigeria">{{t 'degree.step1.nigeria'}}</option>
+                        <option value="Kenya">{{t 'degree.step1.kenya'}}</option>
+                    </select>
+                </div>
+
+                <!-- Step 2: Institution Selection -->
+                <div x-show="selectedCountry">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        {{t 'degree.step2'}}
+                    </label>
+                    <select x-model="selectedInstitution" @change="onInstitutionChange()"
+                            class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-red-600 focus:outline-none">
+                        <option value="">{{t 'degree.step2.placeholder'}}</option>
+                        <template x-for="(inst, index) in institutions" :key="index">
+                            <option :value="inst.name" x-text="inst.name"></option>
+                        </template>
+                    </select>
+                    <p class="text-sm text-gray-500 mt-2" x-show="institutions.length > 0">
+                        <span x-text="institutions.length"></span> {{t 'degree.step2.available'}}
+                    </p>
+                </div>
+
+                <!-- Step 3: Degree Selection -->
+                <div x-show="selectedInstitution">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        {{t 'degree.step3'}}
+                    </label>
+                    <select x-model="selectedDegree"
+                            class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-red-600 focus:outline-none">
+                        <option value="">{{t 'degree.step3.placeholder'}}</option>
+                        <template x-for="(deg, index) in degrees" :key="'deg-' + index">
+                            <option :value="JSON.stringify(deg)" x-text="deg.name"></option>
+                        </template>
+                        <option value="other">{{t 'degree.step3.other'}}</option>
+                    </select>
+                    <p class="text-sm text-gray-500 mt-2" x-show="degrees.length > 0">
+                        <span x-text="degrees.length"></span> {{t 'degree.step3.available'}}
+                    </p>
+                </div>
+
+                <!-- Check Button -->
+                <div x-show="selectedDegree" class="pt-4">
+                    <button @click="checkRecognition()"
+                            class="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition">
+                        {{t 'degree.button.check'}}
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div x-show="showResult" x-transition class="space-y-6">
+                <!-- Result Card -->
+                <div :class="resultType === 'fully' ? 'bg-green-50 border-green-500' : resultType === 'university' ? 'bg-blue-50 border-blue-500' : 'bg-yellow-50 border-yellow-500'"
+                     class="border-2 rounded-lg p-6">
+                    <div class="flex items-start">
+                        <i :data-lucide="resultType === 'fully' ? 'check-circle' : 'info'"
+                           :class="resultType === 'fully' ? 'text-green-600' : resultType === 'university' ? 'text-blue-600' : 'text-yellow-600'"
+                           class="h-8 w-8 mr-4 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2"
+                                :class="resultType === 'fully' ? 'text-green-900' : resultType === 'university' ? 'text-blue-900' : 'text-yellow-900'"
+                                x-text="resultTitle"></h3>
+                            <p class="text-gray-700" x-text="resultMessage"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution Info -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-900 mb-2">{{t 'degree.result.selection'}}</h4>
+                    <ul class="space-y-1 text-sm text-gray-700">
+                        <li><strong>{{t 'degree.result.country'}}</strong> <span x-text="selectedCountry"></span></li>
+                        <li><strong>{{t 'degree.result.institution'}}</strong> <span x-text="selectedInstitution"></span></li>
+                        <li><strong>{{t 'degree.result.degree'}}</strong> <span x-text="selectedDegree === 'other' ? '{{t 'degree.step3.other'}}' : (selectedDegree ? JSON.parse(selectedDegree).name : '')"></span></li>
+                        <li x-show="institutionStatus"><strong>{{t 'degree.result.status'}}</strong> <span x-text="institutionStatus"></span></li>
+                    </ul>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex gap-4">
+                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/edit"
+                       target="_blank"
+                       class="flex-1 bg-red-600 text-white text-center py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition">
+                        {{t 'degree.result.cta.survey'}}
+                    </a>
+                    <button @click="reset()"
+                            class="px-6 py-3 border-2 border-gray-300 rounded-lg font-semibold hover:border-red-600 hover:text-red-600 transition">
+                        {{t 'degree.result.cta.another'}}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <div class="flex items-start">
+                <i data-lucide="info" class="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="font-bold text-blue-900 mb-2">{{t 'degree.info.heading'}}</h3>
+                    <p class="text-sm text-blue-800">
+                        {{t 'degree.info.text'}} <a href="https://anabin.kmk.org/" target="_blank" class="underline hover:text-blue-900">https://anabin.kmk.org/</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function degreeChecker() {
+            return {
+                selectedCountry: '',
+                selectedInstitution: '',
+                selectedDegree: '',
+                institutions: [],
+                degrees: [],
+                institutionStatus: '',
+                showResult: false,
+                resultType: '',
+                resultTitle: '',
+                resultMessage: '',
+                institutionsData: {},
+                degreesData: {},
+
+                async init() {
+                    // Load institutions data
+                    const instResponse = await fetch('/assets/json/anabin-data.json');
+                    this.institutionsData = await instResponse.json();
+
+                    // Load degrees data
+                    const degResponse = await fetch('/assets/json/degrees-data.json');
+                    this.degreesData = await degResponse.json();
+
+                    lucide.createIcons();
+                },
+
+                onCountryChange() {
+                    this.selectedInstitution = '';
+                    this.selectedDegree = '';
+                    this.showResult = false;
+
+                    // Load institutions for selected country
+                    if (this.selectedCountry && this.institutionsData[this.selectedCountry]) {
+                        this.institutions = this.institutionsData[this.selectedCountry];
+                    } else {
+                        this.institutions = [];
+                    }
+
+                    // Load degrees for selected country
+                    if (this.selectedCountry && this.degreesData[this.selectedCountry]) {
+                        this.degrees = this.degreesData[this.selectedCountry];
+                    } else {
+                        this.degrees = [];
+                    }
+                },
+
+                onInstitutionChange() {
+                    this.selectedDegree = '';
+                    this.showResult = false;
+
+                    // Find institution status
+                    const inst = this.institutions.find(i => i.name === this.selectedInstitution);
+                    if (inst) {
+                        this.institutionStatus = inst.status;
+                    }
+                },
+
+                checkRecognition() {
+                    const inst = this.institutions.find(i => i.name === this.selectedInstitution);
+                    const isHPlus = inst && inst.status === 'H+';
+
+                    let degreeObj = null;
+                    let isOther = this.selectedDegree === 'other';
+
+                    if (!isOther) {
+                        degreeObj = JSON.parse(this.selectedDegree);
+                    }
+
+                    // Case 1: H+ university + degree in list + class != NZ
+                    if (isHPlus && !isOther && degreeObj.class !== 'NZ') {
+                        this.resultType = 'fully';
+                        this.resultTitle = '{{t 'degree.result.fully.title'}}';
+                        this.resultMessage = '{{t 'degree.result.fully.message'}}';
+                    }
+                    // Case 2: H+ university + degree not in list or Other
+                    else if (isHPlus && (isOther || degreeObj.class === 'NZ')) {
+                        this.resultType = 'university';
+                        this.resultTitle = '{{t 'degree.result.university.title'}}';
+                        this.resultMessage = '{{t 'degree.result.university.message'}}';
+                    }
+                    // Case 3: All other cases
+                    else {
+                        this.resultType = 'manual';
+                        this.resultTitle = '{{t 'degree.result.manual.title'}}';
+                        this.resultMessage = '{{t 'degree.result.manual.message'}}';
+                    }
+
+                    this.showResult = true;
+                    lucide.createIcons();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
+
+                reset() {
+                    this.selectedCountry = '';
+                    this.selectedInstitution = '';
+                    this.selectedDegree = '';
+                    this.institutions = [];
+                    this.degrees = [];
+                    this.institutionStatus = '';
+                    this.showResult = false;
+                }
+            }
+        }
+    </script>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="/assets/js/component-loader.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
