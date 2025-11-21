@@ -1,0 +1,1141 @@
+/**
+ * MOBILE-ONLY STYLESHEET
+ * PURPOSE: Clean, high-contrast mobile experience
+ * UPDATED: 2025-10-31
+ * RULES: Minimal !important usage, better specificity, great contrast
+ */
+
+@media (max-width: 768px) {
+    /* ============================================
+       GLOBAL MOBILE SETTINGS
+       ============================================ */
+
+    html {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-x: hidden;
+        width: 100vw;
+        max-width: 100vw;
+        /* Clean white background - no gradient that can hurt contrast */
+        background: #ffffff;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Show/hide responsive utilities */
+
+    /* Desktop menu - hide on mobile */
+    nav .hidden.md\:flex {
+        display: none !important;
+    }
+
+    /* Mobile menu button container - show on mobile */
+    nav > div > div.md\:hidden {
+        display: flex !important;
+    }
+
+    /* Mobile menu dropdown - Let Alpine.js x-show control visibility completely */
+    /* DO NOT set display: none here - it breaks Alpine.js x-show functionality */
+    /* Alpine.js will handle hiding/showing with inline styles */
+
+    /* Section heading mobile/desktop toggle */
+    h2.md\:hidden {
+        display: block !important;
+    }
+
+    h2.hidden.md\:block {
+        display: none !important;
+    }
+
+    /* ============================================
+       SECTIONS - Clean cards with great contrast
+       ============================================ */
+
+    section {
+        background-color: #ffffff;
+        padding: 48px 20px;
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    section:nth-child(even) {
+        background-color: #f9fafb; /* Subtle gray for alternating sections */
+    }
+
+    /* ============================================
+       HIDE SUCCESS STORIES ON MOBILE
+       ============================================ */
+
+    #success-stories {
+        display: none;
+    }
+
+    /* Also hide success stories nav link */
+    nav a[href*="success-stories"],
+    nav a[href="#success-stories"] {
+        display: none;
+    }
+
+    /* ============================================
+       TYPOGRAPHY - Perfect contrast ratios
+       ============================================ */
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #111827; /* Gray-900 for maximum contrast */
+        font-weight: 700;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
+    }
+
+    h1,
+    .text-5xl,
+    .text-4xl {
+        font-size: 26px !important;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+        margin-bottom: 16px;
+    }
+
+    h2,
+    .text-3xl,
+    .text-2xl {
+        font-size: 20px !important;
+        line-height: 1.35;
+        letter-spacing: -0.005em;
+        margin-bottom: 14px;
+    }
+
+    h3,
+    .text-xl {
+        font-size: 17px !important;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+
+    /* Specific adjustments for very long headings */
+    h2.text-4xl {
+        font-size: 22px !important;
+        line-height: 1.4;
+    }
+
+    /* Gradient text adjustments for stats */
+    .gradient-bg {
+        background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+    }
+
+    .bg-clip-text {
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    .text-transparent {
+        color: transparent;
+    }
+
+    /* Stats numbers - make readable on mobile */
+    .stat-card .text-5xl,
+    .stat-card .gradient-bg {
+        font-size: 36px !important;
+        line-height: 1;
+        font-weight: 800;
+    }
+
+    p, li, span, div {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #374151; /* Gray-700 for body text */
+    }
+
+    small, .text-sm, .text-xs {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #6b7280; /* Gray-500 for small text */
+    }
+
+    /* ============================================
+       LAYOUT - Full width, no overflow
+       ============================================ */
+
+    .container,
+    .max-w-7xl,
+    .max-w-4xl,
+    .max-w-2xl,
+    .mx-auto {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Centered text sections need extra care on mobile */
+    .text-center {
+        text-align: center;
+        width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .text-center h1,
+    .text-center h2,
+    .text-center h3,
+    .text-center .text-4xl,
+    .text-center .text-3xl,
+    .text-center .text-2xl {
+        max-width: 100%;
+        padding: 0 4px;
+    }
+
+    .text-center .mb-12,
+    .text-center .mb-16 {
+        margin-bottom: 24px;
+    }
+
+    /* ============================================
+       NAVIGATION - Simplified
+       ============================================ */
+
+    nav {
+        padding: 12px 16px;
+        background-color: #ffffff;
+        box-shadow: none;
+    }
+
+    nav img,
+    nav .logo,
+    nav img.logo-animated {
+        max-height: 48px;
+        width: auto;
+    }
+
+    /* Mobile menu toggle button - ensure it's clickable */
+    nav .md\:hidden button {
+        padding: 8px;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    /* ============================================
+       HERO SECTION - Bold and readable
+       ============================================ */
+
+    .hero-section,
+    section:first-of-type {
+        padding: 32px 20px 40px 20px;
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        margin: 0;
+    }
+
+    /* Force white text in hero section on mobile - but NOT in testimonial cards */
+    .hero-section h1,
+    .hero-section h2,
+    .hero-section h3,
+    .hero-section p:not(.testimonial-card p):not(.testimonial-card *),
+    section:first-of-type h1,
+    section:first-of-type h2,
+    section:first-of-type h3,
+    section:first-of-type p:not(.testimonial-card p):not(.testimonial-card *),
+    #app section:first-child h1,
+    #app section:first-child h2,
+    #app section:first-child h3,
+    #app section:first-child p:not(.testimonial-card p):not(.testimonial-card *) {
+        color: #ffffff !important;
+    }
+
+    /* Ensure testimonial cards have proper text color */
+    .hero-section .testimonial-card,
+    .hero-section .testimonial-card * {
+        color: #111827 !important;
+    }
+
+    .hero-section .testimonial-card h3 {
+        color: #111827 !important;
+        font-weight: 600;
+    }
+
+    .hero-section .testimonial-card p {
+        color: #4b5563 !important;
+    }
+
+    .hero-section .testimonial-card .text-gray-500 {
+        color: #6b7280 !important;
+    }
+
+    .hero-section .testimonial-card .text-gray-600 {
+        color: #4b5563 !important;
+    }
+
+    .hero-section .testimonial-card .text-gray-700 {
+        color: #374151 !important;
+    }
+
+    .hero-section .testimonial-card .text-green-600 {
+        color: #16a34a !important;
+    }
+
+    .hero-section .testimonial-card .text-red-600 {
+        color: #dc2626 !important;
+    }
+
+    /* Hide the "MiGreat Germany" headline on mobile */
+    .hero-section h1,
+    section:first-of-type h1,
+    #app section:first-child h1 {
+        display: none !important;
+    }
+
+    /* Default hero paragraph styling */
+    .hero-section p,
+    .hero-section > p,
+    #app section:first-child p {
+        font-size: 19px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+        font-weight: 400;
+    }
+
+    /* Hero subline (first paragraph after h1) - MUCH LARGER */
+    .hero-section .space-y-4 > p:first-of-type,
+    .hero-section div > p:first-of-type,
+    #app section:first-child .space-y-4 > p:first-of-type {
+        font-size: 32px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        margin-bottom: 16px !important;
+        letter-spacing: -0.02em;
+    }
+
+    /* Hero first paragraph (second paragraph after h1) - MUCH LARGER */
+    .hero-section .space-y-4 > p:nth-of-type(2),
+    .hero-section div > p:nth-of-type(2),
+    #app section:first-child .space-y-4 > p:nth-of-type(2) {
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Hero buttons */
+    .hero-section a,
+    .hero-section button,
+    .hero-section .flex.gap-4 a,
+    .hero-section .flex.gap-4 button {
+        width: 100%;
+        margin-bottom: 12px;
+        font-size: 18px;
+        padding: 16px 32px;
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hide testimonial carousel in hero on mobile */
+    .hero-section .testimonial-card,
+    .hero-section .carousel-container,
+    .hero-section [x-data*="heroCarousel"] {
+        display: none;
+    }
+
+    /* ============================================
+       CARDS - High contrast, perfect mobile layout
+       ============================================ */
+
+    .card,
+    .service-card,
+    .stat-card,
+    [class*="card"]:not(.testimonial-card) {
+        padding: 24px 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Step numbers and icon containers - ONLY for icon containers, NOT buttons! */
+    .service-card .gradient-bg.rounded-lg,
+    .service-card .bg-gray-300.rounded-lg {
+        width: 56px !important;
+        height: 56px !important;
+        min-width: 56px;
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+    }
+
+    /* Step numbers - ONLY for numbered circles */
+    #get-started .gradient-bg.rounded-full {
+        width: 64px !important;
+        height: 64px !important;
+        min-width: 64px !important;
+        min-height: 64px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+    }
+
+    /* Step numbers text inside circles */
+    #get-started .gradient-bg.rounded-full span {
+        font-size: 32px !important;
+        font-weight: 800;
+        color: #ffffff;
+    }
+
+    /* Card headings */
+    .card h3,
+    .service-card h3,
+    [class*="card"] h3 {
+        font-size: 18px !important;
+        line-height: 1.3;
+        margin-bottom: 10px;
+        margin-top: 12px;
+    }
+
+    /* Card paragraphs */
+    .card p,
+    .service-card p,
+    [class*="card"] p {
+        font-size: 15px !important;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    /* Stats cards - special handling */
+    .stat-card {
+        padding: 24px 16px;
+        text-align: center;
+    }
+
+    .stat-card > div:first-child {
+        margin-bottom: 12px;
+    }
+
+    .stat-card > div:last-child {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #4b5563;
+    }
+
+    /* ============================================
+       CALL-TO-ACTION SECTIONS
+       ============================================ */
+
+    /* CTA section - gradient background with white text - ONLY for sections, NOT buttons! */
+    section:last-of-type,
+    #app section:last-child {
+        background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%) !important;
+        padding: 32px 20px;
+    }
+
+    /* Force white text in CTA section */
+    section:last-of-type h1,
+    section:last-of-type h2,
+    section:last-of-type h3,
+    section:last-of-type p,
+    #app section:last-child h1,
+    #app section:last-child h2,
+    #app section:last-child h3,
+    #app section:last-child p {
+        color: #ffffff !important;
+    }
+
+    section:last-of-type h2,
+    #app section:last-child h2 {
+        font-size: 28px;
+        margin-bottom: 16px;
+        font-weight: 700;
+    }
+
+    section:last-of-type p,
+    #app section:last-child p {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    /* CTA panes with high contrast */
+    section:last-of-type .grid > div,
+    section:last-of-type > div > div,
+    .cta-section .grid > div {
+        background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+        padding: 28px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 16px rgba(220, 38, 38, 0.2);
+    }
+
+    section:last-of-type a,
+    section:last-of-type button,
+    #app section:last-child a,
+    #app section:last-child button,
+    .cta-section a,
+    .cta-section button {
+        background: #ffffff;
+        color: #dc2626 !important;
+        font-weight: 700;
+        border: none;
+    }
+
+    /* Mobile-only CTA: centered button with good spacing */
+    section:last-of-type .md\:hidden,
+    #app section:last-child .md\:hidden {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section:last-of-type .md\:hidden a,
+    #app section:last-child .md\:hidden a {
+        max-width: 320px;
+        width: 100%;
+    }
+
+    /* ============================================
+       FOOTER - High contrast
+       ============================================ */
+
+    footer {
+        background: #111827; /* Gray-900 for maximum contrast */
+        padding: 40px 20px;
+        margin: 0;
+        color: #ffffff;
+    }
+
+    footer *,
+    footer p,
+    footer span,
+    footer div,
+    footer li {
+        color: #ffffff; /* Pure white for maximum readability */
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    footer h3,
+    footer h4 {
+        color: #ffffff; /* Pure white for headings */
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    footer a {
+        color: #ffffff; /* Pure white for links */
+        text-decoration: none;
+    }
+
+    footer a:hover,
+    footer a:active {
+        color: #ffffff; /* Pure white for hover state */
+        text-decoration: underline;
+    }
+
+    /* Footer logo icon */
+    footer .gradient-bg.rounded-lg {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 16px;
+    }
+
+    footer .gradient-bg i[data-lucide],
+    footer .gradient-bg svg.lucide {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* ============================================
+       BUTTONS - Touch-friendly, high contrast
+       ============================================ */
+
+    /* Buttons - FORCE proper sizing, but exclude step circles and icon containers */
+    button:not(.rounded-full),
+    a[class*="bg-"]:not([class*="card"]):not(.rounded-full):not(.rounded-lg):not(.w-12):not(.w-14):not(.w-16),
+    .btn,
+    a.gradient-bg:not(.rounded-full):not(.rounded-lg):not(.w-12):not(.w-14):not(.w-16) {
+        min-height: 48px !important;
+        padding: 14px 24px !important;
+        font-size: 16px !important;
+        font-weight: 600;
+        border-radius: 8px !important;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.4;
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s;
+        width: auto !important;
+        max-width: 100%;
+    }
+
+    /* Hero section buttons - full width on mobile (exclude carousel testimonial circles) */
+    .hero-section a:not(.rounded-full),
+    .hero-section button:not(.rounded-full) {
+        width: 100% !important;
+        min-height: 56px !important;
+        font-size: 18px !important;
+        padding: 16px 32px !important;
+    }
+
+    /* CTA section buttons */
+    section:last-of-type a,
+    section:last-of-type button,
+    #app section:last-child a,
+    #app section:last-child button {
+        min-height: 48px !important;
+        padding: 14px 24px !important;
+        font-size: 16px !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+    }
+
+    button:hover,
+    a[class*="bg-"]:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ============================================
+       GRIDS - Stack vertically
+       ============================================ */
+
+    .grid,
+    [class*="grid-cols"] {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .grid > * {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* ============================================
+       IMAGES - Prevent overflow
+       ============================================ */
+
+    img:not(.testimonial-card img):not(nav img) {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* ============================================
+       TESTIMONIAL CARDS - Mobile optimization
+       ============================================ */
+
+    /* Testimonial card container */
+    .testimonial-card {
+        padding: 20px !important;
+        margin-bottom: 16px;
+        border-radius: 12px;
+        width: 100%;
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Ensure all testimonial card text is dark on white background */
+    .testimonial-card,
+    .testimonial-card * {
+        color: #111827 !important;
+    }
+
+    .testimonial-card h3 {
+        color: #111827 !important;
+    }
+
+    .testimonial-card .text-gray-600,
+    .testimonial-card p {
+        color: #4b5563 !important;
+    }
+
+    .testimonial-card .text-gray-500 {
+        color: #6b7280 !important;
+    }
+
+    .testimonial-card .text-gray-700 {
+        color: #374151 !important;
+    }
+
+    .testimonial-card .text-green-600 {
+        color: #16a34a !important;
+    }
+
+    .testimonial-card .text-red-600 {
+        color: #dc2626 !important;
+    }
+
+    /* Testimonial card flex layouts */
+    .testimonial-card .flex {
+        flex-wrap: nowrap !important;
+    }
+
+    .testimonial-card .flex.items-start {
+        gap: 12px !important;
+    }
+
+    /* Testimonial images */
+    .testimonial-card img {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+        max-width: 48px !important;
+        max-height: 48px !important;
+        border-radius: 50% !important;
+        object-fit: cover;
+        flex-shrink: 0 !important;
+    }
+
+    /* Testimonial headings */
+    .testimonial-card h3 {
+        font-size: 16px !important;
+        line-height: 1.3;
+        margin-bottom: 4px !important;
+    }
+
+    /* Testimonial paragraphs */
+    .testimonial-card p {
+        font-size: 14px !important;
+        line-height: 1.6;
+    }
+
+    /* Testimonial salary comparison box */
+    .testimonial-card .bg-gray-50 {
+        padding: 12px !important;
+        margin: 12px 0 !important;
+        border-radius: 8px;
+    }
+
+    .testimonial-card .bg-gray-50 .text-lg {
+        font-size: 16px !important;
+    }
+
+    .testimonial-card .bg-gray-50 .text-xs {
+        font-size: 11px !important;
+    }
+
+    /* Testimonial card icons */
+    .testimonial-card i[data-lucide],
+    .testimonial-card svg.lucide {
+        width: 18px !important;
+        height: 18px !important;
+        min-width: 18px !important;
+        min-height: 18px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* ============================================
+       SPACING - Consistent and mobile-optimized
+       ============================================ */
+
+    .space-x-4,
+    .gap-4 {
+        gap: 12px;
+    }
+
+    .space-y-4,
+    .gap-8 {
+        gap: 16px;
+    }
+
+    /* Reduce vertical spacing in hero section to keep button above fold */
+    .hero-section .space-y-4,
+    section:first-of-type .space-y-4,
+    #app section:first-child .space-y-4 {
+        gap: 8px !important;
+    }
+
+    .mb-2 {
+        margin-bottom: 8px;
+    }
+
+    .mb-3 {
+        margin-bottom: 12px;
+    }
+
+    .mb-4 {
+        margin-bottom: 16px;
+    }
+
+    .mb-6 {
+        margin-bottom: 20px;
+    }
+
+    .mb-8 {
+        margin-bottom: 24px;
+    }
+
+    .mb-12 {
+        margin-bottom: 24px;
+    }
+
+    .mb-16 {
+        margin-bottom: 32px;
+    }
+
+    .mt-3,
+    .mt-4 {
+        margin-top: 12px;
+    }
+
+    .my-3,
+    .my-4 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .p-4 {
+        padding: 16px;
+    }
+
+    .p-6 {
+        padding: 18px;
+    }
+
+    .p-8 {
+        padding: 20px;
+    }
+
+    .py-3 {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .py-4 {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .py-20 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .px-4,
+    .px-6,
+    .px-8 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* ============================================
+       ICONS - Mobile optimized sizing
+       ============================================ */
+
+    /* ============================================
+       ICONS - Proper sizing for all sections
+       ============================================ */
+
+    /* General Lucide icons - default sizing (but NOT in Why Germany section) */
+    i[data-lucide]:not(#why-germany i[data-lucide]),
+    svg.lucide:not(#why-germany svg.lucide) {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px;
+        min-height: 20px;
+        padding: 0px !important;
+    }
+
+    /* Small inline icons in buttons (but NOT in Why Germany section) */
+    button:not(#why-germany button) i[data-lucide],
+    a:not(#why-germany a) i[data-lucide],
+    .h-5.w-5:not(#why-germany .h-5):not(#why-germany .w-5) i[data-lucide],
+    .h-5.w-5:not(#why-germany .h-5):not(#why-germany .w-5) svg.lucide,
+    .h-6.w-6:not(#why-germany .h-6):not(#why-germany .w-6) i[data-lucide],
+    .h-6.w-6:not(#why-germany .h-6):not(#why-germany .w-6) svg.lucide {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px !important;
+        min-height: 20px !important;
+    }
+
+    /* Services section - consolidated icon rules */
+    #services .service-card {
+        padding: 20px;
+        margin-bottom: 16px;
+    }
+
+    /* Service icon containers - gradient/gray boxes */
+    #services .gradient-bg.rounded-lg,
+    #services .bg-gray-300.rounded-lg {
+        width: 56px !important;
+        height: 56px !important;
+        min-width: 56px !important;
+        min-height: 56px !important;
+        margin-bottom: 16px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Icons inside service icon containers */
+    #services .gradient-bg i[data-lucide],
+    #services .gradient-bg svg.lucide,
+    #services .bg-gray-300 i[data-lucide],
+    #services .bg-gray-300 svg.lucide {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        padding: 0px !important;
+        margin: 0 !important;
+    }
+
+    #services h3 {
+        font-size: 18px !important;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+
+    #services p {
+        font-size: 15px !important;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    #services a {
+        font-size: 15px !important;
+        font-weight: 600;
+    }
+
+    /* Why Germany section - CRITICAL FIX FOR ICONS */
+    #why-germany .rounded-xl {
+        padding: 20px 16px;
+        margin-bottom: 16px;
+    }
+
+    /* Why Germany icons - FORCE proper size */
+    #why-germany i[data-lucide],
+    #why-germany svg.lucide,
+    #why-germany .lucide {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+        max-width: 40px !important;
+        max-height: 40px !important;
+        padding: 0px !important;
+        margin: 0 auto 12px !important;
+        display: block !important;
+        stroke-width: 2 !important;
+    }
+
+    /* Ensure Why Germany icon containers don't shrink icons */
+    #why-germany .rounded-xl {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    #why-germany h3 {
+        font-size: 17px !important;
+        margin-bottom: 8px;
+    }
+
+    #why-germany p {
+        font-size: 14px !important;
+        line-height: 1.5;
+    }
+
+    /* Get Started (How It Works) section */
+    #get-started .card,
+    #get-started .rounded-xl {
+        padding: 28px 24px;
+        margin-bottom: 24px;
+    }
+
+    #get-started .gradient-bg.rounded-full {
+        width: 64px !important;
+        height: 64px !important;
+        min-width: 64px !important;
+        min-height: 64px !important;
+        border-radius: 50% !important;
+    }
+
+    #get-started .gradient-bg.rounded-full span {
+        font-size: 32px !important;
+        font-weight: 800;
+    }
+
+    #get-started h3 {
+        font-size: 20px !important;
+        margin-bottom: 10px;
+    }
+
+    #get-started p:not(.text-gray-600) {
+        font-size: 15px !important;
+        line-height: 1.6;
+    }
+
+    #get-started a {
+        font-size: 16px !important;
+        font-weight: 600;
+        min-height: 44px;
+    }
+
+    /* ============================================
+       FORMS - Touch-friendly
+       ============================================ */
+
+    input,
+    select,
+    textarea {
+        min-height: 48px;
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    /* ============================================
+       DISABLE ANIMATIONS ON MOBILE
+       ============================================ */
+
+    .fade-in,
+    .scale-in,
+    .slide-up,
+    [class*="animate"],
+    .logo-animated {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    /* ============================================
+       ADDITIONAL MOBILE OPTIMIZATIONS
+       ============================================ */
+
+    /* Better line spacing for paragraphs */
+    section p,
+    .card p,
+    .service-card p {
+        line-height: 1.65;
+        margin-bottom: 16px;
+    }
+
+    /* Ensure touch targets for all clickable elements */
+    a[href],
+    button {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Prevent text from being too close to edges */
+    h1, h2, h3, p, ul, ol {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    /* Better card hover states for touch devices */
+    .card-hover:active,
+    .service-card:active,
+    [class*="card"]:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease-in-out;
+    }
+
+    /* Improved focus states for accessibility */
+    a:focus,
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: 2px solid #dc2626;
+        outline-offset: 2px;
+    }
+
+    /* Better list spacing */
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    /* Ensure images don't break layout */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Better table responsiveness if any */
+    table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL DEVICES (< 375px)
+   ============================================ */
+
+@media (max-width: 375px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .hero-section h1,
+    section:first-of-type h1 {
+        font-size: 28px;
+    }
+
+    .testimonial-card img {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
+    }
+}

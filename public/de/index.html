@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiGreat Germany - Ihr Begleiter für die Migration nach Deutschland</title>
+    <meta name="description" content="Professionelle Migrationsdienstleistungen für das Arbeiten in Deutschland. Visumanträge, Abschlussanerkennung, Deutschlernen und Jobvermittlung.">
+    <meta name="keywords" content="Deutschland Visum, Arbeitsvisum Deutschland, Blue Card, Abschlussanerkennung, Anabin, Migration nach Deutschland, Arbeiten in Deutschland, Deutsches Visum">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://migreat.de/de/" />
+
+    <!-- Alternate Language Versions -->
+    <link rel="alternate" hreflang="en" href="https://migreat.de/en/" />
+    <link rel="alternate" hreflang="de" href="https://migreat.de/de/" />
+    <link rel="alternate" hreflang="x-default" href="https://migreat.de/en/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MiGreat Germany - Ihr Begleiter für die Migration nach Deutschland">
+    <meta property="og:description" content="Professionelle Migrationsdienstleistungen für das Arbeiten in Deutschland. Visumanträge, Abschlussanerkennung, Deutschlernen und Jobvermittlung.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/mobile-only.css">
+    <link rel="stylesheet" href="/assets/css/carousel.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            // Add any custom Tailwind configuration here
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+        }
+    </style>
+
+    <script>
+        // Hero Carousel function - must be defined before Alpine.js loads
+        window.heroCarousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 4,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 4000);
+                }
+            }
+        }
+
+        // Success Stories Carousel function - must be defined before Alpine.js loads
+        window.carousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 5,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                prev() {
+                    this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 5000);
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Navigation Component -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center">
+                    <a href="/de/" class="flex items-center">
+                        <img src="/assets/images/logo.png" alt="MiGreat Germany" class="h-20 w-auto logo-animated">
+                    </a>
+                </div>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center ml-auto">
+                    <a href="/de/#services" class="nav-link text-gray-700 hover:text-red-600 font-medium">Dienstleistungen</a>
+                    <a href="/de/#success-stories" class="nav-link text-gray-700 hover:text-red-600 font-medium">Erfolgsgeschichten</a>
+                    <a href="/de/#why-germany" class="nav-link text-gray-700 hover:text-red-600 font-medium">Warum Deutschland?</a>
+                    <a href="/de/degree-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Abschlussanerkennung</a>
+                    <a href="/de/visa-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Visum-Schnellcheck</a>
+                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-red-600 font-medium">Jetzt starten!</a>
+                    <a href="/de/contact.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Kontakt</a>
+                </div>
+    
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700" aria-label="Menü umschalten">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Mobile Navigation -->
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="/de/#services" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Dienstleistungen</a>
+                <a href="/de/#why-germany" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Warum Deutschland?</a>
+                <a href="/de/degree-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Abschlussanerkennung</a>
+                <a href="/de/visa-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Visum-Schnellcheck</a>
+                <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Jetzt starten!</a>
+                <a href="/de/contact.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+    // Highlight current page in navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || linkHref.startsWith(currentPage)) {
+                link.classList.remove('text-gray-700');
+                link.classList.add('text-red-600', 'font-semibold');
+            }
+        });
+    });
+    </script>
+
+    <!-- Main Content -->
+    <main id="app">
+    <!--
+      SECTION: Hero
+      PURPOSE: Main landing section with value proposition and testimonial carousel
+      DEPENDENCIES: Alpine.js, Lucide icons, heroCarousel() function
+      UPDATED: 2025-11-05
+    -->
+    <section class="relative bg-gray-900 text-white py-20">
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 opacity-90"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=2000')"></div>
+    
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="space-y-4 md:space-y-6">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-white leading-tight">MiGreat Germany</h1>
+                    <p class="text-xl md:text-2xl mb-3 md:mb-4 text-white leading-relaxed">Ihr vertrauenswürdiger Begleiter für Visum und Arbeitsmigration</p>
+                    <p class="text-base md:text-xl text-gray-100 mb-6 md:mb-8 leading-relaxed">Navigieren Sie Ihre Reise nach Deutschland mit Zuversicht. Von Visumanträgen über Abschlussanerkennung bis hin zu Deutschlernen und Jobvermittlung - wir sind hier, um Ihren Traum vom Arbeiten in Deutschland zu verwirklichen.</p>
+    
+                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 w-full">
+                        <a href="/de/visa-check.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 gradient-bg text-white font-semibold rounded-lg hover:opacity-90 transition text-base md:text-lg min-h-[48px]">
+                            Kostenloser Visum-Check
+                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <div x-data="heroCarousel()" x-init="init()">
+                    <div class="relative carousel-container">
+                        <!-- Testimonial Cards -->
+                        <div class="carousel-wrapper">
+                            <!-- Card 1: Priya Sharma (India - IT) -->
+                            <div :class="currentSlide === 0 ? 'carousel-item active' : 'carousel-item'" class="w-full">
+                                <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
+                                    <div class="flex items-start space-x-4">
+                                        <img src="/assets/images/priya-sharma-new.jpg" alt="Priya Sharma" class="w-16 h-16 rounded-full object-cover">
+                                        <div class="flex-1">
+                                            <h3 class="font-semibold text-lg">Priya Sharma</h3>
+                                            <p class="text-sm text-gray-600">Software-Ingenieurin</p>
+                                            <div class="flex items-center gap-4 my-3">
+                                                <div>
+                                                    <div class="text-sm text-gray-500">Vorher</div>
+                                                    <div class="text-lg font-bold text-gray-700">₹60.000</div>
+                                                </div>
+                                                <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                                <div>
+                                                    <div class="text-sm text-gray-500">Nachher</div>
+                                                    <div class="text-lg font-bold text-green-600">€4.500</div>
+                                                </div>
+                                            </div>
+                                            <p class="text-sm italic text-gray-600">"In Deutschland habe ich hervorragende Arbeitsbedingungen, faire Bezahlung und meine Fähigkeiten werden wirklich geschätzt. Die Work-Life-Balance ist unglaublich im Vergleich zu dem, was ich in Indien hatte."</p>
+                                            <div class="mt-3">
+                                                <p class="text-xs text-red-600 font-medium">Aus Indien 🇮🇳</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2: Akosua Mensah (Ghana - Healthcare) -->
+                            <div :class="currentSlide === 1 ? 'carousel-item active' : 'carousel-item'" class="w-full">
+                                <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
+                                    <div class="flex items-start space-x-4">
+                                        <img src="/assets/images/akosua-mensah-new.jpg" alt="Akosua Mensah" class="w-16 h-16 rounded-full object-cover">
+                                        <div class="flex-1">
+                                            <h3 class="font-semibold text-lg">Akosua Mensah</h3>
+                                            <p class="text-sm text-gray-600">Altenpflegerin</p>
+                                            <div class="flex items-center gap-4 my-3">
+                                                <div>
+                                                    <div class="text-sm text-gray-500">Vorher</div>
+                                                    <div class="text-lg font-bold text-gray-700">GH₵3.500</div>
+                                                </div>
+                                                <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                                <div>
+                                                    <div class="text-sm text-gray-500">Nachher</div>
+                                                    <div class="text-lg font-bold text-green-600">€3.600</div>
+                                                </div>
+                                            </div>
+                                            <p class="text-sm italic text-gray-600">"Ich kam durch ein Pflegeprogramm nach Deutschland und arbeite jetzt in der Altenpflege. Das Gehalt ist 12-mal höher als das, was ich in Ghana verdient habe, und ich kann Geld nach Hause schicken, um meinen Geschwistern die Schule zu ermöglichen."</p>
+                                            <div class="mt-3">
+                                                <p class="text-xs text-red-600 font-medium">Aus Ghana 🇬🇭</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 3: Chidinma Okafor (Nigeria - Hospitality) -->
+                            <div :class="currentSlide === 2 ? 'carousel-item active' : 'carousel-item'" class="w-full">
+                                <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
+                                    <div class="flex items-start space-x-4">
+                                        <img src="/assets/images/chidinma-okafor-new.jpg" alt="Chidinma Okafor" class="w-16 h-16 rounded-full object-cover">
+                                        <div class="flex-1">
+                                            <h3 class="font-semibold text-lg">Chidinma Okafor</h3>
+                                            <p class="text-sm text-gray-600">Hotelmanagerin</p>
+                                            <div class="flex items-center gap-4 my-3">
+                                                <div>
+                                                    <div class="text-sm text-gray-500">Vorher</div>
+                                                    <div class="text-lg font-bold text-gray-700">₦280.000</div>
+                                                </div>
+                                                <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                                <div>
+                                                    <div class="text-sm text-gray-500">Nachher</div>
+                                                    <div class="text-lg font-bold text-green-600">€3.200</div>
+                                                </div>
+                                            </div>
+                                            <p class="text-sm italic text-gray-600">"Deutschland gab mir die Möglichkeit, mich beruflich weiterzuentwickeln. Die Ausbildung hier ist weltklasse, und ich leite jetzt ein Team in einem 5-Sterne-Hotel."</p>
+                                            <div class="mt-3">
+                                                <p class="text-xs text-red-600 font-medium">Aus Nigeria 🇳🇬</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 4: Wanjiru Kamau (Kenya - Early Childhood Education) -->
+                            <div :class="currentSlide === 3 ? 'carousel-item active' : 'carousel-item'" class="w-full">
+                                <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
+                                    <div class="flex items-start space-x-4">
+                                        <img src="/assets/images/wanjiru-kamau-new.jpg" alt="Wanjiku Kamau" class="w-16 h-16 rounded-full object-cover">
+                                        <div class="flex-1">
+                                            <h3 class="font-semibold text-lg">Wanjiku Kamau</h3>
+                                            <p class="text-sm text-gray-600">Datenwissenschaftlerin</p>
+                                            <div class="flex items-center gap-4 my-3">
+                                                <div>
+                                                    <div class="text-sm text-gray-500">Vorher</div>
+                                                    <div class="text-lg font-bold text-gray-700">KSh 120.000</div>
+                                                </div>
+                                                <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                                <div>
+                                                    <div class="text-sm text-gray-500">Nachher</div>
+                                                    <div class="text-lg font-bold text-green-600">€5.200</div>
+                                                </div>
+                                            </div>
+                                            <p class="text-sm italic text-gray-600">"Die Arbeit in Berlins Tech-Szene war großartig. Die Innovationskultur und Work-Life-Balance ermöglichen es mir, sowohl beruflich als auch persönlich zu wachsen."</p>
+                                            <div class="mt-3">
+                                                <p class="text-xs text-red-600 font-medium">Aus Kenia 🇰🇪</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+      SECTION: How It Works
+      PURPOSE: Three-step process overview
+      DEPENDENCIES: Lucide icons
+      UPDATED: 2025-11-05
+    -->
+    <section id="get-started" class="py-20 bg-gradient-to-br from-red-50 to-yellow-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <!-- Mobile heading (hidden on desktop) -->
+                <h2 class="md:hidden text-3xl font-bold text-gray-900 mb-4">In drei einfachen Schritten starten</h2>
+                <!-- Desktop heading (hidden on mobile) -->
+                <h2 class="hidden md:block text-4xl font-bold text-gray-900 mb-4">Finden Sie heraus, welches Visum Sie benötigen und wie Sie Ihren Traum von einem Job im Ausland in drei einfachen Schritten verwirklichen</h2>
+                <p class="text-xl text-gray-600">Ihre Reise nach Deutschland beginnt hier</p>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="fade-in card-hover bg-white rounded-xl shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 md:w-18 md:h-18 gradient-bg rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                        <span class="text-2xl md:text-3xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">Überprüfen Sie Ihren Abschluss</h3>
+                    <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4">(falls zutreffend)</p>
+                    <p class="text-sm md:text-base text-gray-700 leading-relaxed">Finden Sie heraus, ob Ihre Qualifikation in Deutschland anerkannt wird, indem Sie unser Abschlussprüfungstool verwenden.</p>
+                    <a href="/de/degree-check.html" class="inline-flex items-center justify-center mt-4 px-4 py-2 min-h-[44px] text-red-600 font-semibold hover:text-red-700 hover:bg-red-50 rounded-lg transition">
+                        Jetzt prüfen →
+                    </a>
+                </div>
+    
+                <div class="fade-in card-hover bg-white rounded-xl shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 md:w-18 md:h-18 gradient-bg rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                        <span class="text-2xl md:text-3xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">Überprüfen Sie Ihre Visumberechtigung</h3>
+                    <p class="text-sm md:text-base text-gray-700 leading-relaxed">Nehmen Sie an unserer kurzen Bewertung teil, um herauszufinden, für welches deutsche Visum Sie sich qualifizieren.</p>
+                    <a href="/de/visa-check.html" class="inline-flex items-center justify-center mt-4 px-4 py-2 min-h-[44px] text-red-600 font-semibold hover:text-red-700 hover:bg-red-50 rounded-lg transition">
+                        Bewertung starten →
+                    </a>
+                </div>
+    
+                <div class="fade-in card-hover bg-white rounded-xl shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 md:w-18 md:h-18 gradient-bg rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                        <span class="text-2xl md:text-3xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">Füllen Sie unsere Hintergrundumfrage aus</h3>
+                    <p class="text-sm md:text-base text-gray-700 leading-relaxed">Helfen Sie uns, Ihre Situation zu verstehen, damit wir Ihnen personalisierte Unterstützung für Ihre Reise bieten können.</p>
+                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="inline-flex items-center justify-center mt-4 px-4 py-2 min-h-[44px] text-red-600 font-semibold hover:text-red-700 hover:bg-red-50 rounded-lg transition">
+                        Jetzt starten →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+      SECTION: Services
+      PURPOSE: Core services overview
+      DEPENDENCIES: Lucide icons
+      UPDATED: 2025-11-05
+    -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Unsere Kerndienstleistungen</h2>
+                <p class="text-xl text-gray-600">Umfassende Unterstützung für jeden Schritt Ihrer deutschen Migrationsreise</p>
+            </div>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="service-card fade-in bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg transition">
+                    <div class="w-12 h-12 md:w-14 md:h-14 gradient-bg rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                        <i data-lucide="file-text" class="h-6 w-6 md:h-7 md:w-7 text-white"></i>
+                    </div>
+                    <h3 class="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Visumanträge</h3>
+                    <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">Expertenberatung durch deutsche Visumprozesse mit 95% Erfolgsquote</p>
+                    <a href="/de/visa-check.html" class="inline-flex items-center text-sm md:text-base text-red-600 font-semibold hover:text-red-700 hover:underline">Mehr erfahren →</a>
+                </div>
+    
+                <div class="service-card fade-in bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg transition">
+                    <div class="w-12 h-12 md:w-14 md:h-14 gradient-bg rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                        <i data-lucide="graduation-cap" class="h-6 w-6 md:h-7 md:w-7 text-white"></i>
+                    </div>
+                    <h3 class="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Abschlusserkennung</h3>
+                    <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">Lassen Sie Ihre Qualifikationen in Deutschland basierend auf der offiziellen anabin-Datenbank anerkennen</p>
+                    <a href="/de/degree-check.html" class="inline-flex items-center text-sm md:text-base text-red-600 font-semibold hover:text-red-700 hover:underline">Anerkennung prüfen →</a>
+                </div>
+    
+                <div class="service-card fade-in bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg transition opacity-60">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-gray-300 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                        <i data-lucide="briefcase" class="h-6 w-6 md:h-7 md:w-7 text-gray-500"></i>
+                    </div>
+                    <h3 class="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Deutsche Sprache</h3>
+                    <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">Strukturierte Lernprogramme von A1 bis C2 Zertifizierung</p>
+                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-xs md:text-sm font-semibold rounded-full">Demnächst</span>
+                </div>
+    
+                <div class="service-card fade-in bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg transition opacity-60">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-gray-300 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                        <i data-lucide="book-open" class="h-6 w-6 md:h-7 md:w-7 text-gray-500"></i>
+                    </div>
+                    <h3 class="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Job-Matching</h3>
+                    <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">Verbinden Sie sich mit deutschen Arbeitgebern, die nach Ihren spezifischen Fähigkeiten suchen</p>
+                    <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-xs md:text-sm font-semibold rounded-full">Demnächst</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+      SECTION: Stats
+      PURPOSE: Statistics and key metrics
+      DEPENDENCIES: None
+      UPDATED: 2025-11-05
+    -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Von Tausenden vertraut</h2>
+                <p class="text-xl text-gray-600">Schließen Sie sich der wachsenden Gemeinschaft erfolgreicher deutscher Migranten an</p>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="stat-card scale-in bg-white rounded-xl shadow-lg p-6 md:p-8 text-center">
+                    <div class="text-3xl md:text-5xl font-bold gradient-bg bg-clip-text text-transparent mb-2 leading-tight">400.000+</div>
+                    <div class="text-sm md:text-base text-gray-600 leading-snug">Menschen migrieren jährlich nach Deutschland zur Arbeit</div>
+                </div>
+    
+                <div class="stat-card scale-in bg-white rounded-xl shadow-lg p-6 md:p-8 text-center">
+                    <div class="text-3xl md:text-5xl font-bold gradient-bg bg-clip-text text-transparent mb-2 leading-tight">58.940 €</div>
+                    <div class="text-sm md:text-base text-gray-600 leading-snug">Durchschnittliches Jahresgehalt</div>
+                </div>
+    
+                <div class="stat-card scale-in bg-white rounded-xl shadow-lg p-6 md:p-8 text-center">
+                    <div class="text-3xl md:text-5xl font-bold gradient-bg bg-clip-text text-transparent mb-2 leading-tight">190,13</div>
+                    <div class="text-sm md:text-base text-gray-600 leading-snug">Lebensqualitätsindex<br><span class="text-xs md:text-sm">Durchgehend Spitzenplatzierung (Numbeo Index)</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+      SECTION: Success Stories
+      PURPOSE: Customer testimonials carousel
+      DEPENDENCIES: Alpine.js, Lucide icons, carousel() function
+      UPDATED: 2025-11-05
+    -->
+    <section id="success-stories" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Erfolgsgeschichten</h2>
+                <p class="text-xl text-gray-600">Entdecken Sie, wie unsere Kunden aus Indien, Ghana, Nigeria und Kenia ihre deutschen Träume verwirklicht haben</p>
+            </div>
+    
+            <div x-data="carousel()" class="relative">
+                <!-- Carousel Container -->
+                <div class="overflow-hidden">
+                    <div class="flex transition-transform duration-500 ease-in-out" :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                        <!-- Slide 1: India -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <!-- Priya Sharma -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/priya-sharma-avatar.webp" alt="Priya Sharma" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Priya Sharma</h3>
+                                            <p class="text-sm text-gray-600">Indien 🇮🇳 • Software-Ingenieurin</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">₹60.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">4.500 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"In Deutschland habe ich ausgezeichnete Arbeitsbedingungen, faire Bezahlung und meine Fähigkeiten werden wirklich geschätzt. Die Work-Life-Balance ist unglaublich im Vergleich zu dem, was ich in Indien hatte."</p>
+                                </div>
+    
+                                <!-- Rajesh Kumar -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Rajesh Kumar" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Rajesh Kumar</h3>
+                                            <p class="text-sm text-gray-600">Indien 🇮🇳 • Krankenpfleger</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">₹35.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">3.400 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Als Krankenpfleger in Deutschland werde ich mit Respekt und Würde behandelt. Das Gesundheitssystem hier schätzt seine Mitarbeiter, und ich kann endlich meine Familie richtig unterstützen."</p>
+                                </div>
+    
+                                <!-- Amit Patel -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Amit Patel" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Amit Patel</h3>
+                                            <p class="text-sm text-gray-600">Indien 🇮🇳 • Maschinenbauingenieur</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">₹80.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">4.800 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Die Arbeit bei einem deutschen Automobilunternehmen war ein Traum, der wahr wurde. Die Ingenieurstandards und Innovationen hier sind Weltklasse."</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Slide 2: Ghana -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <!-- Akosua Mensah -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Akosua Mensah" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Akosua Mensah</h3>
+                                            <p class="text-sm text-gray-600">Ghana 🇬🇭 • Altenpflegerin</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">GH₵3.500</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">3.600 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Ich kam durch ein Pflegeprogramm nach Deutschland und arbeite jetzt in der Altenpflege. Das Gehalt ist 12-mal höher als das, was ich in Ghana verdient habe, und ich kann Geld nach Hause schicken, um meinen Geschwistern den Schulbesuch zu ermöglichen."</p>
+                                </div>
+    
+                                <!-- Kwame Osei -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Kwame Osei" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Kwame Osei</h3>
+                                            <p class="text-sm text-gray-600">Ghana 🇬🇭 • Datenanalyst</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">GH₵4.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">4.200 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Die Tech-Szene in Berlin ist fantastisch. Ich ging von der Suche nach Möglichkeiten in Accra zu einem Job bei einem großen Fintech-Unternehmen mit großartigen Benefits."</p>
+                                </div>
+    
+                                <!-- Kofi Asante -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Kofi Asante" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Kofi Asante</h3>
+                                            <p class="text-sm text-gray-600">Ghana 🇬🇭 • Klempner</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">GH₵2.800</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">3.000 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Ich habe meine Ausbildung als Klempner abgeschlossen und habe jetzt einen festen Job. Das Ausbildungssystem in Deutschland ist ausgezeichnet, und Facharbeiter werden sehr geschätzt."</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Slide 3: Nigeria -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <!-- Chidinma Okafor -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Chidinma Okafor" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Chidinma Okafor</h3>
+                                            <p class="text-sm text-gray-600">Nigeria 🇳🇬 • Software-Entwicklerin</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">₦450.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">4.600 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Die EU Blue Card machte meinen Umzug nahtlos. Ich arbeite jetzt für ein Tech-Startup in München und mein Gehalt hat sich 8-fach erhöht. Meine Familie zu Hause ist so stolz."</p>
+                                </div>
+    
+                                <!-- David Okafor -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/david-okafor-avatar.webp" alt="David Okafor" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">David Okafor</h3>
+                                            <p class="text-sm text-gray-600">Nigeria 🇳🇬 • Elektriker</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">₦180.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">2.800 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Ich begann mit einem Ausbildungsprogramm und bin jetzt ein zertifizierter Elektriker, der an großen Bauprojekten arbeitet. Die Möglichkeiten hier sind endlos."</p>
+                                </div>
+    
+                                <!-- Oluwaseun Adeyemi -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Oluwaseun Adeyemi" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Oluwaseun Adeyemi</h3>
+                                            <p class="text-sm text-gray-600">Nigeria 🇳🇬 • Bauingenieur</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">₦600.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">4.400 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Die Arbeit an Infrastrukturprojekten in Deutschland hat meine Karriere auf ein neues Level gehoben. Die professionellen Standards und Projektgrößen sind unglaublich."</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Slide 4: Nigeria & Kenya -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <!-- Emmanuel Nwosu -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Emmanuel Nwosu" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Emmanuel Nwosu</h3>
+                                            <p class="text-sm text-gray-600">Nigeria 🇳🇬 • Bauleiter</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">₦500.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">4.000 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Der Bauboom in Deutschland schuf erstaunliche Möglichkeiten. Ich leite Teams bei großen Bauprojekten und verdiene mehr, als ich mir je vorgestellt habe."</p>
+                                </div>
+    
+                                <!-- Wanjiru Kamau -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Wanjiru Kamau" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Wanjiru Kamau</h3>
+                                            <p class="text-sm text-gray-600">Kenia 🇰🇪 • Kinderkrankenpflegerin</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">KSh 65.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">3.500 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Die Arbeit in einem deutschen Kinderkrankenhaus ist unglaublich erfüllend. Die Einrichtungen sind Weltklasse und die Unterstützung für Gesundheitspersonal ist herausragend."</p>
+                                </div>
+    
+                                <!-- Brian Mwangi -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Brian Mwangi" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Brian Mwangi</h3>
+                                            <p class="text-sm text-gray-600">Kenia 🇰🇪 • Cybersicherheitsspezialist</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">KSh 120.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">5.200 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Deutschlands Nachfrage nach Cybersicherheitsexperten öffnete Türen, die ich nie für möglich gehalten hätte. Ich arbeite für eine große Bank und das Karrierewachstum ist phänomenal."</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Slide 5: Kenya -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <!-- Grace Wambui -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Grace Wambui" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Grace Wambui</h3>
+                                            <p class="text-sm text-gray-600">Kenia 🇰🇪 • Forschungswissenschaftlerin</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">KSh 90.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">4.300 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Ich arbeite in einem Institut für erneuerbare Energien in Hamburg. Die Finanzierung und Ressourcen für wissenschaftliche Forschung in Deutschland sind unübertroffen."</p>
+                                </div>
+    
+                                <!-- Joseph Omondi -->
+                                <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                                    <div class="flex items-start space-x-4 mb-4">
+                                        <img src="/assets/images/success-story-avatar.webp" alt="Joseph Omondi" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+                                        <div>
+                                            <h3 class="font-bold text-lg text-gray-900">Joseph Omondi</h3>
+                                            <p class="text-sm text-gray-600">Kenia 🇰🇪 • Sozialarbeiter</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 my-4 bg-gray-50 p-4 rounded-lg">
+                                        <div>
+                                            <div class="text-xs text-gray-500">Vorher</div>
+                                            <div class="text-lg font-bold text-gray-700">KSh 55.000</div>
+                                        </div>
+                                        <i data-lucide="arrow-right" class="h-5 w-5 text-red-600"></i>
+                                        <div>
+                                            <div class="text-xs text-gray-500">Nachher</div>
+                                            <div class="text-lg font-bold text-green-600">3.100 €</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm italic text-gray-600">"Die Arbeit mit Flüchtlingsintegrationsprogrammen in Berlin ist erfüllend. Deutschland schätzt Sozialarbeiter und bietet ausgezeichnete Schulungen und Unterstützung."</p>
+                                </div>
+    
+                                <!-- Your Story CTA -->
+                                <div class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl shadow-lg p-8 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Ihre Geschichte könnte die nächste sein!</h3>
+                                        <p class="text-gray-700 mb-6">Schließen Sie sich Hunderten erfolgreicher Fachkräfte aus Indien, Ghana, Nigeria und Kenia an, die Deutschland zu ihrem Zuhause gemacht haben.</p>
+                                        <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="inline-flex items-center justify-center px-6 py-3 gradient-bg text-white font-semibold rounded-lg hover:opacity-90 transition">
+                                            Heute starten
+                                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Navigation Buttons -->
+                <button @click="prev()" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition z-10">
+                    <i data-lucide="chevron-left" class="h-6 w-6 text-gray-700"></i>
+                </button>
+                <button @click="next()" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition z-10">
+                    <i data-lucide="chevron-right" class="h-6 w-6 text-gray-700"></i>
+                </button>
+    
+                <!-- Indicators -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button @click="currentSlide = 0" :class="currentSlide === 0 ? 'bg-red-600' : 'bg-gray-300'" class="w-3 h-3 rounded-full transition"></button>
+                    <button @click="currentSlide = 1" :class="currentSlide === 1 ? 'bg-red-600' : 'bg-gray-300'" class="w-3 h-3 rounded-full transition"></button>
+                    <button @click="currentSlide = 2" :class="currentSlide === 2 ? 'bg-red-600' : 'bg-gray-300'" class="w-3 h-3 rounded-full transition"></button>
+                    <button @click="currentSlide = 3" :class="currentSlide === 3 ? 'bg-red-600' : 'bg-gray-300'" class="w-3 h-3 rounded-full transition"></button>
+                    <button @click="currentSlide = 4" :class="currentSlide === 4 ? 'bg-red-600' : 'bg-gray-300'" class="w-3 h-3 rounded-full transition"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+      SECTION: Why Germany
+      PURPOSE: Benefits of working in Germany
+      DEPENDENCIES: Lucide icons
+      UPDATED: 2025-11-05
+    -->
+    <section id="why-germany" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Warum Deutschland wählen?</h2>
+            </div>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+                <div class="bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition text-center">
+                    <i data-lucide="shield-check" class="h-10 w-10 md:h-12 md:w-12 text-green-600 mx-auto mb-3 md:mb-4"></i>
+                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Arbeitsplatzsicherheit</h3>
+                    <p class="text-gray-600 text-xs md:text-sm leading-relaxed">Starke Arbeitsgesetze, unbefristete Verträge und ausgezeichneter Arbeitnehmerschutz.</p>
+                </div>
+    
+                <div class="bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition text-center">
+                    <i data-lucide="clock" class="h-10 w-10 md:h-12 md:w-12 text-blue-600 mx-auto mb-3 md:mb-4"></i>
+                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Work-Life-Balance</h3>
+                    <p class="text-gray-600 text-xs md:text-sm leading-relaxed">35-40 Stunden Arbeitswochen, 30+ Urlaubstage, flexible Arbeitsregelungen.</p>
+                </div>
+    
+                <div class="bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition text-center">
+                    <i data-lucide="trending-up" class="h-10 w-10 md:h-12 md:w-12 text-purple-600 mx-auto mb-3 md:mb-4"></i>
+                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Karriereentwicklung</h3>
+                    <p class="text-gray-600 text-xs md:text-sm leading-relaxed">Ausgezeichnete Schulungsprogramme und starke Ausbildungssysteme.</p>
+                </div>
+    
+                <div class="bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition text-center">
+                    <i data-lucide="globe" class="h-10 w-10 md:h-12 md:w-12 text-indigo-600 mx-auto mb-3 md:mb-4"></i>
+                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Zentrale Lage</h3>
+                    <p class="text-gray-600 text-xs md:text-sm leading-relaxed">Herz Europas, einfaches Reisen in 26 EU-Länder.</p>
+                </div>
+    
+                <div class="bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition text-center">
+                    <i data-lucide="lightbulb" class="h-10 w-10 md:h-12 md:w-12 text-yellow-600 mx-auto mb-3 md:mb-4"></i>
+                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Innovationszentrum</h3>
+                    <p class="text-gray-600 text-xs md:text-sm leading-relaxed">Führend in Automobilbau, Ingenieurwesen, erneuerbare Energien.</p>
+                </div>
+    
+                <div class="bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition text-center">
+                    <i data-lucide="heart" class="h-10 w-10 md:h-12 md:w-12 text-red-600 mx-auto mb-3 md:mb-4"></i>
+                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Sozialleistungen</h3>
+                    <p class="text-gray-600 text-xs md:text-sm leading-relaxed">Universelle Gesundheitsversorgung, Rentensystem, Arbeitslosengeld.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+      SECTION: CTA (Call to Action)
+      PURPOSE: Final conversion section
+      DEPENDENCIES: Lucide icons
+      UPDATED: 2025-11-05
+    -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+            <!-- Desktop: Show full content -->
+            <div class="hidden md:block">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-white leading-tight">Bereit, Ihre deutsche Reise zu beginnen?</h2>
+                <p class="text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto text-white leading-relaxed">Schließen Sie sich Tausenden erfolgreicher Fachkräfte an, die Deutschland zu ihrem Zuhause gemacht haben. Lassen Sie uns Sie durch jeden Schritt des Prozesses führen.</p>
+    
+                <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center max-w-xl mx-auto">
+                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition text-base md:text-lg min-h-[48px]">
+                        Heute starten
+                        <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                    <a href="/de/contact.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition text-base md:text-lg min-h-[48px]">
+                        Kontaktieren Sie uns
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Mobile: Show only Get Started button -->
+            <div class="md:hidden">
+                <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="w-full inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition text-base min-h-[48px]">
+                    Heute starten
+                    <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+    <!-- Footer Component -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-3 md:mb-4">
+                        <div class="w-8 h-8 md:w-10 md:h-10 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="plane" class="h-5 w-5 md:h-6 md:w-6 text-white"></i>
+                        </div>
+                        <span class="text-base md:text-lg font-bold">MiGreat Germany</span>
+                    </div>
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed">Ihr vertrauenswürdiger Begleiter für die Arbeitsmigration nach Deutschland. Wir verwirklichen Träume vom Arbeiten in Deutschland.</p>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Dienstleistungen</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li><a href="/de/#services" class="hover:text-white transition">Visumanträge</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Abschlussanerkennung</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Deutschkurse</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Jobvermittlung</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Ressourcen</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li><a href="/de/visa-check.html" class="hover:text-white transition">Visum-Schnellcheck</a></li>
+                        <li><a href="/de/degree-check.html" class="hover:text-white transition">Abschlussanerkennung</a></li>
+                        <li><a href="/de/#why-germany" class="hover:text-white transition">Über Deutschland</a></li>
+                        <li><a href="/de/#success-stories" class="hover:text-white transition">Erfolgsgeschichten</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Kontakt</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li>WhatsApp: Rund um die Uhr verfügbar</li>
+                        <li>E-Mail: migreatgermany@gmail.com</li>
+                        <li><a href="/de/contact.html" class="hover:text-white transition">Kontaktieren Sie uns</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Language Switcher -->
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">© 2024 MiGreat Germany. Alle Rechte vorbehalten.</p>
+    
+                <div class="language-switcher flex gap-3" role="navigation" aria-label="Sprache auswählen">
+                    <a href="/en"
+                       class="px-4 py-2 rounded-lg text-sm font-medium transition bg-gray-700 text-gray-300 hover:bg-gray-600"
+                       lang="en"
+                       hreflang="en"
+                       aria-label="Switch to English version">English</a>
+    
+                    <a href="/de"
+                       class="px-4 py-2 rounded-lg text-sm font-medium transition bg-red-600 text-white"
+                       lang="de"
+                       hreflang="de"
+                       aria-label="Zur deutschen Version wechseln">Deutsch</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/animations.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
