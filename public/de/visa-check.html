@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiGreat Germany - Ihr Begleiter für die Migration nach Deutschland</title>
+    <meta name="description" content="Professionelle Migrationsdienstleistungen für das Arbeiten in Deutschland. Visumanträge, Abschlussanerkennung, Deutschlernen und Jobvermittlung.">
+    <meta name="keywords" content="Deutschland Visum, Arbeitsvisum Deutschland, Blue Card, Abschlussanerkennung, Anabin, Migration nach Deutschland, Arbeiten in Deutschland, Deutsches Visum">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://migreat.de/de/visa-check" />
+
+    <!-- Alternate Language Versions -->
+    <link rel="alternate" hreflang="en" href="https://migreat.de/en/visa-check" />
+    <link rel="alternate" hreflang="de" href="https://migreat.de/de/visa-check" />
+    <link rel="alternate" hreflang="x-default" href="https://migreat.de/en/visa-check" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MiGreat Germany - Ihr Begleiter für die Migration nach Deutschland">
+    <meta property="og:description" content="Professionelle Migrationsdienstleistungen für das Arbeiten in Deutschland. Visumanträge, Abschlussanerkennung, Deutschlernen und Jobvermittlung.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/mobile-only.css">
+    <link rel="stylesheet" href="/assets/css/carousel.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            // Add any custom Tailwind configuration here
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+        }
+    </style>
+
+    <script>
+        // Hero Carousel function - must be defined before Alpine.js loads
+        window.heroCarousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 4,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 4000);
+                }
+            }
+        }
+
+        // Success Stories Carousel function - must be defined before Alpine.js loads
+        window.carousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 5,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                prev() {
+                    this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 5000);
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Navigation Component -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center">
+                    <a href="/de/" class="flex items-center">
+                        <img src="/assets/images/logo.png" alt="MiGreat Germany" class="h-20 w-auto logo-animated">
+                    </a>
+                </div>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6 ml-auto">
+                    <a href="/de/#services" class="nav-link text-gray-700 hover:text-red-600 font-medium">Dienstleistungen</a>
+                    <a href="/de/#success-stories" class="nav-link text-gray-700 hover:text-red-600 font-medium">Erfolgsgeschichten</a>
+                    <a href="/de/#why-germany" class="nav-link text-gray-700 hover:text-red-600 font-medium">Warum Deutschland?</a>
+                    <a href="/de/degree-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Abschlussanerkennung</a>
+                    <a href="/de/visa-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Visum-Schnellcheck</a>
+                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-red-600 font-medium">Jetzt starten!</a>
+                    <a href="/de/contact.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Kontakt</a>
+                </div>
+    
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700" aria-label="Menü umschalten">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Mobile Navigation -->
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="/de/#services" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Dienstleistungen</a>
+                <a href="/de/#why-germany" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Warum Deutschland?</a>
+                <a href="/de/degree-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Abschlussanerkennung</a>
+                <a href="/de/visa-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Visum-Schnellcheck</a>
+                <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Jetzt starten!</a>
+                <a href="/de/contact.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+    // Highlight current page in navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || linkHref.startsWith(currentPage)) {
+                link.classList.remove('text-gray-700');
+                link.classList.add('text-red-600', 'font-semibold');
+            }
+        });
+    });
+    </script>
+
+    <!-- Main Content -->
+    <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa-Schnellprüfung - MiGreat Germany</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Component -->
+    <div id="nav-container"></div>
+
+    <div class="min-h-screen py-12 px-4" x-data="visaChecker()">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Umfrage zum deutschen Arbeitsvisum</h1>
+                <p class="text-xl text-gray-600">Finden Sie heraus, für welches deutsche Arbeitsvisum Sie berechtigt sind</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mb-8" x-show="!showResults">
+                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                    <span>Frage <span x-text="currentQuestion"></span> von 9</span>
+                    <span x-text="Math.round((currentQuestion / 9) * 100) + '% abgeschlossen'"></span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="gradient-bg h-2 rounded-full transition-all duration-300"
+                         :style="`width: ${(currentQuestion / 9) * 100}%`"></div>
+                </div>
+            </div>
+
+            <!-- Questions -->
+            <div class="bg-white rounded-lg shadow-lg p-8" x-show="!showResults" x-cloak>
+                <!-- Question 1: Age -->
+                <div x-show="currentQuestion === 1">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Wie alt sind Sie?</h2>
+                    <p class="text-gray-600 mb-6">Das Alter beeinflusst die Berechtigung und Punkte für bestimmte Visatypen</p>
+                    <div class="space-y-3">
+                        <button @click="answer('age', 'under35', 2)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.age === 'under35' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Unter 35 Jahre alt
+                        </button>
+                        <button @click="answer('age', '35-40', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.age === '35-40' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            35-40 Jahre alt
+                        </button>
+                        <button @click="answer('age', 'over40', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.age === 'over40' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Über 40 Jahre alt
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 2: Degree Recognition -->
+                <div x-show="currentQuestion === 2">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Ist Ihr Hochschul-/Universitäts-/Berufsabschluss anerkannt?</h2>
+                    <p class="text-gray-600 mb-6">Anerkennung ist für viele Visatypen wichtig</p>
+                    <p class="text-sm text-gray-500 mb-4">Wissen Sie nicht, ob Ihr Abschluss anerkannt ist? <a href="/de/degree-check" class="text-red-600 hover:underline">Hier direkt prüfen</a></p>
+                    <div class="space-y-3">
+                        <button @click="answer('degreeRecognized', 'yes', 3)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.degreeRecognized === 'yes' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Ja, mein Abschluss ist anerkannt
+                        </button>
+                        <button @click="answer('degreeRecognized', 'no', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.degreeRecognized === 'no' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Nein, mein Abschluss ist nicht anerkannt
+                        </button>
+                        <button @click="answer('degreeRecognized', 'unknown', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.degreeRecognized === 'unknown' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Ich weiß es nicht / nicht zutreffend
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 3: Field of Work -->
+                <div x-show="currentQuestion === 3">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">In welchem Bereich liegt Ihr Abschluss?</h2>
+                    <div class="space-y-3">
+                        <button @click="answer('field', 'it', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'it' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            IT &amp; Technologie
+                        </button>
+                        <button @click="answer('field', 'healthcare', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'healthcare' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Gesundheitswesen &amp; Pflege
+                        </button>
+                        <button @click="answer('field', 'engineering', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'engineering' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Ingenieurwesen (Maschinenbau, Elektrotechnik, Bauingenieurwesen)
+                        </button>
+                        <button @click="answer('field', 'stem', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'stem' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            MINT (Mathematik, Physik, Chemie)
+                        </button>
+                        <button @click="answer('field', 'trades', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'trades' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Handwerk (Elektriker, Klempner, HLK)
+                        </button>
+                        <button @click="answer('field', 'construction', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'construction' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Bau &amp; Logistik
+                        </button>
+                        <button @click="answer('field', 'social', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'social' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Soziale Dienste (Kinderbetreuung, Sozialarbeit)
+                        </button>
+                        <button @click="answer('field', 'other', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.field === 'other' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Sonstiges / Nicht zutreffend
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 4: Work Experience -->
+                <div x-show="currentQuestion === 4">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Wie viele Jahre Berufserfahrung haben Sie?</h2>
+                    <p class="text-gray-600 mb-6">Erfahrung in Ihrem Bereich ist wichtig für die Visaberechtigung</p>
+                    <div class="space-y-3">
+                        <button @click="answer('experience', '5plus', 2)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.experience === '5plus' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            5+ Jahre
+                        </button>
+                        <button @click="answer('experience', '2-5', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.experience === '2-5' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            2-5 Jahre
+                        </button>
+                        <button @click="answer('experience', 'less2', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.experience === 'less2' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Weniger als 2 Jahre
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 5: German Language Skills -->
+                <div x-show="currentQuestion === 5">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Welches Deutschniveau haben Sie?</h2>
+                    <p class="text-gray-600 mb-6">Nach der offiziellen CEFR/Goethe-Klassifizierungsskala und Zertifizierungen:<br>A1 (Grundkenntnisse) – A2 (einfach) – B1 (selbstständig) – B2 (fließend) – C1 (fortgeschritten)</p>
+                    <div class="space-y-3">
+                        <button @click="answer('germanLevel', 'b2plus', 3)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'b2plus' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            B2 oder höher
+                        </button>
+                        <button @click="answer('germanLevel', 'b1', 2)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'b1' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            B1
+                        </button>
+                        <button @click="answer('germanLevel', 'a2', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'a2' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            A2
+                        </button>
+                        <button @click="answer('germanLevel', 'a1', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'a1' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            A1
+                        </button>
+                        <button @click="answer('germanLevel', 'none', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.germanLevel === 'none' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Keine Deutschkenntnisse
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 6: English Language Skills -->
+                <div x-show="currentQuestion === 6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Welches Englischniveau haben Sie?</h2>
+                    <p class="text-gray-600 mb-6">Englischkenntnisse können für bestimmte Positionen hilfreich sein</p>
+                    <div class="space-y-3">
+                        <button @click="answer('englishLevel', 'fluent', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.englishLevel === 'fluent' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Fließend / Muttersprachler
+                        </button>
+                        <button @click="answer('englishLevel', 'intermediate', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.englishLevel === 'intermediate' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Mittelstufe
+                        </button>
+                        <button @click="answer('englishLevel', 'basic', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.englishLevel === 'basic' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Grundkenntnisse oder keine
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 7: Job Offer -->
+                <div x-show="currentQuestion === 7">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Haben Sie ein Jobangebot von einem deutschen Arbeitgeber?</h2>
+                    <p class="text-gray-600 mb-6">Ein Jobangebot verbessert Ihre Visa-Optionen erheblich</p>
+                    <div class="space-y-3">
+                        <button @click="answer('jobOffer', 'yes', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.jobOffer === 'yes' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Ja, ich habe ein Jobangebot
+                        </button>
+                        <button @click="answer('jobOffer', 'no', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.jobOffer === 'no' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Nein, ich suche noch
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 8: Salary (if job offer) -->
+                <div x-show="currentQuestion === 8 && answers.jobOffer === 'yes'">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Wie hoch ist das angebotene Jahresgehalt?</h2>
+                    <p class="text-gray-600 mb-6">Das Gehaltsniveau bestimmt die Berechtigung für bestimmte Visatypen</p>
+                    <div class="space-y-3">
+                        <button @click="answer('salary', 'high', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.salary === 'high' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            €58.400+ (EU-Blaue-Karte-Schwellenwert)
+                        </button>
+                        <button @click="answer('salary', 'medium', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.salary === 'medium' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            €45.300 - €58.400
+                        </button>
+                        <button @click="answer('salary', 'low', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.salary === 'low' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Unter €45.300
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 9: Spouse -->
+                <div x-show="currentQuestion === 9 || (currentQuestion === 8 && answers.jobOffer === 'no')">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Wird Ihr Ehepartner auch ein Visum zur Arbeitssuche beantragen?</h2>
+                    <p class="text-gray-600 mb-2">Ihr Ehepartner kann auch die <strong>Chancenkarte</strong> beantragen</p>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                        <p class="text-sm text-blue-900">
+                            <strong>Was ist die Chancenkarte?</strong><br>
+                            Die Chancenkarte ist ein punktebasiertes Visum zur Arbeitssuche, das Ihnen ermöglicht, bis zu 1 Jahr nach Deutschland zu kommen, um eine Beschäftigung zu suchen. Sie benötigen mindestens 6 Punkte basierend auf Qualifikationen, Erfahrung, Sprachkenntnissen und Alter.
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <button @click="answer('spouse', 'yes', 1)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.spouse === 'yes' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Ja, mein Ehepartner wird sich bewerben
+                        </button>
+                        <button @click="answer('spouse', 'no', 0)"
+                                class="w-full text-left p-4 border-2 rounded-lg hover:border-red-600 transition"
+                                :class="answers.spouse === 'no' ? 'border-red-600 bg-red-50' : 'border-gray-200'">
+                            Nein / Nicht zutreffend
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between mt-8">
+                    <button @click="previousQuestion()"
+                            x-show="currentQuestion > 1"
+                            class="px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition">
+                        Zurück
+                    </button>
+                    <div x-show="currentQuestion === 1"></div>
+                    <button @click="nextQuestion()"
+                            x-show="currentQuestion < 10 && hasAnswer()"
+                            class="px-6 py-3 gradient-bg text-white font-semibold rounded-lg hover:opacity-90 transition">
+                        Weiter
+                    </button>
+                    <button @click="calculateResults()"
+                            x-show="currentQuestion === 10 && hasAnswer()"
+                            class="px-6 py-3 gradient-bg text-white font-semibold rounded-lg hover:opacity-90 transition">
+                        Ergebnisse anzeigen
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div x-show="showResults" x-cloak>
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-6">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Ihre Visumbewertungsergebnisse</h2>
+                    <p class="text-gray-600 mb-6">Basierend auf Ihren Antworten sind hier Ihre Visa-Optionen</p>
+
+                    <!-- Opportunity Card Points (if eligible) -->
+                    <div x-show="opportunityCardPoints >= 6" class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                        <div class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-green-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-green-900 mb-2">
+                                    Chancenkarte-Punkte: <span x-text="opportunityCardPoints"></span>
+                                </h3>
+                                <p class="text-green-800">
+                                    Herzlichen Glückwunsch! Sie erfüllen die Mindestanforderung von 6 Punkten.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Not enough points message -->
+                    <div x-show="opportunityCardPoints < 6 && opportunityCardPoints > 0" class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-6">
+                        <div class="flex items-start">
+                            <i data-lucide="alert-circle" class="h-6 w-6 text-yellow-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-yellow-900 mb-2">
+                                    Chancenkarte-Punkte: <span x-text="opportunityCardPoints"></span>
+                                </h3>
+                                <p class="text-yellow-800 mb-3">
+                                    Sie benötigen <span x-text="6 - opportunityCardPoints"></span> weitere Punkte, um sich für die Chancenkarte zu qualifizieren.
+                                </p>
+                                <p class="text-sm text-yellow-700">
+                                    <strong>So erhalten Sie mehr Punkte:</strong><br>
+                                    • Verbessern Sie Ihre Deutschkenntnisse auf B2+ Niveau (+1 Punkt)<br>
+                                    • Sammeln Sie mehr Berufserfahrung (2-5 Jahre: +1 Punkt, 5+ Jahre: +2 Punkte)<br>
+                                    • Lassen Sie Ihren Abschluss anerkennen (+3 Punkte)<br>
+                                    • Bewerben Sie sich vor dem 35. Lebensjahr (+2 Punkte) oder vor dem 40. Lebensjahr (+1 Punkt)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Not recognized degree message -->
+                    <div x-show="answers.degreeRecognized === 'no'" class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                        <div class="flex items-start">
+                            <i data-lucide="info" class="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-blue-900 mb-2">Abschluss nicht anerkannt?</h3>
+                                <p class="text-blue-800">
+                                    Schade, dass Ihre Qualifikation nicht automatisch anerkannt wird? Aber keine Sorge, Kandidaten mit 2-jährigen Abschlüssen, die in ihrem Heimatland anerkannt sind, sind für die Chancenkarte berechtigt! Meistens können Sie sogar online beantragen, dass Ihr Abschluss vollständig oder teilweise anerkannt wird, während Sie noch im Ausland sind. Wenn Sie weitermachen möchten, füllen Sie unsere Umfrage unter
+                                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="font-semibold underline hover:text-blue-900">Loslegen</a>!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Berechtigte Visa-Typen</h3>
+
+                    <!-- Visa Options -->
+                    <div class="space-y-6">
+                        <!-- EU Blue Card -->
+                        <div x-show="eligibleVisas.includes('euBlueCard')" class="border-2 border-blue-500 rounded-lg p-6">
+                            <div class="flex items-start mb-4">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold text-blue-900 mb-1">EU-Blaue Karte</h4>
+                                    <p class="text-gray-600">Hochqualifiziertes Arbeitsvisum mit schnellem Weg zur Niederlassungserlaubnis</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Erfüllte Anforderungen:</h5>
+                                    <ul class="space-y-1 text-sm">
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Anerkannter Abschluss
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Jobangebot mit €58.400+ Gehalt
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Qualifikation passt zum Job
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Dauer:</h5>
+                                    <p class="text-sm text-gray-700">Bis zu 4 Jahre (verlängerbar)</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Hauptvorteile:</h5>
+                                    <ul class="space-y-1 text-sm text-gray-700">
+                                        <li>• Niederlassungserlaubnis nach 33 Monaten</li>
+                                        <li>• Familiennachzug</li>
+                                        <li>• Arbeit überall in der EU nach 18 Monaten</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skilled Worker Visa -->
+                        <div x-show="eligibleVisas.includes('skilledWorker')" class="border-2 border-green-500 rounded-lg p-6">
+                            <div class="flex items-start mb-4">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-green-600 mr-3 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold text-green-900 mb-1">Fachkräftevisum</h4>
+                                    <p class="text-gray-600">Standard-Arbeitsvisum für qualifizierte Fachkräfte</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Erfüllte Anforderungen:</h5>
+                                    <ul class="space-y-1 text-sm">
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Anerkannter Abschluss
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Jobangebot von deutschem Arbeitgeber
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Qualifikation passt zum Job
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Dauer:</h5>
+                                    <p class="text-sm text-gray-700">Bis zu 4 Jahre (verlängerbar)</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Hauptvorteile:</h5>
+                                    <ul class="space-y-1 text-sm text-gray-700">
+                                        <li>• Niederlassungserlaubnis nach 4 Jahren</li>
+                                        <li>• Familiennachzug</li>
+                                        <li>• Jobwechsel möglich</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opportunity Card -->
+                        <div x-show="eligibleVisas.includes('opportunityCard')" class="border-2 border-yellow-500 rounded-lg p-6">
+                            <div class="flex items-start mb-4">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-yellow-600 mr-3 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold text-yellow-900 mb-1">Chancenkarte</h4>
+                                    <p class="text-gray-600">Visum zur Arbeitssuche mit Punktesystem</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Erfüllte Anforderungen:</h5>
+                                    <ul class="space-y-1 text-sm">
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Mindestens 6 Punkte (Sie haben <span x-text="opportunityCardPoints"></span>)
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Grundqualifikation
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Finanzielle Mittel
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Dauer:</h5>
+                                    <p class="text-sm text-gray-700">1 Jahr (verlängerbar)</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Hauptvorteile:</h5>
+                                    <ul class="space-y-1 text-sm text-gray-700">
+                                        <li>• Zeit zur Arbeitssuche</li>
+                                        <li>• Teilzeitarbeit erlaubt (20h/Woche)</li>
+                                        <li>• Probearbeit zulässig</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Training Visa (Ausbildung) -->
+                        <div x-show="eligibleVisas.includes('jobTraining')" class="border-2 border-purple-500 rounded-lg p-6">
+                            <div class="flex items-start mb-4">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-purple-600 mr-3 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold text-purple-900 mb-1">Ausbildungsvisum</h4>
+                                    <p class="text-gray-600">Berufsausbildungsprogramm, das Arbeit und Lernen kombiniert</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Erfüllte Anforderungen:</h5>
+                                    <ul class="space-y-1 text-sm">
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Altersanforderung (typischerweise unter 40)
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Keine Anerkennung erforderlich
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            B1 Deutschniveau
+                                        </li>
+                                        <li class="flex items-center text-green-700">
+                                            <i data-lucide="check" class="h-4 w-4 mr-2"></i>
+                                            Ausbildungsvertrag erforderlich
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Dauer:</h5>
+                                    <p class="text-sm text-gray-700">2-3 Jahre (Ausbildungszeitraum)</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-900 mb-2">Hauptvorteile:</h5>
+                                    <ul class="space-y-1 text-sm text-gray-700">
+                                        <li>• Verdienen während des Lernens (€800-1.200/Monat)</li>
+                                        <li>• Anerkannte Qualifikation nach Abschluss</li>
+                                        <li>• Weg zum Fachkräftevisum</li>
+                                        <li>• Keine Studiengebühren</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Requirements Disclaimer (only for Opportunity Card) -->
+                    <div x-show="eligibleVisas.includes('opportunityCard')" class="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-6">
+                        <div class="flex items-start">
+                            <i data-lucide="info" class="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-blue-900 mb-2">Wichtig: Finanzielle Anforderungen</h3>
+                                <p class="text-blue-800 mb-3">
+                                    Für die Chancenkarte müssen Sie finanzielle Mittel von mindestens <strong>€1.091 pro Monat</strong> durch eine dieser Optionen nachweisen:
+                                </p>
+                                <ul class="space-y-2 text-sm text-blue-800">
+                                    <li class="flex items-start">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <strong>Sperrkonto:</strong><br>
+                                            Hinterlegen Sie den vollen Betrag (€13.092 für 12 Monate) auf einem deutschen Sperrkonto
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <strong>Verpflichtungserklärung:</strong><br>
+                                            Lassen Sie jemanden in Deutschland Ihre finanzielle Unterstützung garantieren
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="check" class="h-4 w-4 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <strong>Jobangebot:</strong><br>
+                                            Arbeitsvertrag mit monatlichem Gehalt von mindestens €1.091
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No eligible visas -->
+                    <div x-show="eligibleVisas.length === 0" class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-start">
+                            <i data-lucide="info" class="h-6 w-6 text-gray-600 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Keine sofortige Visa-Übereinstimmung</h3>
+                                <p class="text-gray-700 mb-3">
+                                    Basierend auf Ihrer aktuellen Situation erfüllen Sie die Anforderungen für die Hauptarbeitsvisa nicht. Sie haben jedoch Optionen:
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-700">
+                                    <li>• Verbessern Sie Ihre Deutschkenntnisse auf B2-Niveau</li>
+                                    <li>• Lassen Sie Ihren Abschluss durch individuelle Bewertung anerkennen</li>
+                                    <li>• Sammeln Sie mehr Berufserfahrung in Ihrem Bereich</li>
+                                    <li>• Erwägen Sie Berufsausbildungsprogramme in Deutschland</li>
+                                </ul>
+                                <p class="text-gray-700 mt-4">
+                                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="text-red-600 hover:text-red-700 font-semibold">Kontaktieren Sie uns</a> für eine personalisierte Beratung auf Ihrem Weg nach Deutschland.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank"
+                           class="flex-1 inline-flex items-center justify-center px-6 py-3 gradient-bg text-white font-semibold rounded-lg hover:opacity-90 transition">
+                            Mit MiGreat starten
+                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </a>
+                        <button @click="reset()"
+                                class="flex-1 inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition">
+                            Bewertung erneut durchführen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function visaChecker() {
+            return {
+                currentQuestion: 1,
+                showResults: false,
+                answers: {
+                    age: '',
+                    degreeRecognized: '',
+                    field: '',
+                    experience: '',
+                    germanLevel: '',
+                    englishLevel: '',
+                    jobOffer: '',
+                    salary: '',
+                    spouse: '',
+                },
+                opportunityCardPoints: 0,
+                eligibleVisas: [],
+
+                answer(question, value, points) {
+                    this.answers[question] = value;
+
+                    // Auto-advance to next question after short delay
+                    setTimeout(() => {
+                        this.nextQuestion();
+                    }, 300);
+                },
+
+                hasAnswer() {
+                    const questionMap = {
+                        1: 'age',
+                        2: 'degreeRecognized',
+                        3: 'field',
+                        4: 'experience',
+                        5: 'germanLevel',
+                        6: 'englishLevel',
+                        7: 'jobOffer',
+                        8: this.answers.jobOffer === 'yes' ? 'salary' : 'spouse',
+                        9: 'spouse'
+                    };
+
+                    const currentKey = questionMap[this.currentQuestion];
+                    return this.answers[currentKey] !== '';
+                },
+
+                nextQuestion() {
+                    if (!this.hasAnswer()) return;
+
+                    // If at question 9, show results
+                    if (this.currentQuestion === 9) {
+                        this.calculateResults();
+                        return;
+                    }
+
+                    // Skip salary question if no job offer
+                    if (this.currentQuestion === 7 && this.answers.jobOffer === 'no') {
+                        this.currentQuestion = 9;
+                    } else if (this.currentQuestion < 9) {
+                        this.currentQuestion++;
+                    }
+                },
+
+                previousQuestion() {
+                    // Skip back over salary question if no job offer
+                    if (this.currentQuestion === 9 && this.answers.jobOffer === 'no') {
+                        this.currentQuestion = 7;
+                    } else if (this.currentQuestion > 1) {
+                        this.currentQuestion--;
+                    }
+                },
+
+                calculateResults() {
+                    // Calculate Opportunity Card points
+                    let points = 0;
+
+                    // Age points
+                    if (this.answers.age === 'under35') points += 2;
+                    else if (this.answers.age === '35-40') points += 1;
+
+                    // Degree recognition points
+                    if (this.answers.degreeRecognized === 'yes') points += 3;
+
+                    // Field points (shortage occupation)
+                    if (['it', 'healthcare', 'engineering'].includes(this.answers.field)) points += 1;
+
+                    // Experience points
+                    if (this.answers.experience === '5plus') points += 2;
+                    else if (this.answers.experience === '2-5') points += 1;
+
+                    // German language points
+                    if (this.answers.germanLevel === 'b2plus') points += 3;
+                    else if (this.answers.germanLevel === 'b1') points += 2;
+                    else if (this.answers.germanLevel === 'a2') points += 1;
+
+                    // English language points
+                    if (this.answers.englishLevel === 'fluent') points += 1;
+
+                    // Spouse points
+                    if (this.answers.spouse === 'yes') points += 1;
+
+                    this.opportunityCardPoints = points;
+
+                    // Determine eligible visas
+                    this.eligibleVisas = [];
+
+                    // EU Blue Card
+                    if (this.answers.degreeRecognized === 'yes' &&
+                        this.answers.jobOffer === 'yes' &&
+                        this.answers.salary === 'high') {
+                        this.eligibleVisas.push('euBlueCard');
+                    }
+
+                    // Skilled Worker Visa
+                    if (this.answers.degreeRecognized === 'yes' &&
+                        this.answers.jobOffer === 'yes') {
+                        this.eligibleVisas.push('skilledWorker');
+                    }
+
+                    // Opportunity Card
+                    // If degree is fully recognized, eligible immediately
+                    if (this.answers.degreeRecognized === 'yes') {
+                        this.eligibleVisas.push('opportunityCard');
+                    }
+                    // If degree not recognized, need 6+ points
+                    else if (points >= 6) {
+                        this.eligibleVisas.push('opportunityCard');
+                    }
+
+                    // Job Training Visa (Ausbildung)
+                    // Eligible if under 40 years old AND has B1 German
+                    const hasB1German = ['b2Plus', 'b1'].includes(this.answers.germanLevel);
+                    if ((this.answers.age === 'under35' || this.answers.age === '35-40') && hasB1German) {
+                        this.eligibleVisas.push('jobTraining');
+                    }
+
+                    this.showResults = true;
+                    lucide.createIcons();
+
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
+
+                reset() {
+                    this.currentQuestion = 1;
+                    this.showResults = false;
+                    this.answers = {
+                        age: '',
+                        degreeRecognized: '',
+                        field: '',
+                        experience: '',
+                        germanLevel: '',
+                        englishLevel: '',
+                        jobOffer: '',
+                        salary: '',
+                        spouse: '',
+                    };
+                    this.opportunityCardPoints = 0;
+                    this.eligibleVisas = [];
+                    lucide.createIcons();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+
+        // Initialize Lucide icons
+        document.addEventListener('alpine:initialized', () => {
+            lucide.createIcons();
+        });
+    </script>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="/assets/js/component-loader.js"></script>
+</body>
+</html>
+
+
+    <!-- Footer Component -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-3 md:mb-4">
+                        <div class="w-8 h-8 md:w-10 md:h-10 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="plane" class="h-5 w-5 md:h-6 md:w-6 text-white"></i>
+                        </div>
+                        <span class="text-base md:text-lg font-bold">MiGreat Germany</span>
+                    </div>
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed">Ihr vertrauenswürdiger Begleiter für die Arbeitsmigration nach Deutschland. Wir verwirklichen Träume vom Arbeiten in Deutschland.</p>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Dienstleistungen</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li><a href="/de/#services" class="hover:text-white transition">Visumanträge</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Abschlussanerkennung</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Deutschkurse</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Jobvermittlung</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Ressourcen</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li><a href="/de/visa-check.html" class="hover:text-white transition">Visum-Schnellcheck</a></li>
+                        <li><a href="/de/degree-check.html" class="hover:text-white transition">Abschlussanerkennung</a></li>
+                        <li><a href="/de/#why-germany" class="hover:text-white transition">Über Deutschland</a></li>
+                        <li><a href="/de/#success-stories" class="hover:text-white transition">Erfolgsgeschichten</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Kontakt</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li>WhatsApp: Rund um die Uhr verfügbar</li>
+                        <li>E-Mail: migreatgermany@gmail.com</li>
+                        <li><a href="/de/contact.html" class="hover:text-white transition">Kontaktieren Sie uns</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Language Switcher -->
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">© 2024 MiGreat Germany. Alle Rechte vorbehalten.</p>
+    
+                <div class="language-switcher flex gap-3" role="navigation" aria-label="Sprache auswählen">
+                    <a href="/en/visa-check.html"
+                       class="px-4 py-2 rounded-lg text-sm font-medium transition bg-gray-700 text-gray-300 hover:bg-gray-600"
+                       lang="en"
+                       hreflang="en"
+                       aria-label="Switch to English version">English</a>
+    
+                    <a href="/de/visa-check.html"
+                       class="px-4 py-2 rounded-lg text-sm font-medium transition bg-red-600 text-white"
+                       lang="de"
+                       hreflang="de"
+                       aria-label="Zur deutschen Version wechseln">Deutsch</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/animations.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

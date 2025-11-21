@@ -1,0 +1,2566 @@
+{
+  "India": [
+    {
+      "name": "Bachelor of Architecture",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Arts",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts (Vocational Studies)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts with Honours",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Ayurvedic Medicine & Surgery",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Business Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Commerce",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Computer Applications",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Dental Surgery",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Design",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Education",
+      "class": "PGS"
+    },
+    {
+      "name": "Bachelor of Engineering",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Homeopathic Medicine & Surgery",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Interior Design",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Law (3-j\u00e4hrig)",
+      "class": "PGS"
+    },
+    {
+      "name": "Bachelor of Law (5-j\u00e4hrig)",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Management Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Mass Media",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Medicine and Bachelor of Surgery",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Pharmacy",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Physiotherapy",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Planning",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Agriculture)",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Science (Nursing)",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Science (Research)",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Science with Honours",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Social Work",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Technology",
+      "class": "A4"
+    },
+    {
+      "name": "Bachelor of Vocation",
+      "class": "A3"
+    },
+    {
+      "name": "Doctor of Medicine (M.D.)",
+      "class": "A5"
+    },
+    {
+      "name": "Doctor of Pharmacy",
+      "class": "A5"
+    },
+    {
+      "name": "Doctor of Philosophy",
+      "class": "D1"
+    },
+    {
+      "name": "Master of ... (Integrated Master's Degree / Dual Degree)",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Architecture",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Business Administration",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Commerce",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Computer Applications",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Design",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Education",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Interior Design",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Law",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Pharmacy",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Planning",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Social Work",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Technology",
+      "class": "A5"
+    },
+    {
+      "name": "Postgraduate Diploma",
+      "class": "PGS"
+    }
+  ],
+  "Ghana": [
+    {
+      "name": "Bachelor Population & Family Life Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor Psychology and Philosophy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Education (post diploma / top-up)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Education in Agriculture Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Geography",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts (Geography & Sociology)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts Management Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Communication Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Economics and Political Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in French",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Geography & Resource Development with Information Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Geography and Urban Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Industrial Art",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Integrated Community Development",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Integrated Development Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Integrated Rural Art & Industry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Philosophy and Political Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Political Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Political Science (Erstfach) + Zweitfach",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Psychology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Publishing Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Religious Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Social Sciences",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Social Studies Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Social Work",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Sociology with / and ...",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Theology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Business Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Business Administration in Accounting Studies (post-diploma)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Business Administration in Human Resources Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Business Administration in Marketing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Commerce + Studienrichtung",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Dental Surgery",
+      "class": "A5"
+    },
+    {
+      "name": "Bachelor of Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education (Arts)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education (Junior High Education) in Religious and Moral Education and Performing Arts",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Mathematics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Mathematics and Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Population and Family Life Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Psychology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Social Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Special Education and Art Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Fine Art",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Laws",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Marketing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Medicine and Bachelor of Surgery",
+      "class": "A5"
+    },
+    {
+      "name": "Bachelor of Pharmacy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Accounting and Informations Systems)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Architecture)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Construction Technology and Management)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Disability and Rehabilitation Studies)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Forest Resources Technology)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Information Communication Technology)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Medical Sciences)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Nursing)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science Business Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Accounting and Finance",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Agribusiness Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Agricultural Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Agriculture",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Banking and Finance",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Biochemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Biological Sciences",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Building Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Business Administration (Marketing)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Chemical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Chemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Civil Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Community Nutrition",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Computer Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Computer Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Development Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Economics & Business Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Economics with / and",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Electrical and Electronic Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in General Agriculture",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Geodetic Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Geological Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Herbal Medicine",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Human Biology (Medicine)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Industrial Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Information Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Land Economy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Management Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Management and Computer Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Marketing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Materials Science and Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mathematics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mechanical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mine Electrical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mine Geological Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mine Mechanical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mine Survey",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mineral Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mining Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Natural Resources Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Optometry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Physical Sciences",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Physician Assistantship",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Physics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Planning",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Procurement and Supply Chain Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Special Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Statistics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Tourism",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Technology in Medical Laboratory Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Technology in Procurement and Supply Chain Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Technology in Secretaryship and Management Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Theology",
+      "class": "A3"
+    },
+    {
+      "name": "Diploma in Basic Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Doctor of Medical Laboratory Science",
+      "class": "A5"
+    },
+    {
+      "name": "Doctor of Medicine",
+      "class": "A5"
+    },
+    {
+      "name": "Doctor of Pharmacy",
+      "class": "A5"
+    },
+    {
+      "name": "Higher National Diploma in Accountancy",
+      "class": "NZ"
+    },
+    {
+      "name": "Higher National Diploma in Automobile Engineering",
+      "class": "NZ"
+    },
+    {
+      "name": "Higher National Diploma in Electrical / Electronic Engineering",
+      "class": "NZ"
+    },
+    {
+      "name": "Higher National Diploma in Mechanical Engineering",
+      "class": "NZ"
+    },
+    {
+      "name": "Master Public Health",
+      "class": "A5"
+    },
+    {
+      "name": "Master in Business Administration",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Development Studies",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in International Affairs",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Pharmacy",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy (Immunology)",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy (Social Work)",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy in Chemistry",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy in Environmental Science",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy in Geography",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy in Sociology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy in Special Education",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy in Study of Religions",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy in Transportation Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science (Development Planning and Management)",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Applied Statistics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Development Planning",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Environmental Resource Management",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Health Informatics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Mathematical Science",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Mineral Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Mining Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Physics",
+      "class": "A5"
+    },
+    {
+      "name": "Teachers' Certificate",
+      "class": "NZ"
+    }
+  ],
+  "Nigeria": [
+    {
+      "name": "Advanced Diploma in Business Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Bachelor of Agriculture",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Aquaculture and Fisheries",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts (English Language)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts (German)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts (History)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts (Religious Studies)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts (Theatre Arts)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts History and International Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Education (Adult Education)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Education (Edo)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Education (English)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Education (French)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Education (History)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in English",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Linguistics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Philosophy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Russian",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Dental Surgery",
+      "class": "A5"
+    },
+    {
+      "name": "Bachelor of Education in Early Childhood Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Guidance and Counselling",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Primary Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Educational Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Engineering (Civil)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Engineering in Chemical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Engineering in Computer Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Engineering in Electrical / Electronics Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Engineering in Electrical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Engineering in Metallurgical & Materials Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Engineering in Petroleum Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Laws",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Mechanical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Medical Laboratory Sciences",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Medical Rehabilitation",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Medicine / Bachelor of Surgery",
+      "class": "A5"
+    },
+    {
+      "name": "Bachelor of Pharmacy",
+      "class": "A5"
+    },
+    {
+      "name": "Bachelor of Philosophy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Physiotherapy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Religious Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Sacred Theology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Architecture)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Education)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Geography and Regional Planning)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Geology)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Hons.) English and Literary Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (International Studies)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science (Pharmacology)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science Cyber Security",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science Human Nutrition",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Accountancy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Accounting",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Actuarial Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Applied Microbiology & Brewing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Banking and Finance",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Biochemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Biological Sciences",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Botany and Microbiology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Building",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Business Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Business Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Cell Biology & Genetics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Chemical & Polymer Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Chemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Computer & Information Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Computer Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Economics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Education (Agriculture)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Education (Chemistry)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Education (Computer Science)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Education (Economics)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Education / Accountancy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Education/Social Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Electrical & Electronics Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Environmental Design",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Estate Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Food Science and Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Forestry and Wildlife",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Geography",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Health Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Human Anatomy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Industrial Chemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Marine Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mass Communication",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mathematics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mechanical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Medical Laboratory Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Metallurgical & Materials Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Microbiology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Nursing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Nutrition and Dietetics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Optometry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Petroleum & Gas Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Physics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Physiology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Physiotherapy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Plant Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Political Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Psychology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Sociology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Sociology and Anthropology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Statistics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Surveying & Geoinformatics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Systems Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Urban & Regional Planning",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Zoology and Marine Sciences",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Social Work",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Technology in Microbiology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Theology",
+      "class": "A3"
+    },
+    {
+      "name": "Certificate in Fundamentals of Electronic Data Processing and Computer Programming",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Accountancy",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Analytical Chemistry",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Applied Microbiology",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Data Processing",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Food and Brewing Science",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Geology",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Industrial Physics",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Mass Communication",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Physical Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Doctor of Veterinary Medicine",
+      "class": "A5"
+    },
+    {
+      "name": "Higher National Diploma in Accounting",
+      "class": "NZ"
+    },
+    {
+      "name": "Higher National Diploma in Civil Engineering Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Higher National Diploma in Marketing",
+      "class": "NZ"
+    },
+    {
+      "name": "Higher National Diploma in Mechanical Engineering",
+      "class": "NZ"
+    },
+    {
+      "name": "Higher National Diploma in Quantity Surveying",
+      "class": "NZ"
+    },
+    {
+      "name": "Higher National Diploma in Secretarial Studies",
+      "class": "NZ"
+    },
+    {
+      "name": "Master in International Law & Diplomacy",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Banking & Finance",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Business Administration",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Education in Health Education",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Engineering in Advanced Materials Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Industrial and Labour Relations",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Law",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science (Architecture)",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agricultural Biology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agricultural Economics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agriculture",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Botany",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Chemistry",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Civil Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Computer Science",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in International Relations",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Medical Microbiology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Pharmacology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Physics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Political Science",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Statistics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Technology in Meteorology",
+      "class": "A5"
+    },
+    {
+      "name": "National Diploma in Business Administration/Management",
+      "class": "NZ"
+    },
+    {
+      "name": "National Diploma in Electrical Engineering",
+      "class": "NZ"
+    },
+    {
+      "name": "National Diploma in Statistics",
+      "class": "NZ"
+    },
+    {
+      "name": "Nigeria Certificate in Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Ordinary National Diploma in Optometry",
+      "class": "NZ"
+    },
+    {
+      "name": "Post Graduate Diploma in Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Computer Science",
+      "class": "NZ"
+    },
+    {
+      "name": "Teachers' Certificate",
+      "class": "NZ"
+    }
+  ],
+  "Kenya": [
+    {
+      "name": "(Ordinary) Diploma in Water Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Bachelor in / of Veterinary Medicine",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Accountancy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Actuarial Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Business Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Commerce and Business Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Economics and Marketing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Library and Information Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Religious Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor in Theology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Agribusiness Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Architecture",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Anthropology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Bible and Religious Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Building Economics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Communication",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Community Development",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Cooperative Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Creative Arts",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Cultural Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Design",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Economics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in English and Psychology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Geography",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Human Resources Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Land Economics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Language and Literary Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Social Sciences",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Social Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Arts in Sociology and Economics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Business Administration and Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Business Information Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Business Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Commerce",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Corporate Secretaryship",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Dental Surgery",
+      "class": "A5"
+    },
+    {
+      "name": "Bachelor of Education",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education (Arts)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education (Science)",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education and Counseling",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Accountancy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Bible and Religious Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Business Administration and Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Economics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in English",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Education in Marketing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Foreign Trade",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Information Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Landscape Architecture",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Laws",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Medicine and Bachelor of Surgery",
+      "class": "A5"
+    },
+    {
+      "name": "Bachelor of Nursing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Pharmacy",
+      "class": "A5"
+    },
+    {
+      "name": "Bachelor of Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Agricultural Economics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Agricultural Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Agriculture",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Analytical Chemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Animal Production",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Applied Physics and Instrumentation",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Appropriate Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Architecture",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Biochemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Biochemistry and Molecular Biology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Biomechanical and Processing Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Biotechnology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Botany",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Chemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Civil Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Clinical Medicine and Community Health",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Community Health",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Computer (and) Information Systems",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Computer Application",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Computer Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Construction Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Crop Protection",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Dairy Science and Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Electrical and Electronics Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Electronic and Computer Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Environmental Health",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Environmental Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Food Science and Nutrition",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Food Science and PostHarvest Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Food Science and PostHarvestTechnology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Geography",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Geomatic Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Horticulture",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Industrial Biotechnology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Industrial Chemistry",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Information Sciences",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Information Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in International Business Administration",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mathematics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mathematics and Computer Science",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mathematics and Statistics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mechanical Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Mechatronic Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Medical Laboratory Services",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Medical Microbiology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Meteorology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Microbiology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Natural Resource Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Nursing",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Ornamental Science and Landscaping",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Physics",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Physiotherapy",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Range Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Recreational and Leisure Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Soil, Water and Environmental Engineering",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Sports Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Surveying",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Tourism Management",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Science in Zoology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Technology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Theology",
+      "class": "A3"
+    },
+    {
+      "name": "Bachelor of Tourism Studies",
+      "class": "A3"
+    },
+    {
+      "name": "Certificate in Business Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Computing",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Consumer Protection",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Disaster Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Empowerment of Women",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Environmental Studies",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Family Counselling",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Foods and Nutrition",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Guidance and Counselling",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in HIV and Family Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Health Project Planning",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Health and Environment",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Labor Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Laboratory Techniques",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Management and Information Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Nutrition and Child Care",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Nutrition and HIV",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Participatory Forest Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Participatory Project Planning",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Pharmaceutical Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Public Relations",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Purchasing and Supplies Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Rural Development",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in School Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Certificate in Small Enterprise Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Craft Certificate in Food and Beverage Production and Service",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Adult Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Agricultural Engineering",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Animal Health",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Catering and Accomodation Services",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Clinical Medicine",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Clinical Medicine & Surgery",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Community Health Nursing",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Computer Studies",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Creative Writing in English",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Dairy Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Disaster Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Early Childhood Care and Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Early Childhood Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Farm Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Food Science and Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Food Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Guidance and Counselling",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Horticulture",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Information Science (Library)",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Information Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Management and Information Technology",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Nutrition and Health",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Production Engineering",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Public Relations",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Purchasing and Supplies Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Sales and Marketing",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in School Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Tourism",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Travel Operations",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Youth Development",
+      "class": "NZ"
+    },
+    {
+      "name": "Diploma in Youth and Development Work",
+      "class": "NZ"
+    },
+    {
+      "name": "Doctor of Philosophy in Agricultural Economics",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Agricultural Engineering",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Animal Production",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Botany",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Chemistry",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Civil Engineering",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Crop Science",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Food Science",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Library and Information",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Mathematics",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Physics",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Soil Science",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Theology",
+      "class": "D1"
+    },
+    {
+      "name": "Doctor of Philosophy in Zoology",
+      "class": "D1"
+    },
+    {
+      "name": "Kindergarten Teachers Certificate",
+      "class": "NZ"
+    },
+    {
+      "name": "Master in Computer Based Information Systems",
+      "class": "A5"
+    },
+    {
+      "name": "Master in Library and Information Studies",
+      "class": "A5"
+    },
+    {
+      "name": "Master in Tourism Studies",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Architecture",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Anthropology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Building Management",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Communication Studies",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Distance Education",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Economics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Housing Administration",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Philosophy",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Philosophy and Religious Studies",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Arts in Theology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Business Administration",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Business Management",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Computer Applications",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Dental Surgery",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Education",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Foreign Trade",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Laws",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Pharmacy",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Philosophy",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Public Health",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agricultural Economics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agricultural Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agricultural Extension",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agricultural and Applied Economics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agriculture",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Agronomy",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Animal Production",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Applied Human Nutrition",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Biochemistry",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Biology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Botany",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Chemistry",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Civil Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Electrical and Electronics Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Enterpreneurship",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Food Science",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Food Science and Nutrition",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Food Science and PostHarvest Technology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Horticulture",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Information Systems",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Management and Information Technology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Mathematics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Mechanical Engineering",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Physics",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Plant Breeding",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Plant Pathology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Soil Science",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Surveying and Photogrammetry",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Veterinary Medicine",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Science in Zoology",
+      "class": "A5"
+    },
+    {
+      "name": "Master of Urban Design",
+      "class": "A5"
+    },
+    {
+      "name": "Postgraduate Certificate in Participatory Management of Displacement",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Agricultural Marketing",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Agrometeorology",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Christian Ministries in Counselling",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Christian Ministries in Missions",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Christian Music Communication",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Communication Arts",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Computer Science",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Cooperative Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Cultural Studies",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Distance Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Enterpreneurship",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Financial Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Guidance and Counselling",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Higher Education",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Human Resource Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Insurance Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in International Business",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in International Business Operations",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Irrigation",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Journalism and Mass Communication",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Management and Development",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Marketing Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Mass Communication",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Maternal and Child Health",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Operations Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Operations Research",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Pharmaceutical Marketing",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Portfolio Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Projects Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Public Relations",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Rural Development Studies",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in School Management",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Software Marketing",
+      "class": "NZ"
+    },
+    {
+      "name": "Postgraduate Diploma in Soil Conservation",
+      "class": "NZ"
+    },
+    {
+      "name": "Primary Teachers' Certificate",
+      "class": "NZ"
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiGreat Germany - Your Companion for Migration to Germany</title>
+    <meta name="description" content="Professional migration services for working in Germany. Visa applications, degree recognition, German language learning, and job matching services.">
+    <meta name="keywords" content="Germany visa, work visa Germany, Blue Card, degree recognition, Anabin, migration to Germany, work in Germany, German visa application">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://migreat.de/degree-check" />
+
+    <!-- Alternate Language Versions -->
+    <link rel="alternate" hreflang="en" href="https://migreat.de/en/degree-check" />
+    <link rel="alternate" hreflang="de" href="https://migreat.de/de/degree-check" />
+    <link rel="alternate" hreflang="x-default" href="https://migreat.de/en/degree-check" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MiGreat Germany - Your Companion for Migration to Germany">
+    <meta property="og:description" content="Professional migration services for working in Germany. Visa applications, degree recognition, German language learning, and job matching services.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/mobile-only.css">
+    <link rel="stylesheet" href="/assets/css/carousel.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            // Add any custom Tailwind configuration here
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+        }
+    </style>
+
+    <script>
+        // Hero Carousel function - must be defined before Alpine.js loads
+        window.heroCarousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 4,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 4000);
+                }
+            }
+        }
+
+        // Success Stories Carousel function - must be defined before Alpine.js loads
+        window.carousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 5,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                prev() {
+                    this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 5000);
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Navigation Component -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center">
+                    <a href="/en/" class="flex items-center">
+                        <img src="/assets/images/logo.png" alt="MiGreat Germany" class="h-20 w-auto logo-animated">
+                    </a>
+                </div>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6 ml-auto">
+                    <a href="/en/#services" class="nav-link text-gray-700 hover:text-red-600 font-medium">Services</a>
+                    <a href="/en/#success-stories" class="nav-link text-gray-700 hover:text-red-600 font-medium">Success Stories</a>
+                    <a href="/en/#why-germany" class="nav-link text-gray-700 hover:text-red-600 font-medium">Why Germany?</a>
+                    <a href="/en/degree-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Degree Recognition</a>
+                    <a href="/en/visa-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Visa Quick Check</a>
+                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-red-600 font-medium">Get Started!</a>
+                    <a href="/en/contact.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Contact</a>
+                </div>
+    
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700" aria-label="Toggle menu">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Mobile Navigation -->
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="/en/#services" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Services</a>
+                <a href="/en/#why-germany" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Why Germany?</a>
+                <a href="/en/degree-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Degree Recognition</a>
+                <a href="/en/visa-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Visa Quick Check</a>
+                <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Get Started!</a>
+                <a href="/en/contact.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+    // Highlight current page in navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || linkHref.startsWith(currentPage)) {
+                link.classList.remove('text-gray-700');
+                link.classList.add('text-red-600', 'font-semibold');
+            }
+        });
+    });
+    </script>
+
+    <!-- Main Content -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degree Recognition Checker - MiGreat Germany</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Component -->
+    <div id="nav-container"></div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-12" x-data="degreeChecker()" x-init="init()">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-16 h-20 bg-red-100 rounded-full mb-4">
+                    <i data-lucide="graduation-cap" class="h-8 w-8 text-red-600"></i>
+                </div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Degree Recognition Checker</h1>
+                <p class="text-gray-600">Check if your degree is recognized in Germany</p>
+            </div>
+
+            <!-- Form -->
+            <div x-show="!showResult" class="space-y-6">
+                <!-- Step 1: Country Selection -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        1. Select your country
+                    </label>
+                    <select x-model="selectedCountry" @change="onCountryChange()"
+                            class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-red-600 focus:outline-none">
+                        <option value="">-- Select Country --</option>
+                        <option value="India">India</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Kenya">Kenya</option>
+                    </select>
+                </div>
+
+                <!-- Step 2: Institution Selection -->
+                <div x-show="selectedCountry">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        2. Select your institution
+                    </label>
+                    <select x-model="selectedInstitution" @change="onInstitutionChange()"
+                            class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-red-600 focus:outline-none">
+                        <option value="">-- Select Institution --</option>
+                        <template x-for="(inst, index) in institutions" :key="index">
+                            <option :value="inst.name" x-text="inst.name"></option>
+                        </template>
+                    </select>
+                    <p class="text-sm text-gray-500 mt-2" x-show="institutions.length > 0">
+                        <span x-text="institutions.length"></span> institutions available
+                    </p>
+                </div>
+
+                <!-- Step 3: Degree Selection -->
+                <div x-show="selectedInstitution">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        3. Select your degree
+                    </label>
+                    <select x-model="selectedDegree"
+                            class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-red-600 focus:outline-none">
+                        <option value="">-- Select Degree --</option>
+                        <template x-for="(deg, index) in degrees" :key="'deg-' + index">
+                            <option :value="JSON.stringify(deg)" x-text="deg.name"></option>
+                        </template>
+                        <option value="other">Other</option>
+                    </select>
+                    <p class="text-sm text-gray-500 mt-2" x-show="degrees.length > 0">
+                        <span x-text="degrees.length"></span> degrees available
+                    </p>
+                </div>
+
+                <!-- Check Button -->
+                <div x-show="selectedDegree" class="pt-4">
+                    <button @click="checkRecognition()"
+                            class="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition">
+                        Check Recognition Status
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div x-show="showResult" x-transition class="space-y-6">
+                <!-- Result Card -->
+                <div :class="resultType === 'fully' ? 'bg-green-50 border-green-500' : resultType === 'university' ? 'bg-blue-50 border-blue-500' : 'bg-yellow-50 border-yellow-500'"
+                     class="border-2 rounded-lg p-6">
+                    <div class="flex items-start">
+                        <i :data-lucide="resultType === 'fully' ? 'check-circle' : 'info'"
+                           :class="resultType === 'fully' ? 'text-green-600' : resultType === 'university' ? 'text-blue-600' : 'text-yellow-600'"
+                           class="h-8 w-8 mr-4 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2"
+                                :class="resultType === 'fully' ? 'text-green-900' : resultType === 'university' ? 'text-blue-900' : 'text-yellow-900'"
+                                x-text="resultTitle"></h3>
+                            <p class="text-gray-700" x-text="resultMessage"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution Info -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-900 mb-2">Your Selection:</h4>
+                    <ul class="space-y-1 text-sm text-gray-700">
+                        <li><strong>Country:</strong> <span x-text="selectedCountry"></span></li>
+                        <li><strong>Institution:</strong> <span x-text="selectedInstitution"></span></li>
+                        <li><strong>Degree:</strong> <span x-text="selectedDegree === 'other' ? 'Other' : (selectedDegree ? JSON.parse(selectedDegree).name : '')"></span></li>
+                        <li x-show="institutionStatus"><strong>Institution Status:</strong> <span x-text="institutionStatus"></span></li>
+                    </ul>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex gap-4">
+                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/edit"
+                       target="_blank"
+                       class="flex-1 bg-red-600 text-white text-center py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition">
+                        Take Get Started Survey
+                    </a>
+                    <button @click="reset()"
+                            class="px-6 py-3 border-2 border-gray-300 rounded-lg font-semibold hover:border-red-600 hover:text-red-600 transition">
+                        Check Another Degree
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <div class="flex items-start">
+                <i data-lucide="info" class="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="font-bold text-blue-900 mb-2">About Degree Recognition</h3>
+                    <p class="text-sm text-blue-800">
+                        This tool checks the official anabin database maintained by the German government. Recognition status can affect your visa eligibility and job prospects in Germany. All rights and final decisions remain with KMK. Find more info at <a href="https://anabin.kmk.org/" target="_blank" class="underline hover:text-blue-900">https://anabin.kmk.org/</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function degreeChecker() {
+            return {
+                selectedCountry: '',
+                selectedInstitution: '',
+                selectedDegree: '',
+                institutions: [],
+                degrees: [],
+                institutionStatus: '',
+                showResult: false,
+                resultType: '',
+                resultTitle: '',
+                resultMessage: '',
+                institutionsData: {},
+                degreesData: {},
+
+                async init() {
+                    // Load institutions data
+                    const instResponse = await fetch('/assets/json/anabin-data.json');
+                    this.institutionsData = await instResponse.json();
+
+                    // Load degrees data
+                    const degResponse = await fetch('/assets/json/degrees-data.json');
+                    this.degreesData = await degResponse.json();
+
+                    lucide.createIcons();
+                },
+
+                onCountryChange() {
+                    this.selectedInstitution = '';
+                    this.selectedDegree = '';
+                    this.showResult = false;
+
+                    // Load institutions for selected country
+                    if (this.selectedCountry && this.institutionsData[this.selectedCountry]) {
+                        this.institutions = this.institutionsData[this.selectedCountry];
+                    } else {
+                        this.institutions = [];
+                    }
+
+                    // Load degrees for selected country
+                    if (this.selectedCountry && this.degreesData[this.selectedCountry]) {
+                        this.degrees = this.degreesData[this.selectedCountry];
+                    } else {
+                        this.degrees = [];
+                    }
+                },
+
+                onInstitutionChange() {
+                    this.selectedDegree = '';
+                    this.showResult = false;
+
+                    // Find institution status
+                    const inst = this.institutions.find(i => i.name === this.selectedInstitution);
+                    if (inst) {
+                        this.institutionStatus = inst.status;
+                    }
+                },
+
+                checkRecognition() {
+                    const inst = this.institutions.find(i => i.name === this.selectedInstitution);
+                    const isHPlus = inst && inst.status === 'H+';
+
+                    let degreeObj = null;
+                    let isOther = this.selectedDegree === 'other';
+
+                    if (!isOther) {
+                        degreeObj = JSON.parse(this.selectedDegree);
+                    }
+
+                    // Case 1: H+ university + degree in list + class != NZ
+                    if (isHPlus && !isOther && degreeObj.class !== 'NZ') {
+                        this.resultType = 'fully';
+                        this.resultTitle = 'Great! Your university and degree are fully recognized.';
+                        this.resultMessage = 'Take our get started survey to see how you can apply to work in Germany.';
+                    }
+                    // Case 2: H+ university + degree not in list or Other
+                    else if (isHPlus && (isOther || degreeObj.class === 'NZ')) {
+                        this.resultType = 'university';
+                        this.resultTitle = 'Great! Your university is fully recognized.';
+                        this.resultMessage = 'Your specific degree is not listed, but we can help you apply for individual degree recognition. Take our get started survey to see how you can apply to work in Germany.';
+                    }
+                    // Case 3: All other cases
+                    else {
+                        this.resultType = 'manual';
+                        this.resultTitle = 'Your degree is not pre-approved by Germany';
+                        this.resultMessage = 'But we can help you apply for manual recognition. Take our survey and we will help you take the right steps to get an answer soon and start your journey!';
+                    }
+
+                    this.showResult = true;
+                    lucide.createIcons();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
+
+                reset() {
+                    this.selectedCountry = '';
+                    this.selectedInstitution = '';
+                    this.selectedDegree = '';
+                    this.institutions = [];
+                    this.degrees = [];
+                    this.institutionStatus = '';
+                    this.showResult = false;
+                }
+            }
+        }
+    </script>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="/assets/js/component-loader.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+
+    <!-- Footer Component -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-3 md:mb-4">
+                        <div class="w-8 h-8 md:w-10 md:h-10 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="plane" class="h-5 w-5 md:h-6 md:w-6 text-white"></i>
+                        </div>
+                        <span class="text-base md:text-lg font-bold">MiGreat Germany</span>
+                    </div>
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed">Your trusted companion for work migration to Germany. Making dreams of working in Germany a reality.</p>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Services</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li><a href="/en/#services" class="hover:text-white transition">Visa Applications</a></li>
+                        <li><a href="/en/#services" class="hover:text-white transition">Degree Recognition</a></li>
+                        <li><a href="/en/#services" class="hover:text-white transition">German Language</a></li>
+                        <li><a href="/en/#services" class="hover:text-white transition">Job Matching</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Resources</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li><a href="/en/visa-check.html" class="hover:text-white transition">Visa Quick Check</a></li>
+                        <li><a href="/en/degree-check.html" class="hover:text-white transition">Degree Recognition</a></li>
+                        <li><a href="/en/#why-germany" class="hover:text-white transition">About Germany</a></li>
+                        <li><a href="/en/#success-stories" class="hover:text-white transition">Success Stories</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li>WhatsApp: Available 24/7</li>
+                        <li>Email: migreatgermany@gmail.com</li>
+                        <li><a href="/en/contact.html" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Language Switcher -->
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">© 2024 MiGreat Germany. All rights reserved.</p>
+    
+                <div class="language-switcher flex gap-3" role="navigation" aria-label="Select language">
+                    <a href="/en/degree-check.html"
+                       class="px-4 py-2 rounded-lg text-sm font-medium transition bg-red-600 text-white"
+                       lang="en"
+                       hreflang="en"
+                       aria-label="Switch to English">English</a>
+    
+                    <a href="/de/degree-check.html"
+                       class="px-4 py-2 rounded-lg text-sm font-medium transition bg-gray-700 text-gray-300 hover:bg-gray-600"
+                       lang="de"
+                       hreflang="de"
+                       aria-label="Zur deutschen Version wechseln">Deutsch</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/animations.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

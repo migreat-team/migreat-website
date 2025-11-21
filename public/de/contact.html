@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiGreat Germany - Ihr Begleiter für die Migration nach Deutschland</title>
+    <meta name="description" content="Professionelle Migrationsdienstleistungen für das Arbeiten in Deutschland. Visumanträge, Abschlussanerkennung, Deutschlernen und Jobvermittlung.">
+    <meta name="keywords" content="Deutschland Visum, Arbeitsvisum Deutschland, Blue Card, Abschlussanerkennung, Anabin, Migration nach Deutschland, Arbeiten in Deutschland, Deutsches Visum">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://migreat.de/de/contact" />
+
+    <!-- Alternate Language Versions -->
+    <link rel="alternate" hreflang="en" href="https://migreat.de/en/contact" />
+    <link rel="alternate" hreflang="de" href="https://migreat.de/de/contact" />
+    <link rel="alternate" hreflang="x-default" href="https://migreat.de/en/contact" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MiGreat Germany - Ihr Begleiter für die Migration nach Deutschland">
+    <meta property="og:description" content="Professionelle Migrationsdienstleistungen für das Arbeiten in Deutschland. Visumanträge, Abschlussanerkennung, Deutschlernen und Jobvermittlung.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/mobile-only.css">
+    <link rel="stylesheet" href="/assets/css/carousel.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            // Add any custom Tailwind configuration here
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+        }
+    </style>
+
+    <script>
+        // Hero Carousel function - must be defined before Alpine.js loads
+        window.heroCarousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 4,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 4000);
+                }
+            }
+        }
+
+        // Success Stories Carousel function - must be defined before Alpine.js loads
+        window.carousel = function() {
+            return {
+                currentSlide: 0,
+                totalSlides: 5,
+                next() {
+                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                },
+                prev() {
+                    this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                },
+                init() {
+                    setInterval(() => this.next(), 5000);
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Navigation Component -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center">
+                    <a href="/de/" class="flex items-center">
+                        <img src="/assets/images/logo.png" alt="MiGreat Germany" class="h-20 w-auto logo-animated">
+                    </a>
+                </div>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6 ml-auto">
+                    <a href="/de/#services" class="nav-link text-gray-700 hover:text-red-600 font-medium">Dienstleistungen</a>
+                    <a href="/de/#success-stories" class="nav-link text-gray-700 hover:text-red-600 font-medium">Erfolgsgeschichten</a>
+                    <a href="/de/#why-germany" class="nav-link text-gray-700 hover:text-red-600 font-medium">Warum Deutschland?</a>
+                    <a href="/de/degree-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Abschlussanerkennung</a>
+                    <a href="/de/visa-check.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Visum-Schnellcheck</a>
+                    <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 hover:text-red-600 font-medium">Jetzt starten!</a>
+                    <a href="/de/contact.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Kontakt</a>
+                </div>
+    
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700" aria-label="Menü umschalten">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Mobile Navigation -->
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="/de/#services" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Dienstleistungen</a>
+                <a href="/de/#why-germany" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Warum Deutschland?</a>
+                <a href="/de/degree-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Abschlussanerkennung</a>
+                <a href="/de/visa-check.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Visum-Schnellcheck</a>
+                <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Jetzt starten!</a>
+                <a href="/de/contact.html" class="block px-4 py-3 text-base text-gray-700 hover:bg-gray-50 rounded-lg transition min-h-[44px] flex items-center">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+    // Highlight current page in navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || linkHref.startsWith(currentPage)) {
+                link.classList.remove('text-gray-700');
+                link.classList.add('text-red-600', 'font-semibold');
+            }
+        });
+    });
+    </script>
+
+    <!-- Main Content -->
+    <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - MiGreat Germany</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #eab308 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Component -->
+    <div id="nav-container"></div>
+
+    <!-- Contact Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Kontaktieren Sie uns</h1>
+            <p class="text-xl text-gray-600">Wir helfen Ihnen auf Ihrem Weg nach Deutschland</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Information -->
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Kontaktinformationen</h2>
+
+                    <!-- Office Address -->
+                    <div class="flex items-start mb-6">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="map-pin" class="h-6 w-6 text-red-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Büroadresse</h3>
+                            <p class="text-gray-600">
+                                MiGreat Germany<br>
+                                Friedrichstraße 123<br>
+                                10117 Berlin<br>
+                                Deutschland
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start mb-6">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="mail" class="h-6 w-6 text-red-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">E-Mail</h3>
+                            <a href="mailto:migreatgermany@gmail.com" class="text-red-600 hover:text-red-700">
+                                migreatgermany@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="flex items-start mb-6">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="message-circle" class="h-6 w-6 text-red-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">WhatsApp</h3>
+                            <a href="https://wa.me/491234567890" target="_blank" class="text-red-600 hover:text-red-700">
+                                +49 123 456 7890
+                            </a>
+                            <p class="text-sm text-gray-500 mt-1">Klicken Sie hier, um mit uns zu chatten</p>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="clock" class="h-6 w-6 text-red-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Öffnungszeiten</h3>
+                            <p class="text-gray-600">
+                                Montag - Freitag: 9:00 - 18:00 Uhr MEZ<br>
+                                Samstag: 10:00 - 14:00 Uhr MEZ<br>
+                                Sonntag: Geschlossen
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-gradient-to-r from-red-50 to-yellow-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Schnellzugriff</h3>
+                    <div class="space-y-3">
+                        <a href="/de/visa-check" class="flex items-center text-gray-700 hover:text-red-600 transition">
+                            <i data-lucide="check-circle" class="h-5 w-5 mr-3"></i>
+                            Visa-Berechtigung prüfen
+                        </a>
+                        <a href="/de/degree-check" class="flex items-center text-gray-700 hover:text-red-600 transition">
+                            <i data-lucide="graduation-cap" class="h-5 w-5 mr-3"></i>
+                            Anerkennung des Abschlusses prüfen
+                        </a>
+                        <a href="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="flex items-center text-gray-700 hover:text-red-600 transition">
+                            <i data-lucide="file-text" class="h-5 w-5 mr-3"></i>
+                            Hintergrundfragebogen ausfüllen
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Senden Sie uns eine Nachricht</h2>
+                <form action="https://docs.google.com/forms/d/1LcyfLhhQoBr2FyHhsk9DyxHymTxrGn1tPZw3hFZQl_M/viewform" target="_blank" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Vollständiger Name</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail-Adresse</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Betreff</label>
+                        <select id="subject" name="subject" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                            <option value="">Wählen Sie einen Betreff...</option>
+                            <option value="visa">Unterstützung bei Visumanträgen</option>
+                            <option value="degree">Anerkennung von Abschlüssen</option>
+                            <option value="language">Sprachunterricht</option>
+                            <option value="job">Jobvermittlung</option>
+                            <option value="general">Allgemeine Anfrage</option>
+                            <option value="other">Sonstiges</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Nachricht</label>
+                        <textarea id="message" name="message" rows="5" required
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition">
+                        Nachricht senden
+                    </button>
+
+                    <p class="text-sm text-gray-500 text-center">
+                        Oder senden Sie uns direkt eine E-Mail an <a href="mailto:migreatgermany@gmail.com" class="text-red-600 hover:text-red-700">migreatgermany@gmail.com</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Section (Optional) -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Finden Sie uns in Berlin</h2>
+            <div class="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
+                <div class="text-center">
+                    <i data-lucide="map" class="h-20 w-16 text-gray-400 mx-auto mb-4"></i>
+                    <p class="text-gray-600">Friedrichstraße 123, 10117 Berlin, Deutschland</p>
+                    <a href="https://www.google.com/maps/search/Friedrichstraße+123,+10117+Berlin" target="_blank"
+                       class="inline-block mt-4 text-red-600 hover:text-red-700 font-semibold">
+                        In Google Maps öffnen →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <script src="/assets/js/component-loader.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+
+    <!-- Footer Component -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-3 md:mb-4">
+                        <div class="w-8 h-8 md:w-10 md:h-10 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="plane" class="h-5 w-5 md:h-6 md:w-6 text-white"></i>
+                        </div>
+                        <span class="text-base md:text-lg font-bold">MiGreat Germany</span>
+                    </div>
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed">Ihr vertrauenswürdiger Begleiter für die Arbeitsmigration nach Deutschland. Wir verwirklichen Träume vom Arbeiten in Deutschland.</p>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Dienstleistungen</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li><a href="/de/#services" class="hover:text-white transition">Visumanträge</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Abschlussanerkennung</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Deutschkurse</a></li>
+                        <li><a href="/de/#services" class="hover:text-white transition">Jobvermittlung</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Ressourcen</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li><a href="/de/visa-check.html" class="hover:text-white transition">Visum-Schnellcheck</a></li>
+                        <li><a href="/de/degree-check.html" class="hover:text-white transition">Abschlussanerkennung</a></li>
+                        <li><a href="/de/#why-germany" class="hover:text-white transition">Über Deutschland</a></li>
+                        <li><a href="/de/#success-stories" class="hover:text-white transition">Erfolgsgeschichten</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Kontakt</h3>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-300">
+                        <li>WhatsApp: Rund um die Uhr verfügbar</li>
+                        <li>E-Mail: migreatgermany@gmail.com</li>
+                        <li><a href="/de/contact.html" class="hover:text-white transition">Kontaktieren Sie uns</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Language Switcher -->
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">© 2024 MiGreat Germany. Alle Rechte vorbehalten.</p>
+    
+                <div class="language-switcher flex gap-3" role="navigation" aria-label="Sprache auswählen">
+                    <a href="/en/contact.html"
+                       class="px-4 py-2 rounded-lg text-sm font-medium transition bg-gray-700 text-gray-300 hover:bg-gray-600"
+                       lang="en"
+                       hreflang="en"
+                       aria-label="Switch to English version">English</a>
+    
+                    <a href="/de/contact.html"
+                       class="px-4 py-2 rounded-lg text-sm font-medium transition bg-red-600 text-white"
+                       lang="de"
+                       hreflang="de"
+                       aria-label="Zur deutschen Version wechseln">Deutsch</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/animations.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
