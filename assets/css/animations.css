@@ -241,6 +241,8 @@ html {
 .nav-link {
     position: relative;
     transition: color 0.3s ease;
+    font-size: 14px;
+    margin-left: 15px;
 }
 
 .nav-link::after {
