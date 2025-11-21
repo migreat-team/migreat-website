@@ -31,7 +31,7 @@ function heroSection() {
                             <div :class="currentSlide === 0 ? 'carousel-item active' : 'carousel-item'" class="w-full">
                                 <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
                                     <div class="flex items-start space-x-4">
-                                        <img src="assets/images/priya-sharma-new.jpg" alt="Priya Sharma" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="/assets/images/testimonials/priya-sharma-new.jpg" alt="Priya Sharma" class="w-16 h-16 rounded-full object-cover">
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-lg">Priya Sharma</h3>
                                             <p class="text-sm text-gray-600">Software Engineer</p>
@@ -58,7 +58,7 @@ function heroSection() {
                             <div :class="currentSlide === 1 ? 'carousel-item active' : 'carousel-item'" class="w-full">
                                 <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
                                     <div class="flex items-start space-x-4">
-                                        <img src="assets/images/akosua-mensah-new.jpg" alt="Akosua Mensah" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="/assets/images/testimonials/akosua-mensah-new.jpg" alt="Akosua Mensah" class="w-16 h-16 rounded-full object-cover">
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-lg">Akosua Mensah</h3>
                                             <p class="text-sm text-gray-600">Geriatric Nurse</p>
@@ -85,7 +85,7 @@ function heroSection() {
                             <div :class="currentSlide === 2 ? 'carousel-item active' : 'carousel-item'" class="w-full">
                                 <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
                                     <div class="flex items-start space-x-4">
-                                        <img src="assets/images/chidinma-okafor-new.jpg" alt="Chidinma Okafor" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="/assets/images/testimonials/chidinma-okafor-new.jpg" alt="Chidinma Okafor" class="w-16 h-16 rounded-full object-cover">
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-lg">Chidinma Okafor</h3>
                                             <p class="text-sm text-gray-600">Hotel Manager</p>
@@ -112,7 +112,7 @@ function heroSection() {
                             <div :class="currentSlide === 3 ? 'carousel-item active' : 'carousel-item'" class="w-full">
                                 <div class="testimonial-card bg-white rounded-2xl shadow-2xl p-6 text-gray-900">
                                     <div class="flex items-start space-x-4">
-                                        <img src="assets/images/wanjiru-kamau-new.jpg" alt="Wanjiru Kamau" class="w-16 h-16 rounded-full object-cover">
+                                        <img src="/assets/images/testimonials/wanjiru-kamau-new.jpg" alt="Wanjiru Kamau" class="w-16 h-16 rounded-full object-cover">
                                         <div class="flex-1">
                                             <h3 class="font-semibold text-lg">Wanjiru Kamau</h3>
                                             <p class="text-sm text-gray-600">Kindergarten Teacher</p>
@@ -293,39 +293,39 @@ function successStoriesSection() {
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 ${successStoryCard('Priya Sharma', 'India 🇮🇳', 'Software Engineer', '₹60,000', '€4,500', 'priya-sharma-avatar.webp', 'In Germany, I have excellent working conditions, fair pay, and my skills are truly appreciated. The work-life balance is incredible compared to what I had in India.')}
-                                ${successStoryCard('Rajesh Kumar', 'India 🇮🇳', 'Registered Nurse', '₹35,000', '€3,400', 'success-story-avatar.webp', 'As a nurse in Germany, I\'m treated with respect and dignity. The healthcare system here values its workers, and I can finally support my family properly.')}
-                                ${successStoryCard('Amit Patel', 'India 🇮🇳', 'Mechanical Engineer', '₹80,000', '€4,800', 'success-story-avatar.webp', 'Working at a German automotive company has been a dream come true. The engineering standards and innovation here are world-class.')}
+                                ${successStoryCard('Rajesh Kumar', 'India 🇮🇳', 'Registered Nurse', '₹35,000', '€3,400', 'mohammed-al-hassan-avatar.webp', 'As a nurse in Germany, I\'m treated with respect and dignity. The healthcare system here values its workers, and I can finally support my family properly.')}
+                                ${successStoryCard('Amit Patel', 'India 🇮🇳', 'Mechanical Engineer', '₹80,000', '€4,800', 'carlos-rodriguez-avatar.webp', 'Working at a German automotive company has been a dream come true. The engineering standards and innovation here are world-class.')}
                             </div>
                         </div>
                         <!-- Slide 2: Ghana -->
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                ${successStoryCard('Akosua Mensah', 'Ghana 🇬🇭', 'Geriatric Nurse', 'GH₵3,500', '€3,600', 'success-story-avatar.webp', 'I came to Germany through a nursing program and now work in elderly care. The salary is 12 times what I earned in Ghana, and I can send money home to help my siblings go to school.')}
-                                ${successStoryCard('Kwame Osei', 'Ghana 🇬🇭', 'Data Analyst', 'GH₵4,000', '€4,200', 'success-story-avatar.webp', 'The tech scene in Berlin is amazing. I went from struggling to find opportunities in Accra to working for a major fintech company with great benefits.')}
-                                ${successStoryCard('Kofi Asante', 'Ghana 🇬🇭', 'Plumber', 'GH₵2,800', '€3,000', 'success-story-avatar.webp', 'I completed my Ausbildung as a plumber and now have a permanent job. The training system in Germany is excellent, and skilled workers are highly valued.')}
+                                ${successStoryCard('Akosua Mensah', 'Ghana 🇬🇭', 'Geriatric Nurse', 'GH₵3,500', '€3,600', 'akosua-mensah-new.jpg', 'I came to Germany through a nursing program and now work in elderly care. The salary is 12 times what I earned in Ghana, and I can send money home to help my siblings go to school.')}
+                                ${successStoryCard('Kwame Osei', 'Ghana 🇬🇭', 'Data Analyst', 'GH₵4,000', '€4,200', 'aisha-rahman-avatar.webp', 'The tech scene in Berlin is amazing. I went from struggling to find opportunities in Accra to working for a major fintech company with great benefits.')}
+                                ${successStoryCard('Kofi Asante', 'Ghana 🇬🇭', 'Plumber', 'GH₵2,800', '€3,000', 'fatima-al-zahra-avatar.webp', 'I completed my Ausbildung as a plumber and now have a permanent job. The training system in Germany is excellent, and skilled workers are highly valued.')}
                             </div>
                         </div>
                         <!-- Slide 3: Nigeria -->
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                ${successStoryCard('Chidinma Okafor', 'Nigeria 🇳🇬', 'Software Developer', '₦450,000', '€4,600', 'success-story-avatar.webp', 'The EU Blue Card made my move seamless. I now work for a tech startup in Munich and my salary increased 8 times. My family back home is so proud.')}
+                                ${successStoryCard('Chidinma Okafor', 'Nigeria 🇳🇬', 'Software Developer', '₦450,000', '€4,600', 'chidinma-okafor-new.jpg', 'The EU Blue Card made my move seamless. I now work for a tech startup in Munich and my salary increased 8 times. My family back home is so proud.')}
                                 ${successStoryCard('David Okafor', 'Nigeria 🇳🇬', 'Electrician', '₦180,000', '€2,800', 'david-okafor-avatar.webp', 'I started with an Ausbildung program and now I\'m a certified electrician working on major construction projects. The opportunities here are endless.')}
-                                ${successStoryCard('Oluwaseun Adeyemi', 'Nigeria 🇳🇬', 'Civil Engineer', '₦600,000', '€4,400', 'success-story-avatar.webp', 'Working on infrastructure projects in Germany has elevated my career. The professional standards and project scale are incredible.')}
+                                ${successStoryCard('Oluwaseun Adeyemi', 'Nigeria 🇳🇬', 'Civil Engineer', '₦600,000', '€4,400', 'mohammed-al-hassan-avatar.jpeg', 'Working on infrastructure projects in Germany has elevated my career. The professional standards and project scale are incredible.')}
                             </div>
                         </div>
                         <!-- Slide 4: Nigeria & Kenya -->
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                ${successStoryCard('Emmanuel Nwosu', 'Nigeria 🇳🇬', 'Construction Manager', '₦500,000', '€4,000', 'success-story-avatar.webp', 'Germany\'s construction boom created amazing opportunities. I manage teams on major building projects and earn more than I ever imagined.')}
-                                ${successStoryCard('Wanjiru Kamau', 'Kenya 🇰🇪', 'Pediatric Nurse', 'KSh 65,000', '€3,500', 'success-story-avatar.webp', 'Working in a German children\'s hospital has been incredibly rewarding. The facilities are world-class and the support for healthcare workers is outstanding.')}
-                                ${successStoryCard('Brian Mwangi', 'Kenya 🇰🇪', 'Cybersecurity Specialist', 'KSh 120,000', '€5,200', 'success-story-avatar.webp', 'Germany\'s demand for cybersecurity experts opened doors I never thought possible. I work for a major bank and the career growth has been phenomenal.')}
+                                ${successStoryCard('Emmanuel Nwosu', 'Nigeria 🇳🇬', 'Construction Manager', '₦500,000', '€4,000', 'carlos-rodriguez-avatar.jpeg', 'Germany\'s construction boom created amazing opportunities. I manage teams on major building projects and earn more than I ever imagined.')}
+                                ${successStoryCard('Wanjiru Kamau', 'Kenya 🇰🇪', 'Pediatric Nurse', 'KSh 65,000', '€3,500', 'wanjiru-kamau-new.jpg', 'Working in a German children\'s hospital has been incredibly rewarding. The facilities are world-class and the support for healthcare workers is outstanding.')}
+                                ${successStoryCard('Brian Mwangi', 'Kenya 🇰🇪', 'Cybersecurity Specialist', 'KSh 120,000', '€5,200', 'aisha-rahman-avatar.jpeg', 'Germany\'s demand for cybersecurity experts opened doors I never thought possible. I work for a major bank and the career growth has been phenomenal.')}
                             </div>
                         </div>
                         <!-- Slide 5: Kenya -->
                         <div class="w-full flex-shrink-0 px-4">
                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                ${successStoryCard('Grace Wambui', 'Kenya 🇰🇪', 'Research Scientist', 'KSh 90,000', '€4,300', 'success-story-avatar.webp', 'I work at a renewable energy research institute in Hamburg. The funding and resources for scientific research in Germany are unmatched.')}
-                                ${successStoryCard('Joseph Omondi', 'Kenya 🇰🇪', 'Social Worker', 'KSh 55,000', '€3,100', 'success-story-avatar.webp', 'Working with refugee integration programs in Berlin has been fulfilling. Germany values social workers and provides excellent training and support.')}
+                                ${successStoryCard('Grace Wambui', 'Kenya 🇰🇪', 'Research Scientist', 'KSh 90,000', '€4,300', 'fatima-al-zahra-avatar.jpeg', 'I work at a renewable energy research institute in Hamburg. The funding and resources for scientific research in Germany are unmatched.')}
+                                ${successStoryCard('Joseph Omondi', 'Kenya 🇰🇪', 'Social Worker', 'KSh 55,000', '€3,100', 'mohammed-al-hassan-avatar.webp', 'Working with refugee integration programs in Berlin has been fulfilling. Germany values social workers and provides excellent training and support.')}
                                 <div class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl shadow-lg p-8 flex items-center justify-center">
                                     <div class="text-center">
                                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Your Story Could Be Next!</h3>
@@ -367,7 +367,7 @@ function successStoryCard(name, country, profession, before, after, image, quote
     return `
     <div class="testimonial-card bg-white border rounded-xl shadow-lg p-6 hover:shadow-xl transition">
         <div class="flex items-start space-x-4 mb-4">
-            <img src="assets/images/${image}" alt="${name}" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
+            <img src="/assets/images/testimonials/${image}" alt="${name}" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0">
             <div>
                 <h3 class="font-bold text-lg text-gray-900">${name}</h3>
                 <p class="text-sm text-gray-600">${country} • ${profession}</p>

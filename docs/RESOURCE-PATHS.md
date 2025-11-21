@@ -115,7 +115,7 @@ All asset paths in generated HTML use absolute paths from root:
 
 <!-- Images (in templates) -->
 <img src="/assets/images/logo.png" alt="{{t 'nav.logoAlt'}}">
-<img src="/assets/images/priya-sharma-new.jpg" alt="...">
+<img src="/assets/images/testimonials/priya-sharma-new.jpg" alt="...">
 
 <!-- JSON Data (in JavaScript) -->
 fetch('/assets/json/anabin-data.json')
