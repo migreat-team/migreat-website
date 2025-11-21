@@ -5,8 +5,8 @@
   "contact.info.heading": "Contact Information",
   "contact.address.heading": "Office Address",
   "contact.address.line1": "MiGreat Germany",
-  "contact.address.line2": "Friedrichstraße 123",
-  "contact.address.line3": "10117 Berlin",
+  "contact.address.line2": "Karl Liebknecht Str. 34",
+  "contact.address.line3": "10178 Berlin",
   "contact.address.line4": "Germany",
   "contact.email.heading": "Email",
   "contact.email.address": "migreatgermany@gmail.com",
@@ -36,6 +36,6 @@
   "contact.form.submit": "Send Message",
   "contact.form.email.direct": "Or email us directly at",
   "contact.map.heading": "Find Us in Berlin",
-  "contact.map.address": "Friedrichstraße 123, 10117 Berlin, Germany",
+  "contact.map.address": "Karl Liebknecht Str. 34, 10178 Berlin, Germany",
   "contact.map.cta": "Open in Google Maps →"
 }
